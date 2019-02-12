@@ -1,0 +1,14 @@
+//
+// Created by vdido on 12/02/2019.
+//
+
+#ifndef PROJET_STRUCTURE_DE_DONNEES_CONTACT_H
+#define PROJET_STRUCTURE_DE_DONNEES_CONTACT_H
+
+
+class contact {
+
+};
+
+
+#endif //PROJET_STRUCTURE_DE_DONNEES_CONTACT_H
