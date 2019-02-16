@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="Projet-Structure-de-Donnees" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="Debug">
+				<Option output="bin/Debug/Projet-Structure-de-Donnees" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Debug/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-g" />
+				</Compiler>
+			</Target>
+			<Target title="Release">
+				<Option output="bin/Release/Projet-Structure-de-Donnees" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Release/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-O2" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+				</Linker>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="-Wall" />
+		</Compiler>
+		<Unit filename="agenda.cpp" />
+		<Unit filename="agenda.h" />
+		<Unit filename="contact.cpp" />
+		<Unit filename="contact.h" />
+		<Unit filename="jour.cpp" />
+		<Unit filename="jour.h" />
+		<Unit filename="listContact.cpp" />
+		<Unit filename="listContact.h" />
+		<Unit filename="listRdv.cpp" />
+		<Unit filename="listRdv.h" />
+		<Unit filename="main.cpp" />
+		<Unit filename="rdv.cpp" />
+		<Unit filename="rdv.h" />
+		<Extensions>
+			<code_completion />
+			<envvars />
+			<debugger />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>
