@@ -37,3 +37,6 @@ cmake-build-debug
 
 #GDrive
 desktop.ini
+
+#Visual Studio
+.vs
