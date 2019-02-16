@@ -5,10 +5,13 @@
 #ifndef PROJET_STRUCTURE_DE_DONNEES_JOUR_H
 #define PROJET_STRUCTURE_DE_DONNEES_JOUR_H
 
-class evenement;
+class rdv;
 
 class jour {
 
+private:
+	rdv *tete;
+	rdv **rdvMultiJours;
 };
 
 

@@ -5,10 +5,13 @@
 #ifndef PROJET_STRUCTURE_DE_DONNEES_LISTCONTACT_H
 #define PROJET_STRUCTURE_DE_DONNEES_LISTCONTACT_H
 
+#include "contact.h"
+
 class contact;
 
 class listContact {
-
+private:
+	contact *tete;
 };
 
 

@@ -34,4 +34,6 @@
 #Clion
 .idea
 cmake-build-debug
-CMakeLists.txt
+
+#GDrive
+desktop.ini
