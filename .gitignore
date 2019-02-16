@@ -40,3 +40,6 @@ desktop.ini
 
 #Visual Studio
 .vs
+Projet-Structure-de-Donnees.vcxproj.user
+Projet-Structure-de-Donnees.vcxproj.filters
+Projet-Structure-de-Donnees.json
