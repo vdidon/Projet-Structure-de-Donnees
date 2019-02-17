@@ -17,7 +17,7 @@ Dans votre ligne de commande, tapez :
 
 Afin de vous créer un clone de travail local, tapez :
 
-`git clone [https://github.com/vdidon/Projet-Structure-de-Donnees.git](https://github.com/vdidon/Projet-Structure-de-Donnees.git)`
+`git clone https://github.com/vdidon/Projet-Structure-de-Donnees.git`
 
 Cela a pour effet de créer un dossier [projectname] dans lequel vous pourrez travailler.
 
