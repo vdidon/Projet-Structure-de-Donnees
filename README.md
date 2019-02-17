@@ -50,7 +50,7 @@ Permet aussi bien :
 
 Permet d&#39;enlever un fichier de la liste des fichiers à ajouter au prochain commit
 
-`git commit -m "..."`
+`git commit --all -m "..."`
 
 Permet d&#39;ajouter un commit au dépôt (sous réserve d&#39;avoir fait au moins un add avant). Cette commande permet de saisir le message du commit et voir au passage la liste des fichiers concernés
 
