@@ -11,9 +11,9 @@ Installer git : https://git-scm.com/downloads
 
 Dans votre ligne de commande, tapez :
 
-`git config --global user.name &quot;[Prenom] [Nom]&quot;`
+`git config --global user.name "[Prenom] [Nom]"`
 
-`git config --global user.email &quot;[username]@[…]&quot;`
+`git config --global user.email "[username]@[…]"`
 
 Afin de vous créer un clone de travail local, tapez :
 
