@@ -20,7 +20,7 @@ private:
 	 */
 	size_t duree;
 	rdv *suiv;
-	contact **personnes;
+	contact **tabPersonne;
 
 };
 

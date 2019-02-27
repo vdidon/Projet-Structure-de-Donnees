@@ -7,7 +7,9 @@
 
 #include <string>
 
-using namespace std;
+using namespace std; // pour le string
+
+class rdv;
 
 class contact {
 	friend class listContact;
@@ -35,6 +37,7 @@ private:
 	string d_num;
 	string d_adresse;
 	contact *suiv;
+	rdv **tabRdv;
 };
 
 #endif //PROJET_STRUCTURE_DE_DONNEES_CONTACT_H
