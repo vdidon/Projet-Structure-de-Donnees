@@ -5,13 +5,13 @@
 #ifndef PROJET_STRUCTURE_DE_DONNEES_AGENDA_H
 #define PROJET_STRUCTURE_DE_DONNEES_AGENDA_H
 
-#include "listRdv.h"
+#include "listJour.h"
 #include "listContact.h"
 
 class agenda {
 
 private:
-	listRdv d_listRdv;
+	listRdv d_listJour;
 	listContact d_listContact;
 };
 
