@@ -15,7 +15,9 @@ class contact {
 	friend class listContact;
 
 public:
-	contact(const string &nom, const string &prenom, const string &num, const string &adresse);
+	contact(const string &nom, const string &prenom, const string &num, const string &adresseMail);
+
+	~contact();
 
 	//getter
 	string getNom() const;
@@ -26,18 +28,28 @@ public:
 
 	string getAdresse() const;
 
-	//setter
-	void modifNum(string num);
+	rdv **getTabrdv() const;
 
-	void modifEmail(string adresse);
+	//setter
+	bool modifNum(const string &num);
+
+	bool modifEmail(const string &adresse);
+
+	bool operator==(const contact &c) const;
+
+	void ajouterRdv(rdv *r);
+
+	void supprimerRdv(rdv *r);
 
 private:
 	string d_nom;
 	string d_prenom;
 	string d_num;
-	string d_adresse;
-	contact *suiv;
-	rdv **tabRdv;
+	string d_adresseMail;
+	contact *d_suiv;
+	rdv **d_tabRdv;
+
+
 };
 
 #endif //PROJET_STRUCTURE_DE_DONNEES_CONTACT_H

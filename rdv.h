@@ -5,22 +5,56 @@
 #ifndef PROJET_STRUCTURE_DE_DONNEES_RDV_H
 #define PROJET_STRUCTURE_DE_DONNEES_RDV_H
 
-#include <cstddef> //size_t
+#include <string>
+#include "temps.h"
+
+class jour;
 
 class contact;
+
 
 class rdv {
 	friend class jour;
 
+public:
+	rdv(const std::string &nom, const temps &deb, const temps &fin, jour *j,
+	    contact **tabContacts = nullptr);
+
+	rdv(const std::string &nom, const temps &deb, unsigned int duree, jour *j,
+	    contact **tabContacts = nullptr);
+
+	~rdv();
+
+	//getter
+	std::string getNom() const;
+
+	temps &getDeb() const;
+
+	temps &getFin() const;
+
+	unsigned int getDuree() const;
+
+	contact **getContacts() const;
+
+	//setter
+	void ajouterContact(contact *c);
+
+	void supprimeContact(contact *c);
+
 private:
-	/*
-	 * string d_heureDeb;
-	 * ou
-	 * int d_heureDeb;
-	 */
-	size_t duree;
-	rdv *suiv;
-	contact **tabPersonne;
+	jour *d_j;
+	std::string d_nom;
+	temps tDeb;
+	unsigned int d_duree;
+	contact **d_tabContacts;
+	rdv *d_suiv;
+
+	void modifHeureDeb(const temps &t);
+
+	void modifHeureFin(const temps &t);
+
+	void modifDuree(unsigned int duree);
+
 
 };
 
