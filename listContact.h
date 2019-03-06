@@ -1,7 +1,3 @@
-//
-// Created by vdido on 12/02/2019.
-//
-
 #ifndef PROJET_STRUCTURE_DE_DONNEES_LISTCONTACT_H
 #define PROJET_STRUCTURE_DE_DONNEES_LISTCONTACT_H
 
@@ -11,24 +7,37 @@ using namespace std; // pour le string
 
 class contact;
 
+class rdv;
+
 class listContact {
 public:
-	listContact();
+    listContact(contact *tete = nullptr);
 
-	~listContact();
+    ~listContact();
 
-	bool ajouterContact(const string &nom, const string &prenom, const string &num, const string &adresseMail);
+    bool
+    ajouterContact(const string &nom, const string &prenom, const string &num = "", const string &adresseMail = "");
 
-	bool supprimerContact(const string &nom, const string &prenom);
+    bool supprimerContact(const string &nom, const string &prenom);
 
-	int taille();
+    int taille();
 
-	contact *chercherContact(const string &nom, const string &prenom);
+    contact *chercherContact(const string &nom, const string &prenom);
 
+    bool modifNum(const string &nom, const string &prenom, const string &num);
+
+    bool modifEmail(const string &nom, const string &prenom, const string &adresse);
+
+    void ajouterRdv(contact *c, rdv *r);
+
+    void supprimerRdv(contact *c, rdv *r);
+
+    bool afficherRdvDeContact(...);
 
 private:
 
-	contact *d_tete;
+    contact *d_tete;
+
 };
 
 

@@ -1,7 +1,3 @@
-//
-// Created by vdido on 16/02/2019.
-//
-
 #ifndef PROJET_STRUCTURE_DE_DONNEES_RDV_H
 #define PROJET_STRUCTURE_DE_DONNEES_RDV_H
 
@@ -14,47 +10,50 @@ class contact;
 
 
 class rdv {
-	friend class jour;
+    friend class jour;
 
 public:
-	rdv(const std::string &nom, const temps &deb, const temps &fin, jour *j,
-	    contact **tabContacts = nullptr);
+    rdv(const std::string &nom, const temps &deb, const temps &fin, jour *j,
+        contact **tabContacts = nullptr);
 
-	rdv(const std::string &nom, const temps &deb, unsigned int duree, jour *j,
-	    contact **tabContacts = nullptr);
+    rdv(const std::string &nom, const temps &deb, unsigned int duree, jour *j,
+        contact **tabContacts = nullptr);
 
-	~rdv();
+    ~rdv();
 
-	//getter
-	std::string getNom() const;
+    //getter
+    std::string getNom() const;
 
-	temps &getDeb() const;
+    temps &getDeb() const;
 
-	temps &getFin() const;
+    temps &getFin() const;
 
-	unsigned int getDuree() const;
+    unsigned int getDuree() const;
 
-	contact **getContacts() const;
+    contact **getContacts() const;
 
-	//setter
-	void ajouterContact(contact *c);
+    bool afficherContactDeRdv(...);
 
-	void supprimeContact(contact *c);
+    bool afficherRdvDeJour(...);
+
 
 private:
-	jour *d_j;
-	std::string d_nom;
-	temps tDeb;
-	unsigned int d_duree;
-	contact **d_tabContacts;
-	rdv *d_suiv;
+    jour *d_j;
+    std::string d_nom;
+    temps tDeb;
+    unsigned int d_duree;
+    contact **d_tabContacts;
+    rdv *d_suiv;
 
-	void modifHeureDeb(const temps &t);
+    void modifHeureDeb(const temps &t);
 
-	void modifHeureFin(const temps &t);
+    void modifHeureFin(const temps &t);
 
-	void modifDuree(unsigned int duree);
+    void modifDuree(unsigned int duree);
 
+    bool ajouterContact(contact *c);
+
+    bool supprimeContact(contact *c);
 
 };
 
