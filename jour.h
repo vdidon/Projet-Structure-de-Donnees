@@ -22,8 +22,6 @@ public:
 
     rdv* ajouterRdv(...);
 
-    bool supprimerRdv(const std::string &nom);
-
     int getJour() const;
 
     int getMois() const;
@@ -36,6 +34,8 @@ public:
     static void ajouterContact(rdv *r, contact *c);
 
     static void supprimerContact(rdv *r, contact *c);
+
+    static void supprimerRdv(rdv *r);
 
     rdv *chercherRdv(const std::string &nom);
 
