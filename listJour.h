@@ -18,8 +18,6 @@ public:
 
     ~listJour();
 
-    rdv *chercherRdv(const std::string &nom);
-
     rdv *chercherRdv(const date &d, const std::string &nom);
 
     jour *chercherJour(const date &d);
@@ -41,12 +39,6 @@ public:
 
     void modifDuree(const date &d,
                     const std::string &nom, unsigned int duree);
-
-    void modifHeureDeb(const std::string &nom, const temps &t);
-
-    void modifHeureFin(const std::string &nom, const temps &t);
-
-    void modifDuree(const std::string &nom, unsigned int duree);
 
     bool afficherContactDeRdv(...);
 

@@ -32,28 +32,15 @@ class agenda {
     void modifDuree(int j, int m, int a,
                     const std::string &nom, unsigned int duree);
 
-    void modifHeureDeb(const std::string &nom, const temps &t);
-
-    void modifHeureFin(const std::string &nom, const temps &t);
-
-    void modifDuree(const std::string &nom, unsigned int duree);
-
     bool ajouterContactARdv(const string &nom, const string &prenom,
-                            const string &nom_rdv);
-
-    bool ajouterContactARdv(const string &nom, const string &prenom,
-                            const string &nom_rdv, int j, int m, int a);
-
-    bool supprimerContactARdv(const string &nom, const string &prenom,
-                              const string &nom_rdv);
+                            const string &nom_rdv,
+                            int j, int m, int a);
 
     bool supprimerContactARdv(const string &nom, const string &prenom,
                               const string &nom_rdv,
                               int j, int m, int a);
 
     bool supprimerRdv(int j, int m, int a, const std::string &nom);
-
-    bool supprimerRdv(const std::string &nom);
 
     bool afficherRdvDeContact(const string &nom, const string &prenom);
 

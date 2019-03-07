@@ -47,28 +47,6 @@ void agenda::modifDuree(int j, int m, int a, const std::string &nom, unsigned in
     return d_listJour.modifDuree(date{j, m, a}, nom, duree);
 }
 
-void agenda::modifHeureDeb(const std::string &nom, const temps &t) {
-    return d_listJour.modifHeureDeb(nom, t);
-}
-
-void agenda::modifHeureFin(const std::string &nom, const temps &t) {
-    return d_listJour.modifHeureFin(nom, t);
-}
-
-void agenda::modifDuree(const std::string &nom, unsigned int duree) {
-    return d_listJour.modifDuree(nom, duree);
-}
-
-bool agenda::ajouterContactARdv(const string &nom, const string &prenom, const string &nom_rdv) {
-    contact *c;
-    rdv *r;
-    if (!chercherContactEtRdv(nom, prenom, nom_rdv, c, r))
-        return false;
-    d_listContact.ajouterRdv(c, r);
-    d_listJour.ajouterContact(r, c);
-    return true;
-}
-
 bool agenda::ajouterContactARdv(const string &nom, const string &prenom, const string &nom_rdv, int j, int m, int a) {
     contact *c;
     rdv *r;
@@ -76,16 +54,6 @@ bool agenda::ajouterContactARdv(const string &nom, const string &prenom, const s
         return false;
     d_listContact.ajouterRdv(c, r);
     d_listJour.ajouterContact(r, c);
-    return true;
-}
-
-bool agenda::supprimerContactARdv(const string &nom, const string &prenom, const string &nom_rdv) {
-    contact *c;
-    rdv *r;
-    if (!chercherContactEtRdv(nom, prenom, nom_rdv, c, r))
-        return false;
-    d_listContact.supprimerRdv(c, r);
-    d_listJour.supprimerContact(r, c);
     return true;
 }
 
@@ -113,15 +81,6 @@ bool agenda::chercherContactEtRdv(const string &nom, const string &prenom, const
 
 bool agenda::supprimerRdv(int j, int m, int a, const std::string &nom) {
     rdv *r = d_listJour.chercherRdv(date{j, m, a}, nom);
-    contact **cs = r->getContacts();
-    for (int i = 0; i < MAX; ++i) {
-        d_listContact.supprimerRdv(cs[i], r);
-    }
-    d_listJour.supprimerRdv(r);
-}
-
-bool agenda::supprimerRdv(const std::string &nom) {
-    rdv *r = d_listJour.chercherRdv(nom);
     contact **cs = r->getContacts();
     for (int i = 0; i < MAX; ++i) {
         d_listContact.supprimerRdv(cs[i], r);
