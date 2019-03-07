@@ -20,7 +20,7 @@ public:
 
     int taille() const;
 
-    rdv* ajouterRdv(...);
+    rdv *ajouterRdv(const std::string &nom, const temps &tDeb, unsigned int duree, contact **tabContacts);
 
     int getJour() const;
 
