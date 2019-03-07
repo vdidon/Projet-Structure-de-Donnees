@@ -15,8 +15,7 @@ public:
 
     ~listContact();
 
-    bool
-    ajouterContact(const string &nom, const string &prenom, const string &num = "", const string &adresseMail = "");
+    bool ajouterContact(const string &nom, const string &prenom, const string &num = "", const string &adresseMail = "");
 
     bool supprimerContact(const string &nom, const string &prenom);
 
