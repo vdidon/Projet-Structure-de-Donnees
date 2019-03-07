@@ -26,10 +26,10 @@ class agenda {
     void modifHeureDeb(int j, int m, int a,
                        const std::string &nom, const temps &t);
 
-    void modifHeureFin(int j, int m, int a,
+    bool modifHeureFin(int j, int m, int a,
                        const std::string &nom, const temps &t);
 
-    void modifDuree(int j, int m, int a,
+    bool modifDuree(int j, int m, int a,
                     const std::string &nom, unsigned int duree);
 
     bool ajouterContactARdv(const string &nom, const string &prenom,
