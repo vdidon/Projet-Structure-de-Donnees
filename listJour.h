@@ -14,7 +14,7 @@ class rdv;
 
 class listJour {
 public:
-    listJour(jour *tete = nullptr);
+    explicit listJour(jour *tete = nullptr);
 
     ~listJour();
 
@@ -25,19 +25,19 @@ public:
     int taille();
 
     rdv *ajouterRdv(const date &d,
-                    std::string d_nom, const temps &tDeb, unsigned int d_duree, contact **d_tabContacts = nullptr);
+                    std::string nom, const temps &tDeb, unsigned int duree, contact **tabContacts = nullptr);
 
     void ajouterContact(rdv *r, contact *c);
 
     void supprimerContact(rdv *r, contact *c);
 
-    void modifHeureDeb(const date &d,
+    bool modifHeureDeb(const date &d,
                        const std::string &nom, const temps &t);
 
-    void modifHeureFin(const date &d,
+    bool modifHeureFin(const date &d,
                        const std::string &nom, const temps &t);
 
-    void modifDuree(const date &d,
+    bool modifDuree(const date &d,
                     const std::string &nom, unsigned int duree);
 
     bool afficherContactDeRdv(...);
@@ -47,11 +47,15 @@ public:
     void supprimerRdv(rdv* r);
 
 private:
-    jour *tete;
+    jour *d_tete;
 
-    void ajouterJour(const date &d);
+    jour *ajouterJour(const date &d, jour *pre, jour *suiv);
+
+    void supprimerJour(jour *pre, jour *suiv);
 
     void supprimerJour(const date &d);
+
+    bool estVide();
 
 };
 
