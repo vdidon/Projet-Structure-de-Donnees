@@ -49,7 +49,7 @@ public:
 
     bool afficherRdvDeJour(...);
 
-    bool pasDeRdvAujourdhui() const;
+
 private:
     date d_date;
     rdv *d_tete;
