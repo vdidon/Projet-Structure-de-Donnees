@@ -22,7 +22,7 @@ public:
 
     int taille();
 
-    contact *chercherContact(const string &nom, const string &prenom);
+    contact *chercherContact(const string &nom, const string &prenom) const;
 
     bool modifNum(const string &nom, const string &prenom, const string &num);
 

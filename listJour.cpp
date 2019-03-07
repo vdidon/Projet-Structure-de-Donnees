@@ -16,11 +16,11 @@ listJour::~listJour() {
     delete d_tete;
 }
 
-rdv *listJour::chercherRdv(const date &d, const std::string &nom) {
+rdv *listJour::chercherRdv(const date &d, const std::string &nom) const {
     return nullptr;
 }
 
-jour *listJour::chercherJour(const date &d) {
+jour *listJour::chercherJour(const date &d) const {
     jour *j = d_tete;
     while (j != nullptr && d < j->d_date) {
         j = j->suiv;
@@ -78,13 +78,6 @@ bool listJour::modifDuree(const date &d, const std::string &nom, unsigned int du
     j->modifDuree(nom, duree);
 }
 
-bool listJour::afficherContactDeRdv(...) {
-    return false;
-}
-
-bool listJour::afficherRdvDeJour(...) {
-    return false;
-}
 
 void listJour::supprimerRdv(rdv *r) {
     jour *j = r->getJour();

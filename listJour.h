@@ -18,9 +18,9 @@ public:
 
     ~listJour();
 
-    rdv *chercherRdv(const date &d, const std::string &nom);
+    rdv *chercherRdv(const date &d, const std::string &nom) const;
 
-    jour *chercherJour(const date &d);
+    jour *chercherJour(const date &d) const;
 
     int taille();
 
