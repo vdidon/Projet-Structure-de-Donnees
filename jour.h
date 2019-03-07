@@ -16,7 +16,7 @@ class jour {
 public:
     jour(const date &d); // d_date doit être construit par recopie
 
-    ~jour();
+    ~jour(); // le tab de rdv étant vide
 
     int taille() const;
 
