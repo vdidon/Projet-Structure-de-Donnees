@@ -32,7 +32,6 @@ public:
 
     date getDate() const;
 
-    bool operator>(const jour &j);
 
     static void ajouterContact(rdv *r, contact *c);
 
