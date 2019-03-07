@@ -11,6 +11,9 @@ class contact;
 
 
 class jour {
+    friend class listJour;
+
+public:
     jour(const date &d); // d_date doit être construit par recopie
 
     ~jour();
