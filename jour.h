@@ -35,7 +35,7 @@ public:
 
     static void supprimerContact(rdv *r, contact *c);
 
-    static void supprimerRdv(rdv *r);
+    static void supprimerRdv(rdv *r); // le tab de contact étant vide
 
     rdv *chercherRdv(const std::string &nom);
 
