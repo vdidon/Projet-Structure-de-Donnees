@@ -3,6 +3,7 @@
 
 #include "listJour.h"
 #include "listContact.h"
+#include <ostream>
 
 class agenda {
     agenda();
@@ -42,11 +43,11 @@ class agenda {
 
     bool supprimerRdv(int j, int m, int a, const std::string &nom);
 
-    bool afficherRdvDeContact(const string &nom, const string &prenom);
+    bool afficherRdvDeContact(const string &nom, const string &prenom, std::ostream &out) const;
 
-    bool afficherContactDeRdv(const string &nom_rdv, int j, int m, int a);
+    bool afficherContactDeRdv(const string &nom_rdv, int j, int m, int a, std::ostream &out) const;
 
-    bool afficherRdvDeJour(int j, int m, int a);
+    bool afficherRdvDeJour(int j, int m, int a, std::ostream &out) const;
 
 
 private:

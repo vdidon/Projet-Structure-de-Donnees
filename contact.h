@@ -2,6 +2,7 @@
 #define PROJET_STRUCTURE_DE_DONNEES_CONTACT_H
 
 #include <string>
+#include <ostream>
 
 using namespace std; // pour le string
 
@@ -27,7 +28,7 @@ public:
     rdv **getTabrdv() const;
 
 
-    bool afficherRdvDeContact(...);
+    bool afficherRdvDeContact(std::ostream &out) const;
 
     bool operator==(const contact &c) const;
 

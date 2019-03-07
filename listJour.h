@@ -40,9 +40,9 @@ public:
     bool modifDuree(const date &d,
                     const std::string &nom, unsigned int duree);
 
-    bool afficherContactDeRdv(...);
+    bool afficherContactDeRdv(const date &d, const std::string &nom, std::ostream &out) const;
 
-    bool afficherRdvDeJour(...);
+    bool afficherRdvDeJour(const date &d, std::ostream &out) const;
 
     void supprimerRdv(rdv* r);
 

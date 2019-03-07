@@ -3,6 +3,7 @@
 
 #include <string>
 #include "temps.h"
+#include <ostream>
 
 class jour;
 
@@ -34,7 +35,7 @@ public:
 
     jour *getJour() const;
 
-    bool afficherContactDeRdv(...);
+    bool afficherContactDeRdv(std::ostream &out) const;
 
 
 private:

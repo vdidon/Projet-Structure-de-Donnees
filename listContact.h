@@ -2,6 +2,7 @@
 #define PROJET_STRUCTURE_DE_DONNEES_LISTCONTACT_H
 
 #include <string>
+#include <ostream>
 
 using namespace std; // pour le string
 
@@ -31,7 +32,7 @@ public:
 
     void supprimerRdv(contact *c, rdv *r);
 
-    bool afficherRdvDeContact(...);
+    bool afficherRdvDeContact(const string &nom, const string &prenom, ostream &out) const;
 
 private:
 

@@ -4,6 +4,7 @@
 #include <string>
 #include "temps.h"
 #include "date.h"
+#include <ostream>
 
 class rdv;
 
@@ -45,9 +46,9 @@ public:
 
     void modifDuree(const std::string &nom, unsigned int duree);
 
-    bool afficherContactDeRdv(...);
+    bool afficherContactDeRdv(const std::string &nom, std::ostream &out) const;
 
-    bool afficherRdvDeJour(...);
+    bool afficherRdvDeJour(std::ostream &out) const;
 
 
 private:
