@@ -38,15 +38,15 @@ bool agenda::ajouterRdv(int j, int m, int a, const std::string &nom, const temps
         }
 }
 
-void agenda::modifHeureDeb(int j, int m, int a, const std::string &nom, const temps &t) {
+bool agenda::modifHeureDeb(int j, int m, int a, const std::string &nom, const temps &t) {
     return d_listJour.modifHeureDeb(date{j, m, a}, nom, t);
 }
 
-void agenda::modifHeureFin(int j, int m, int a, const std::string &nom, const temps &t) {
+bool agenda::modifHeureFin(int j, int m, int a, const std::string &nom, const temps &t) {
     return d_listJour.modifHeureFin(date{j, m, a}, nom, t);
 }
 
-void agenda::modifDuree(int j, int m, int a, const std::string &nom, unsigned int duree) {
+bool agenda::modifDuree(int j, int m, int a, const std::string &nom, unsigned int duree) {
     return d_listJour.modifDuree(date{j, m, a}, nom, duree);
 }
 
