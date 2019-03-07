@@ -24,7 +24,7 @@ class agenda {
                     const std::string &nom, const temps &tDeb, unsigned int duree,
                     contact **tabContacts = nullptr, int nbTab = 0);
 
-    void modifHeureDeb(int j, int m, int a,
+    bool modifHeureDeb(int j, int m, int a,
                        const std::string &nom, const temps &t);
 
     bool modifHeureFin(int j, int m, int a,
@@ -55,7 +55,7 @@ private:
     listContact d_listContact;
 
     bool chercherContactEtRdv(const string &nom, const string &prenom, const string &nom_rdv, contact *&c, rdv *&r,
-                              int j = 0, int m = 0, int a = 0);
+                              int j, int m, int a);
 
 };
 
