@@ -3,17 +3,14 @@
 
 class date {
 public:
-    bool operator>(const date &d) const {
-        return (a > d.a) || (a == d.a && (m > d.m || (m == d.m && j > d.j)));
-    }
+    bool operator>(const date &d) const;
 
-    bool operator<(const date &d) const {
-        return (a < d.a) || (a == d.a && (m < d.m || (m == d.m && j < d.j)));
-    }
+    bool operator<(const date &d) const;
 
-    bool operator==(const date &d) const {
-        return a == d.a && m == d.m && j == d.j;
-    }
+    bool operator==(const date &d) const;
+
+    bool operator!=(const date &d) const;
+
     int j, m, a;
 };
 
