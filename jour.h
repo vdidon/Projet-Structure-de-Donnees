@@ -50,6 +50,7 @@ private:
     date d_date;
     rdv *d_tete;
     rdv **d_rdvMultiJours; // des jours d'avant
+    jour *suiv;
 
 };
 
