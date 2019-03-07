@@ -76,8 +76,6 @@ bool agenda::chercherContactEtRdv(const string &nom, const string &prenom, const
     c = d_listContact.chercherContact(nom, prenom);
     if (c)
         return false; // le contact n'existe pas
-    if (j == 0) // pas de date
-        r = d_listJour.chercherRdv(nom);
     r = d_listJour.chercherRdv(date{j, m, a}, nom);
     return r != nullptr; // le rdv n'existe pas
 }
