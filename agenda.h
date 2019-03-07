@@ -7,6 +7,8 @@
 class agenda {
     agenda();
 
+    //agenda(const listContact &c,const listJour &j);
+
     ~agenda();
 
     bool ajouterContact(const string &nom, const string &prenom, const string &num = "", const string &adresseMail = "");
@@ -17,17 +19,17 @@ class agenda {
 
     bool modifEmail(const string &nom, const string &prenom, const string &adresse);
 
-    bool ajouterRdv(int d_j, int d_m, int d_a,
-                    std::string d_nom, const temps &tDeb, unsigned int d_duree,
-                    contact **d_tabContacts = nullptr);
+    bool ajouterRdv(int j, int m, int a,
+                    const std::string &nom, const temps &tDeb, unsigned int duree,
+                    contact **tabContacts = nullptr, int nbTab = 0);
 
-    void modifHeureDeb(int d_j, int d_m, int d_a,
+    void modifHeureDeb(int j, int m, int a,
                        const std::string &nom, const temps &t);
 
-    void modifHeureFin(int d_j, int d_m, int d_a,
+    void modifHeureFin(int j, int m, int a,
                        const std::string &nom, const temps &t);
 
-    void modifDuree(int d_j, int d_m, int d_a,
+    void modifDuree(int j, int m, int a,
                     const std::string &nom, unsigned int duree);
 
     void modifHeureDeb(const std::string &nom, const temps &t);
@@ -40,25 +42,32 @@ class agenda {
                             const string &nom_rdv);
 
     bool ajouterContactARdv(const string &nom, const string &prenom,
-                            const string &nom_rdv, int d_j, int d_m, int d_a);
+                            const string &nom_rdv, int j, int m, int a);
 
     bool supprimerContactARdv(const string &nom, const string &prenom,
                               const string &nom_rdv);
 
     bool supprimerContactARdv(const string &nom, const string &prenom,
-                         const string &nom_rdv,
-                         int d_j, int d_m, int d_a);
+                              const string &nom_rdv,
+                              int j, int m, int a);
 
-    bool afficherRdvDeContact(...);
+    bool supprimerRdv(int j, int m, int a, const std::string &nom);
 
-    bool afficherContactDeRdv(...);
+    bool supprimerRdv(const std::string &nom);
 
-    bool afficherRdvDeJour(...);
+    bool afficherRdvDeContact(const string &nom, const string &prenom);
+
+    bool afficherContactDeRdv(const string &nom_rdv, int j, int m, int a);
+
+    bool afficherRdvDeJour(int j, int m, int a);
 
 
 private:
     listJour d_listJour;
     listContact d_listContact;
+
+    bool chercherContactEtRdv(const string &nom, const string &prenom, const string &nom_rdv, contact *&c, rdv *&r,
+                              int j = 0, int m = 0, int a = 0);
 
 };
 
