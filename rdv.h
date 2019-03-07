@@ -32,8 +32,6 @@ public:
 
     contact **getContacts() const;
 
-    jour *getJour() const;
-
     bool afficherContactDeRdv(...);
 
 
