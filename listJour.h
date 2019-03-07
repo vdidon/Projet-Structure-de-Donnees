@@ -3,6 +3,7 @@
 
 #include <string>
 #include "temps.h"
+#include "date.h"
 
 
 class contact;
@@ -19,26 +20,26 @@ public:
 
     rdv *chercherRdv(const std::string &nom);
 
-    rdv *chercherRdv(int d_j, int d_m, int d_a, const std::string &nom);
+    rdv *chercherRdv(const date &d, const std::string &nom);
 
     jour* chercherJour(int j,int m,int a);
 
     int taille();
 
-    rdv *ajouterRdv(int d_j, int d_m, int d_a,
+    rdv *ajouterRdv(const date &d,
                     std::string d_nom, const temps &tDeb, unsigned int d_duree, contact **d_tabContacts = nullptr);
 
     void ajouterContact(rdv *r, contact *c);
 
     void supprimerContact(rdv *r, contact *c);
 
-    void modifHeureDeb(int d_j, int d_m, int d_a,
+    void modifHeureDeb(const date &d,
                        const std::string &nom, const temps &t);
 
-    void modifHeureFin(int d_j, int d_m, int d_a,
+    void modifHeureFin(const date &d,
                        const std::string &nom, const temps &t);
 
-    void modifDuree(int d_j, int d_m, int d_a,
+    void modifDuree(const date &d,
                     const std::string &nom, unsigned int duree);
 
     void modifHeureDeb(const std::string &nom, const temps &t);
@@ -56,9 +57,9 @@ public:
 private:
     jour *tete;
 
-    void ajouterJour(int d_j, int d_m, int d_a);
+    void ajouterJour(const date &d);
 
-    void supprimerJour(int d_j, int d_m, int d_a);
+    void supprimerJour(const date &d);
 
 };
 

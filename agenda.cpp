@@ -2,6 +2,7 @@
 #include "agenda.h"
 #include "listContact.h"
 #include "listJour.h"
+#include "date.h"
 
 agenda::agenda() : d_listJour{}, d_listContact{} {}
 
@@ -25,7 +26,7 @@ bool agenda::modifEmail(const string &nom, const string &prenom, const string &a
 
 bool agenda::ajouterRdv(int j, int m, int a, const std::string &nom, const temps &tDeb, unsigned int duree,
                         contact **tabContacts, int nbTab) {
-    rdv *r = d_listJour.ajouterRdv(j, m, a, nom, tDeb, duree, tabContacts);
+    rdv *r = d_listJour.ajouterRdv(date{j, m, a}, nom, tDeb, duree, tabContacts);
     if (r == nullptr)
         return false; // rdv pas créé
     if (!tabContacts)
@@ -35,15 +36,15 @@ bool agenda::ajouterRdv(int j, int m, int a, const std::string &nom, const temps
 }
 
 void agenda::modifHeureDeb(int j, int m, int a, const std::string &nom, const temps &t) {
-    return d_listJour.modifHeureDeb(j, m, a, nom, t);
+    return d_listJour.modifHeureDeb(date{j, m, a}, nom, t);
 }
 
 void agenda::modifHeureFin(int j, int m, int a, const std::string &nom, const temps &t) {
-    return d_listJour.modifHeureFin(j, m, a, nom, t);
+    return d_listJour.modifHeureFin(date{j, m, a}, nom, t);
 }
 
 void agenda::modifDuree(int j, int m, int a, const std::string &nom, unsigned int duree) {
-    return d_listJour.modifDuree(j, m, a, nom, duree);
+    return d_listJour.modifDuree(date{j, m, a}, nom, duree);
 }
 
 void agenda::modifHeureDeb(const std::string &nom, const temps &t) {
@@ -106,12 +107,12 @@ bool agenda::chercherContactEtRdv(const string &nom, const string &prenom, const
         return false; // le contact n'existe pas
     if (j == 0) // pas de date
         r = d_listJour.chercherRdv(nom);
-    r = d_listJour.chercherRdv(j, m, a, nom);
+    r = d_listJour.chercherRdv(date{j, m, a}, nom);
     return r != nullptr; // le rdv n'existe pas
 }
 
 bool agenda::supprimerRdv(int j, int m, int a, const std::string &nom) {
-    rdv *r = d_listJour.chercherRdv(j, m, a, nom);
+    rdv *r = d_listJour.chercherRdv(date{j, m, a}, nom);
     contact **cs = r->getContacts();
     for (int i = 0; i < MAX; ++i) {
         d_listContact.supprimerRdv(cs[i], r);
@@ -137,7 +138,7 @@ bool agenda::afficherRdvDeContact(const string &nom, const string &prenom) {
 }
 
 bool agenda::afficherContactDeRdv(const string &nom_rdv, int j, int m, int a) {
-    rdv *r = d_listJour.chercherRdv(j, m, a, nom_rdv);
+    rdv *r = d_listJour.chercherRdv(date{j, m, a}, nom_rdv);
     if (!r)
         return false;
     r->afficherContactDeRdv();

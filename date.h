@@ -1,0 +1,8 @@
+#ifndef PROJET_STRUCTURE_DE_DONNEES_DATE_H
+#define PROJET_STRUCTURE_DE_DONNEES_DATE_H
+
+struct date {
+    int j, m, a;
+};
+
+#endif //PROJET_STRUCTURE_DE_DONNEES_DATE_H

@@ -3,13 +3,15 @@
 
 #include <string>
 #include "temps.h"
+#include "date.h"
 
 class rdv;
 
 class contact;
 
+
 class jour {
-    jour(int j, int m, int a);
+    jour(const date &d); // d_date doit être construit par recopie
 
     ~jour();
 
@@ -24,6 +26,8 @@ class jour {
     int getMois() const;
 
     int getAnnee() const;
+
+    date getDate() const;
 
     bool operator>(const jour &j);
 
@@ -43,7 +47,7 @@ class jour {
 
 
 private:
-    int d_j, d_m, d_a;
+    date d_date;
     rdv *d_tete;
     rdv **d_rdvMultiJours; // des jours d'avant
 
