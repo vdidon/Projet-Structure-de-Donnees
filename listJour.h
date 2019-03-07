@@ -21,6 +21,8 @@ public:
 
     rdv *chercherRdv(int d_j, int d_m, int d_a, const std::string &nom);
 
+    jour* chercherJour(int j,int m,int a);
+
     int taille();
 
     rdv *ajouterRdv(int d_j, int d_m, int d_a,
@@ -48,6 +50,8 @@ public:
     bool afficherContactDeRdv(...);
 
     bool afficherRdvDeJour(...);
+
+    void supprimerRdv(rdv* r);
 
 private:
     jour *tete;
