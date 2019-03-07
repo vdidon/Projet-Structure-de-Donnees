@@ -23,7 +23,7 @@ public:
 
     int taille();
 
-    bool ajouterRdv(int d_j, int d_m, int d_a,
+    rdv *ajouterRdv(int d_j, int d_m, int d_a,
                     std::string d_nom, const temps &tDeb, unsigned int d_duree, contact **d_tabContacts = nullptr);
 
     void ajouterContact(rdv *r, contact *c);

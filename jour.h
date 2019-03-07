@@ -15,7 +15,7 @@ class jour {
 
     int taille() const;
 
-    bool ajouterRdv(...);
+    rdv* ajouterRdv(...);
 
     bool supprimerRdv(const std::string &nom);
 
