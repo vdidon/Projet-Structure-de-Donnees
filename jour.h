@@ -35,6 +35,8 @@ public:
 
     static void ajouterContact(rdv *r, contact *c);
 
+    static void supprimerContact(rdv *r, contact *c);
+
     rdv *chercherRdv(const std::string &nom);
 
     void modifHeureDeb(const std::string &nom, const temps &t);
