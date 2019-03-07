@@ -34,8 +34,6 @@ public:
 
     bool afficherContactDeRdv(...);
 
-    bool afficherRdvDeJour(...);
-
 
 private:
     jour *d_j;
