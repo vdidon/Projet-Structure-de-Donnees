@@ -89,26 +89,26 @@ bool agenda::supprimerRdv(int j, int m, int a, const std::string &nom) {
     d_listJour.supprimerRdv(r);
 }
 
-bool agenda::afficherRdvDeContact(const string &nom, const string &prenom) {
+bool agenda::afficherRdvDeContact(const string &nom, const string &prenom, std::ostream &out) const {
     contact *c = d_listContact.chercherContact(nom, prenom);
     if (!c)
         return false;
-    c->afficherRdvDeContact();
+    c->afficherRdvDeContact(out);
     return true;
 }
 
-bool agenda::afficherContactDeRdv(const string &nom_rdv, int j, int m, int a) {
+bool agenda::afficherContactDeRdv(const string &nom_rdv, int j, int m, int a, std::ostream &out) const {
     rdv *r = d_listJour.chercherRdv(date{j, m, a}, nom_rdv);
     if (!r)
         return false;
-    r->afficherContactDeRdv();
+    r->afficherContactDeRdv(out);
 }
 
-bool agenda::afficherRdvDeJour(int j, int m, int a) {
-    jour *jo = d_listJour.chercherJour(j, m, a);
+bool agenda::afficherRdvDeJour(int j, int m, int a, std::ostream &out) const {
+    jour *jo = d_listJour.chercherJour(date{j, m, a});
     if (!j)
         return false;
-    jo->afficherRdvDeJour();
+    jo->afficherRdvDeJour(out);
 }
 
 
