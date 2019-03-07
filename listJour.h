@@ -22,7 +22,7 @@ public:
 
     rdv *chercherRdv(const date &d, const std::string &nom);
 
-    jour* chercherJour(int j,int m,int a);
+    jour *chercherJour(const date &d);
 
     int taille();
 
