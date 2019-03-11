@@ -3,6 +3,7 @@
 
 #include <string>
 #include <ostream>
+#include <vector>
 
 using namespace std; // pour le string
 
@@ -25,7 +26,7 @@ public:
 
     string getAdresse() const;
 
-    rdv **getTabrdv() const;
+    vector<rdv *> getTabrdv() const;
 
 
     bool afficherRdvDeContact(std::ostream &out) const;
@@ -39,11 +40,11 @@ private:
     string d_num;
     string d_adresseMail;
     contact *d_suiv;
-    rdv **d_tabRdv;
+    vector<rdv *> d_tabRdv;
 
-    bool modifNum(const string &num);
+    contact &modifNum(const string &num);
 
-    bool modifEmail(const string &adresse);
+    contact &modifEmail(const string &adresse);
 
     void ajouterRdv(rdv *r);
 
