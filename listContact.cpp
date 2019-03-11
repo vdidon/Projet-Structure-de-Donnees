@@ -47,7 +47,7 @@ int listContact::taille() {
 
 contact *listContact::chercherContact(const string &nom, const string &prenom) const {
     contact *c = d_tete;
-    while (c != nullptr && (c.d_nom != nom && d.d_prenom != prenom)) {
+    while (c != nullptr && (c->d_nom != nom && c->d_prenom != prenom)) {
         c = c->d_suiv;
     }
     if (c == nullptr) {
@@ -62,14 +62,14 @@ contact *listContact::chercherContact(const string &nom, const string &prenom) c
 bool listContact::supprimerContact(const string &nom, const string &prenom) {
     contact *as = chercherContact(nom, prenom);
     if (as != nullptr) {
-        if (as.getTabrdv().size() == 0) {
-            if (d_tete.d_nom == as.d_nom && d_tete.d_prenom == as.d_prenom) {
+        if (as->getTabrdv().size() == 0) {
+            if (d_tete->d_nom == as->d_nom && d_tete->d_prenom == as->d_prenom) {
                 contact *c = d_tete;
                 d_tete = c->d_suiv;
                 delete c;
             } else {
                 contact *precC = nullptr, *c = d_tete;
-                while (c != nullptr && (c.d_nom != nom && d.d_prenom != prenom)) {
+                while (c != nullptr && (c->d_nom != nom && c->d_prenom != prenom)) {
                     precC = c;
                     c = c->d_suiv;
                 }

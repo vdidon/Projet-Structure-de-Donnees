@@ -28,12 +28,12 @@ bool agenda::modifEmail(const string &nom, const string &prenom, const string &a
 }
 
 bool agenda::ajouterRdv(int j, int m, int a, const std::string &nom, const temps &tDeb, unsigned int duree,
-                        contact **tabContacts, int nbTab) {
+                        contact **tabContacts, int nb_c) {
     rdv *r = d_listJour.ajouterRdv(date{j, m, a}, nom, tDeb, duree, tabContacts);
     if (r == nullptr)
         return false; // rdv pas créé
-    if (!tabContacts)
-        for (int i = 0; i < nbTab; ++i) {
+    if (nb_c)
+        for (int i = 0; i < nb_c; ++i) {
             d_listContact.ajouterRdv(tabContacts[i], r);
         }
 }
@@ -82,8 +82,8 @@ bool agenda::chercherContactEtRdv(const string &nom, const string &prenom, const
 
 bool agenda::supprimerRdv(int j, int m, int a, const std::string &nom) {
     rdv *r = d_listJour.chercherRdv(date{j, m, a}, nom);
-    contact **cs = r->getContacts();
-    for (int i = 0; i < MAX; ++i) {
+    vectorLite<contact *> cs = r->getContacts();
+    for (int i = 0; i < cs.size(); ++i) {
         d_listContact.supprimerRdv(cs[i], r);
     }
     d_listJour.supprimerRdv(r);

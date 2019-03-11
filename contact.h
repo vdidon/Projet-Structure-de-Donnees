@@ -3,7 +3,7 @@
 
 #include <string>
 #include <ostream>
-#include <vector>
+#include "vectorLite.h"
 
 using namespace std; // pour le string
 
@@ -26,7 +26,7 @@ public:
 
     string getAdresse() const;
 
-    vector<rdv *> getTabrdv() const;
+    vectorLite<rdv *> &getTabrdv();
 
 
     bool afficherRdvDeContact(std::ostream &out) const;
@@ -40,7 +40,7 @@ private:
     string d_num;
     string d_adresseMail;
     contact *d_suiv;
-    vector<rdv *> d_tabRdv;
+    vectorLite<rdv *> d_tabRdv;
 
     contact &modifNum(const string &num);
 

@@ -1,6 +1,5 @@
 #include "contact.h"
 #include "rdv.h"
-#include <vector>
 
 contact::contact(const string &nom, const string &prenom, const string &num, const string &adresse) :
         d_nom{nom}, d_prenom{prenom}, d_num{num}, d_adresseMail{adresse} {
@@ -23,7 +22,7 @@ string contact::getAdresse() const {
     return d_adresseMail;
 }
 
-vector<rdv *> contact::getTabrdv() const {
+vectorLite<rdv *> &contact::getTabrdv() {
     return d_tabRdv;
 }
 

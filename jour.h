@@ -5,6 +5,7 @@
 #include "temps.h"
 #include "date.h"
 #include <ostream>
+#include "vectorLite.h"
 
 class rdv;
 
@@ -21,7 +22,8 @@ public:
 
     int taille() const;
 
-    rdv *ajouterRdv(const std::string &nom, const temps &tDeb, unsigned int duree, contact **tabContacts);
+    rdv *ajouterRdv(const std::string &nom, const temps &tDeb, unsigned int duree,
+                    contact **tabContacts); // à vérifier avec d_rdvMultiJours
 
     int getJour() const;
 
@@ -54,7 +56,7 @@ public:
 private:
     date d_date;
     rdv *d_tete;
-    rdv **d_rdvMultiJours; // des jours d'avant
+    vectorLite<rdv *> d_rdvMultiJours; // des jours d'avant
     jour *suiv;
 
 };

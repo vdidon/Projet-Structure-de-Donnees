@@ -20,6 +20,8 @@ public:
 
     bool supprimer(int i);
 
+    void inserer(int i, T val);
+
 private:
     void recap(int p_cap);
 

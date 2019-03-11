@@ -20,9 +20,8 @@ class agenda {
 
     bool modifEmail(const string &nom, const string &prenom, const string &adresse);
 
-    bool ajouterRdv(int j, int m, int a,
-                    const std::string &nom, const temps &tDeb, unsigned int duree,
-                    contact **tabContacts = nullptr, int nbTab = 0);
+    bool ajouterRdv(int j, int m, int a, const std::string &nom, const temps &tDeb, unsigned int duree,
+                    contact **tabContacts, int nb_c);
 
     bool modifHeureDeb(int j, int m, int a,
                        const std::string &nom, const temps &t);

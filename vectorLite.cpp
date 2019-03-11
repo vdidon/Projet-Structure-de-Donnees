@@ -9,7 +9,7 @@ vectorLite<T>::vectorLite(int p_size, T *p_tab): d_size{p_size}, d_cap{p_size * 
     if (p_size) {
         d_tab = new T[d_cap];
         if (p_tab) {
-            memcpy(d_tab, p_tab, d_size * sizeof(T));
+            memcpy(d_tab, p_tab, d_size * sizeof(T)); // copie de mémoire
         }
     }
 }
@@ -29,7 +29,7 @@ vectorLite<T>::~vectorLite() {
 
 template<typename T>
 void vectorLite<T>::push_back(T val) {
-    if (d_size + 1 >= d_cap) {
+    if (d_size == d_cap) {
         recap((d_size + 1) * 2);
     }
     d_tab[d_size++] = val;
@@ -64,6 +64,17 @@ bool vectorLite<T>::supprimer(int i) {
 template<typename T>
 T &vectorLite<T>::operator[](int i) {
     return d_tab[i];
+}
+
+template<typename T>
+void vectorLite<T>::inserer(int i, T val) {
+    if (d_size == d_cap) {
+        recap((d_size + 1) * 2);
+    }
+    ++d_size;
+    memcpy(&d_tab[i + 1], &d_tab[i], (d_size - i - 1) * sizeof(T));
+    d_tab[i] = val;
+
 }
 
 

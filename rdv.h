@@ -4,6 +4,7 @@
 #include <string>
 #include "temps.h"
 #include <ostream>
+#include "vectorLite.h"
 
 class jour;
 
@@ -31,7 +32,7 @@ public:
 
     unsigned int getDuree() const;
 
-    contact **getContacts() const;
+    vectorLite<contact *> &getContacts();
 
     jour *getJour() const;
 
@@ -43,7 +44,7 @@ private:
     std::string d_nom;
     temps tDeb;
     unsigned int d_duree;
-    contact **d_tabContacts;
+    vectorLite<contact *> d_tabContacts;
     rdv *d_suiv;
 
     void modifHeureDeb(const temps &t);
