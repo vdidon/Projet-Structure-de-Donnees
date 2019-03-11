@@ -36,6 +36,7 @@ bool agenda::ajouterRdv(int j, int m, int a, const std::string &nom, const temps
         for (int i = 0; i < nb_c; ++i) {
             d_listContact.ajouterRdv(tabContacts[i], r);
         }
+    return true;
 }
 
 bool agenda::modifHeureDeb(int j, int m, int a, const std::string &nom, const temps &t) {
@@ -82,17 +83,20 @@ bool agenda::chercherContactEtRdv(const string &nom, const string &prenom, const
 
 bool agenda::supprimerRdv(int j, int m, int a, const std::string &nom) {
     rdv *r = d_listJour.chercherRdv(date{j, m, a}, nom);
+    if (r == nullptr)
+        return false; // rdv pas trouvé
     vectorLite<contact *> cs = r->getContacts();
     for (int i = 0; i < cs.size(); ++i) {
         d_listContact.supprimerRdv(cs[i], r);
     }
     d_listJour.supprimerRdv(r);
+    return true;
 }
 
 bool agenda::afficherRdvDeContact(const string &nom, const string &prenom, std::ostream &out) const {
     contact *c = d_listContact.chercherContact(nom, prenom);
     if (!c)
-        return false;
+        return false; // contact pas trouvé
     c->afficherRdvDeContact(out);
     return true;
 }
@@ -100,15 +104,17 @@ bool agenda::afficherRdvDeContact(const string &nom, const string &prenom, std::
 bool agenda::afficherContactDeRdv(const string &nom_rdv, int j, int m, int a, std::ostream &out) const {
     rdv *r = d_listJour.chercherRdv(date{j, m, a}, nom_rdv);
     if (!r)
-        return false;
+        return false; // rdv pas trouvé
     r->afficherContactDeRdv(out);
+    return true;
 }
 
 bool agenda::afficherRdvDeJour(int j, int m, int a, std::ostream &out) const {
     jour *jo = d_listJour.chercherJour(date{j, m, a});
     if (!j)
-        return false;
+        return false; // jour pas trouvé
     jo->afficherRdvDeJour(out);
+    return true;
 }
 
 
