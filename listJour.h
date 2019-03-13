@@ -15,7 +15,7 @@ class rdv;
 
 class listJour {
 public:
-    explicit listJour(jour *tete = nullptr);
+    listJour(jour *tete = nullptr);
 
     ~listJour();
 
