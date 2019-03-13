@@ -42,9 +42,9 @@ private:
     contact *d_suiv;
     vectorLite<rdv *> d_tabRdv;
 
-    contact &modifNum(const string &num);
+    void modifNum(const string &num);
 
-    contact &modifEmail(const string &adresse);
+    void modifEmail(const string &adresse);
 
     void ajouterRdv(rdv *r);
 

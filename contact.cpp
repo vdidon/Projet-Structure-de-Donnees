@@ -26,16 +26,14 @@ vectorLite<rdv *> &contact::getTabrdv() {
     return d_tabRdv;
 }
 
-contact &
+void
 contact::modifNum(const string &num)// pourquoi la m�thode retourne un bool alors que c'est le contact qui est retourn�
 {
     d_num = num;
-    return *this;
 }
 
-contact &contact::modifEmail(const string &adresse) {
+void contact::modifEmail(const string &adresse) {
     d_adresseMail = adresse;
-    return *this;
 }
 
 void contact::ajouterRdv(rdv *r) {
