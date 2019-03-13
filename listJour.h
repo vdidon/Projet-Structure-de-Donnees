@@ -4,6 +4,7 @@
 #include <string>
 #include "temps.h"
 #include "date.h"
+#include "vectorLite.h"
 
 
 class contact;
@@ -25,7 +26,8 @@ public:
     int taille();
 
     rdv *ajouterRdv(const date &d,
-                    std::string nom, const temps &tDeb, unsigned int duree, contact **tabContacts = nullptr);
+                    std::string nom, const temps &tDeb, unsigned int duree, const
+                    vectorLite<contact *> &tabContacts);
 
     void ajouterContact(rdv *r, contact *c);
 

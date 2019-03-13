@@ -35,8 +35,8 @@ int listJour::taille() {
     return res;
 }
 
-rdv *listJour::ajouterRdv(const date &d, std::string nom, const temps &tDeb, unsigned int duree,
-                          contact **tabContacts) {
+rdv *listJour::ajouterRdv(const date &d, std::string nom, const temps &tDeb, unsigned int duree, const
+vectorLite<contact *> &tabContacts) {
     jour *j = d_tete;
     jour *pre = nullptr;
     while (j != nullptr && d < j->d_date) {

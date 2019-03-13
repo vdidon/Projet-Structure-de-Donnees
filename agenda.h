@@ -3,6 +3,7 @@
 
 #include "listJour.h"
 #include "listContact.h"
+#include "vectorLite.h"
 #include <ostream>
 
 class agenda {
@@ -20,8 +21,8 @@ class agenda {
 
     bool modifEmail(const string &nom, const string &prenom, const string &adresse);
 
-    bool ajouterRdv(int j, int m, int a, const std::string &nom, const temps &tDeb, unsigned int duree,
-                    contact **tabContacts, int nb_c);
+    bool ajouterRdv(int j, int m, int a, const std::string &nom, const temps &tDeb, unsigned int duree, const
+    vectorLite<contact *> &tabContacts = vectorLite<contact *>{});
 
     bool modifHeureDeb(int j, int m, int a,
                        const std::string &nom, const temps &t);
@@ -53,8 +54,9 @@ private:
     listJour d_listJour;
     listContact d_listContact;
 
-    bool chercherContactEtRdv(const string &nom, const string &prenom, const string &nom_rdv, contact *&c, rdv *&r,
-                              int j, int m, int a);
+    bool chercherContactEtRdv(const string &nom, const string &prenom,
+                              const string &nom_rdv, int j, int m, int a,
+                              contact *&c, rdv *&r);
 
 };
 

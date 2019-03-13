@@ -23,7 +23,7 @@ public:
     int taille() const;
 
     rdv *ajouterRdv(const std::string &nom, const temps &tDeb, unsigned int duree,
-                    contact **tabContacts); // à vérifier avec d_rdvMultiJours
+                    const vectorLite<contact *> &tabContacts); // à vérifier avec d_rdvMultiJours
 
     int getJour() const;
 

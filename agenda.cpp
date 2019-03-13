@@ -27,13 +27,13 @@ bool agenda::modifEmail(const string &nom, const string &prenom, const string &a
     return d_listContact.modifEmail(nom, prenom, adresse);
 }
 
-bool agenda::ajouterRdv(int j, int m, int a, const std::string &nom, const temps &tDeb, unsigned int duree,
-                        contact **tabContacts, int nb_c) {
+bool agenda::ajouterRdv(int j, int m, int a, const std::string &nom, const temps &tDeb, unsigned int duree, const
+vectorLite<contact *> &tabContacts) {
     rdv *r = d_listJour.ajouterRdv(date{j, m, a}, nom, tDeb, duree, tabContacts);
     if (r == nullptr)
         return false; // rdv pas créé
-    if (nb_c)
-        for (int i = 0; i < nb_c; ++i) {
+    if (tabContacts.size())
+        for (int i = 0; i < tabContacts.size(); ++i) {
             d_listContact.ajouterRdv(tabContacts[i], r);
         }
     return true;
@@ -54,7 +54,7 @@ bool agenda::modifDuree(int j, int m, int a, const std::string &nom, unsigned in
 bool agenda::ajouterContactARdv(const string &nom, const string &prenom, const string &nom_rdv, int j, int m, int a) {
     contact *c;
     rdv *r;
-    if (!chercherContactEtRdv(nom, prenom, nom_rdv, c, r, j, m, a))
+    if (!chercherContactEtRdv(nom, prenom, nom_rdv, j, m, a, c, r))
         return false;
     d_listContact.ajouterRdv(c, r);
     d_listJour.ajouterContact(r, c);
@@ -64,7 +64,7 @@ bool agenda::ajouterContactARdv(const string &nom, const string &prenom, const s
 bool agenda::supprimerContactARdv(const string &nom, const string &prenom, const string &nom_rdv, int j, int m, int a) {
     contact *c;
     rdv *r;
-    if (!chercherContactEtRdv(nom, prenom, nom_rdv, c, r, j, m, a))
+    if (!chercherContactEtRdv(nom, prenom, nom_rdv, j, m, a, c, r))
         return false;
     d_listContact.supprimerRdv(c, r);
     d_listJour.supprimerContact(r, c);
@@ -72,8 +72,9 @@ bool agenda::supprimerContactARdv(const string &nom, const string &prenom, const
 }
 
 
-bool agenda::chercherContactEtRdv(const string &nom, const string &prenom, const string &nom_rdv, contact *&c, rdv *&r,
-                                  int j, int m, int a) {
+bool agenda::chercherContactEtRdv(const string &nom, const string &prenom, const string &nom_rdv, int j, int m, int a,
+                                  contact *&c,
+                                  rdv *&r) {
     c = d_listContact.chercherContact(nom, prenom);
     if (c)
         return false; // le contact n'existe pas

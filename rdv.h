@@ -16,10 +16,10 @@ class rdv {
 
 public:
     rdv(const std::string &nom, const temps &deb, const temps &fin, jour *j,
-        contact **tabContacts = nullptr);
+        const vectorLite<contact *> &tabContacts);
 
     rdv(const std::string &nom, const temps &deb, unsigned int duree, jour *j,
-        contact **tabContacts = nullptr);
+        const vectorLite<contact *> &tabContacts);
 
     ~rdv();
 
