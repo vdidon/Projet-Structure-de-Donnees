@@ -10,6 +10,14 @@ public:
 
     unsigned int duree(const temps &t) const;
 
+    bool operator>(const temps &t) const;
+
+    bool operator<(const temps &t) const;
+
+    bool operator==(const temps &t) const;
+
+    bool operator!=(const temps &t) const;
+
     short h, m;
 
 };
