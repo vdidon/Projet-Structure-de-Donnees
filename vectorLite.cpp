@@ -1,7 +1,3 @@
-//
-// Created by vdidon on 11/03/19.
-//
-
 #include "vectorLite.h"
 
 template<typename T>
