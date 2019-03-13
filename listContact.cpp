@@ -19,8 +19,7 @@ listContact::~listContact() {
 
 /** Ajout en tete d'un nouveau contact */
 
-contact *
-listContact::ajouterContact(const string &nom, const string &prenom, const string &num, const string &adresseMail) {
+contact * listContact::ajouterContact(const string &nom, const string &prenom, const string &num, const string &adresseMail) {
     contact *n = new contact(nom, prenom, num, adresseMail);
     if (d_tete == nullptr) {
         d_tete = n;
@@ -63,13 +62,13 @@ bool listContact::supprimerContact(const string &nom, const string &prenom) {
     contact *as = chercherContact(nom, prenom);
     if (as != nullptr) {
         if (as->getTabrdv().size() == 0) {
-            if (d_tete->d_nom == as->d_nom && d_tete->d_prenom == as->d_prenom) {
+            if (d_tete == as) {
                 contact *c = d_tete;
                 d_tete = c->d_suiv;
                 delete c;
             } else {
                 contact *precC = nullptr, *c = d_tete;
-                while (c != nullptr && (c->d_nom != nom && c->d_prenom != prenom)) {
+                while (c != as) {
                     precC = c;
                     c = c->d_suiv;
                 }
@@ -78,7 +77,6 @@ bool listContact::supprimerContact(const string &nom, const string &prenom) {
             }
             return true;
         } else {
-            //cout<<"La personne ne peut pas etre suprim��, car elle a un rdv\n";
             return false;
         }
     }
