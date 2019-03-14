@@ -108,6 +108,10 @@ void ajouRdv() {
 
 }
 
+void ajouPersonneARdv() {
+
+}
+
 void quitter() {
 
 }
@@ -123,9 +127,10 @@ bool menuPrincipal() {
     cout << "7 - Une personne est-elle disponible ?" << endl;
     cout << "8 - Ajouter une personne" << endl;
     cout << "9 - Ajouter un rdv" << endl;
+    cout << "10 - Ajouter une personne à un rdv" << endl;
     cout << "0 - Quitter" << endl;
     int i;
-    cout << "0-9 : ";
+    cout << "0-10 : ";
     cin >> i;
     switch (i) {
         case 1:
@@ -154,6 +159,9 @@ bool menuPrincipal() {
             break;
         case 9:
             ajouRdv();
+            break;
+        case 10:
+            ajouPersonneARdv();
             break;
         case 0:
             quitter();
