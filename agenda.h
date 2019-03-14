@@ -57,6 +57,12 @@ private:
                               const string &nom_rdv, int j, int m, int a,
                               contact *&c, rdv *&r);
 
+    bool testContact(const string &nom, const string &prenom);
+
+    bool testJour(int j, int m, int a);
+
+    bool testRdv(const string &nom);
+
 };
 
 

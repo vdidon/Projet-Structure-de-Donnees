@@ -16,7 +16,7 @@ bool agenda::ajouterContact(const string &nom, const string &prenom, const strin
 }
 
 bool agenda::supprimerContact(const string &nom, const string &prenom) {
-    if (nom.empty() || prenom.empty())
+    if (testContact(nom, prenom))
         return false;
     return d_listContact.supprimerContact(nom, prenom);
 }
@@ -85,8 +85,8 @@ bool agenda::chercherContactEtRdv(const string &nom, const string &prenom, const
 }
 
 bool agenda::supprimerRdv(int j, int m, int a, const std::string &nom) {
-    if (j < 1 || m < 1 || j > 31 || m > 12 || nom.empty())
-        return false; // date pas bonne
+    if (testJour(j, m, a) && testRdv(nom))
+        return false; // date ou rdv pas bon
     rdv *r = d_listJour.chercherRdv(date{j, m, a}, nom);
     if (r == nullptr)
         return false; // rdv pas trouvé
@@ -120,6 +120,18 @@ bool agenda::afficherRdvDeJour(int j, int m, int a, std::ostream &out) const {
         return false; // jour pas trouvé
     jo->afficherRdvDeJour(out);
     return true;
+}
+
+bool agenda::testContact(const string &nom, const string &prenom) {
+    return !nom.empty() && !prenom.empty();
+}
+
+bool agenda::testJour(int j, int m, int a) {
+    return !(j < 1 || m < 1 || j > 31 || m > 12);
+}
+
+bool agenda::testRdv(const string &nom) {
+    return !nom.empty();
 }
 
 
