@@ -46,9 +46,9 @@ private:
 
     void modifEmail(const string &adresse);
 
-    void ajouterRdv(rdv *r);
+    bool ajouterRdv(rdv *r); // tester si la personne est dispo à l'heure du rdv
 
-    void supprimerRdv(rdv *r);
+    bool supprimerRdv(rdv *r); //tester si le rdv est dans la liste
 
 };
 

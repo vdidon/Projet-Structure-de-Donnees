@@ -58,7 +58,8 @@ bool agenda::ajouterContactARdv(const string &nom, const string &prenom, const s
     rdv *r;
     if (!chercherContactEtRdv(nom, prenom, nom_rdv, j, m, a, c, r))
         return false;
-    d_listContact.ajouterRdv(c, r);
+    if (!d_listContact.ajouterRdv(c, r))
+        return false; // contact pas dispo
     d_listJour.ajouterContact(r, c);
     return true;
 }
@@ -68,7 +69,8 @@ bool agenda::supprimerContactARdv(const string &nom, const string &prenom, const
     rdv *r;
     if (!chercherContactEtRdv(nom, prenom, nom_rdv, j, m, a, c, r))
         return false;
-    d_listContact.supprimerRdv(c, r);
+    if (!d_listContact.supprimerRdv(c, r))
+        return false; // le contact n'a pas ce rdv
     d_listJour.supprimerContact(r, c);
     return true;
 }

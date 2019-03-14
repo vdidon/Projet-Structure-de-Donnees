@@ -28,9 +28,9 @@ public:
 
     bool modifEmail(const string &nom, const string &prenom, const string &adresse);
 
-    void ajouterRdv(contact *c, rdv *r);
+    bool ajouterRdv(contact *c, rdv *r); // la classe contact teste si la personne est dispo à l'heure du rdv
 
-    void supprimerRdv(contact *c, rdv *r);
+    bool supprimerRdv(contact *c, rdv *r); // la classe contact teste si le rdv est dans la liste
 
     bool afficherRdvDeContact(const string &nom, const string &prenom, ostream &out) const;
 

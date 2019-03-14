@@ -1,5 +1,6 @@
 #include "contact.h"
 #include "rdv.h"
+#include "temps.h" // pour ajouter un rdv à un contact (test si il est dispo)
 
 contact::contact(const string &nom, const string &prenom, const string &num, const string &adresse) :
         d_nom{nom}, d_prenom{prenom}, d_num{num}, d_adresseMail{adresse} {
@@ -36,7 +37,7 @@ void contact::modifEmail(const string &adresse) {
     d_adresseMail = adresse;
 }
 
-void contact::ajouterRdv(rdv *r) {
+bool contact::ajouterRdv(rdv *r) {
     d_tabRdv.push_back(r);
 }
 
