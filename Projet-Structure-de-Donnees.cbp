@@ -35,6 +35,8 @@
 		<Unit filename="agenda.h" />
 		<Unit filename="contact.cpp" />
 		<Unit filename="contact.h" />
+		<Unit filename="date.cpp" />
+		<Unit filename="date.h" />
 		<Unit filename="jour.cpp" />
 		<Unit filename="jour.h" />
 		<Unit filename="listContact.cpp" />
@@ -44,6 +46,10 @@
 		<Unit filename="main.cpp" />
 		<Unit filename="rdv.cpp" />
 		<Unit filename="rdv.h" />
+		<Unit filename="temps.cpp" />
+		<Unit filename="temps.h" />
+		<Unit filename="vectorLite.cpp" />
+		<Unit filename="vectorLite.h" />
 		<Extensions>
 			<code_completion />
 			<envvars />
