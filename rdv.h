@@ -38,6 +38,8 @@ public:
 
     bool afficherContactDeRdv(std::ostream &out) const;
 
+    bool pasEnMemeTemps(rdv *r);
+
 
 private:
     jour *d_j;
