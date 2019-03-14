@@ -7,8 +7,8 @@
 #include <ostream>
 
 class agenda {
+public:
     agenda();
-
     //agenda(const listContact &c,const listJour &j);
 
     ~agenda();
@@ -48,7 +48,6 @@ class agenda {
     bool afficherContactDeRdv(const string &nom_rdv, int j, int m, int a, std::ostream &out) const;
 
     bool afficherRdvDeJour(int j, int m, int a, std::ostream &out) const;
-
 
 private:
     listJour d_listJour;
