@@ -29,9 +29,10 @@ bool agenda::modifEmail(const string &nom, const string &prenom, const string &a
     return d_listContact.modifEmail(nom, prenom, adresse);
 }
 
-bool agenda::ajouterRdv(int j, int m, int a, const std::string &nom, const temps &tDeb, unsigned int duree, const
-vectorLite<contact *> &tabContacts) {
-    rdv *r = d_listJour.ajouterRdv(date{j, m, a}, nom, tDeb, duree, tabContacts);
+bool agenda::ajouterRdv(int j, int m, int a, const std::string &nom, int h, int min, unsigned int duree,
+                        const vectorLite<contact *> &tabContacts) {
+    rdv *r = d_listJour.ajouterRdv(date{j, m, a}, nom, temps{static_cast<short>(h), static_cast<short>(min)}, duree,
+                                   tabContacts);
     if (r == nullptr)
         return false; // rdv pas créé
     if (tabContacts.size())
@@ -41,12 +42,8 @@ vectorLite<contact *> &tabContacts) {
     return true;
 }
 
-bool agenda::modifHeureDeb(int j, int m, int a, const std::string &nom, const temps &t) {
-    return d_listJour.modifHeureDeb(date{j, m, a}, nom, t);
-}
-
-bool agenda::modifHeureFin(int j, int m, int a, const std::string &nom, const temps &t) {
-    return d_listJour.modifHeureFin(date{j, m, a}, nom, t);
+bool agenda::modifHeureDeb(int j, int m, int a, const std::string &nom, int h, int min) {
+    return d_listJour.modifHeureDeb(date{j, m, a}, nom, temps{static_cast<short>(h), static_cast<short>(min)});
 }
 
 bool agenda::modifDuree(int j, int m, int a, const std::string &nom, unsigned int duree) {

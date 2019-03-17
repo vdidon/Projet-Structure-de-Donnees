@@ -15,8 +15,6 @@ class rdv {
     friend class jour;
 
 public:
-    rdv(const std::string &nom, const temps &deb, const temps &fin, jour *j,
-        const vectorLite<contact *> &tabContacts);
 
     rdv(const std::string &nom, const temps &deb, unsigned int duree, jour *j,
         const vectorLite<contact *> &tabContacts);

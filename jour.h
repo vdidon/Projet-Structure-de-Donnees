@@ -44,8 +44,6 @@ public:
 
     void modifHeureDeb(const std::string &nom, const temps &t);
 
-    void modifHeureFin(const std::string &nom, const temps &t);
-
     void modifDuree(const std::string &nom, unsigned int duree);
 
     bool afficherContactDeRdv(const std::string &nom, std::ostream &out) const;

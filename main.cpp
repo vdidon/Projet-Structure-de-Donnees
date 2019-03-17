@@ -12,7 +12,7 @@ void majuscule(char &c) {
 
 bool sortir() {
     do {
-        cout << "Voulez vous revenir au menu ? (O/N) ";
+        cout << "Voulez vous revenir au menu principal ? (O/N) ";
         char c;
         cin >> c;
         majuscule(c);
@@ -24,7 +24,7 @@ bool sortir() {
             default:
                 cout << "Entré O ou N" << endl;
         }
-    } while ("poules" != "dents");
+    } while ("poules n'ont pas de" != "dents");
 }
 
 void entrerPersonne(string &nom, string &prenom) {
@@ -47,6 +47,20 @@ void entreRdv(string &nom, int &j, int &m, int &a) {
     cout << "Entré le nom : ";
     cin >> nom;
     entreJour(j, m, a);
+}
+
+void entreTemps(int &h, int &m) {
+    cout << "Entré l'heure : ";
+    cin >> h;
+    cout << "Entré la minute : ";
+    cin >> m;
+}
+
+unsigned int calculDuree(int dj, int dm, int da, int dh, int dmin, int fj, int fm, int fa, int fh, int fmin) {
+    return static_cast<unsigned int>(fmin) - static_cast<unsigned int>(dmin) +
+           60 * (static_cast<unsigned int>(fh) - static_cast<unsigned int>(dh)) +
+           60 * 24 * (static_cast<unsigned int>(fj) - static_cast<unsigned int>(dj)) +
+           60 * 24;
 }
 
 void suppPersonne() {
@@ -81,10 +95,88 @@ void suppRdv() {
 }
 
 void modifPersonne() {
-
+    int i;
+    bool ext = false;
+    do {
+        string nom, prenom;
+        entrerPersonne(nom, prenom);
+        cout << "Quel modification voulez vous faire : " << endl;
+        cout << "1 - Heure de début" << endl;
+        cout << "2 - Heure de fin" << endl;
+        cout << "0 - Menu principal" << endl;
+        cout << "0-2 : ";
+        cin >> i;
+        switch (i) {
+            case 1:
+                string num;
+                cout << "Entrer le numéro : ";
+                cin >> num;
+                if (!ag.modifNum(nom, prenom, num)) {
+                    cout << "La personne n'a pas était modifiée";
+                    ext = sortir();
+                } else
+                    ext = true;
+                break;
+            case 2:
+                string email;
+                cout << "Entrer l'email : ";
+                cin >> email;
+                if (!ag.modifEmail(nom, prenom, email)) {
+                    cout << "La personne n'a pas était modifiée";
+                    ext = sortir();
+                } else
+                    ext = true;
+                break;
+            case 0:
+                ext = true;
+                break;
+            default:
+                cout << "Entré un nombre entre 0 et 2" << endl;
+        }
+    } while (!ext);
 }
 
 void modifRdv() {
+    string nom;
+    int j, m, a;
+    int i;
+    bool ext = false;
+    do {
+        entreRdv(nom, j, m, a);
+        cout << "Quel modification voulez vous faire : " << endl;
+        cout << "1 - Heure de début" << endl;
+        cout << "2 - Email" << endl;
+        cout << "0 - Menu principal" << endl;
+        cout << "0-2 : ";
+        cin >> i;
+        switch (i) {
+            case 1:
+                int h, min;
+                entreTemps(h, min);
+                if (!ag.modifHeureDeb(j, m, a, nom, h, min)) {
+                    cout << "Le rdv n'a pas était modifié";
+                    ext = sortir();
+                } else
+                    ext = true;
+                break;
+            case 2:
+                int fj, fm, fa, fh, fmin;
+                entreJour(fj, fm, fa);
+                entreTemps(fh, fmin);
+                int duree;
+                if (!ag.modifDuree(j, m, a, nom, duree)) {
+                    cout << "Le rdv n'a pas était modifié";
+                    ext = sortir();
+                } else
+                    ext = true;
+                break;
+            case 0:
+                ext = true;
+            default:
+                cout << "Entré un nombre entre 0 et 2" << endl;
+        }
+    } while (!ext);
+
 
 }
 
@@ -167,8 +259,7 @@ bool menuPrincipal() {
             quitter();
             return false;
         default:
-            cout << "Entré un nombre entre 0 et 9" << endl;
-            break;
+            cout << "Entré un nombre entre 0 et 10" << endl;
     }
     return true;
 }
