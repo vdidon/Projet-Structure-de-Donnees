@@ -29,7 +29,7 @@ public:
     vectorLite<rdv *> &getTabrdv();
 
 
-    bool afficherRdvDeContact(std::ostream &out) const;
+    bool afficherRdvDeContact(std::ostream &out) const; // avec toute les infos sur la contact
 
     bool operator==(const contact &c) const;
 

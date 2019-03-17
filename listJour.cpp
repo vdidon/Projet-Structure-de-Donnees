@@ -17,7 +17,10 @@ listJour::~listJour() {
 }
 
 rdv *listJour::chercherRdv(const date &d, const std::string &nom) const {
-    return nullptr;
+    jour *j = chercherJour(d);
+    if (!j)
+        return nullptr;
+    return j->chercherRdv(nom);
 }
 
 jour *listJour::chercherJour(const date &d) const {
@@ -35,10 +38,11 @@ int listJour::taille() {
     return res;
 }
 
-rdv *listJour::ajouterRdv(const date &d, std::string nom, const temps &tDeb, unsigned int duree, const
+rdv *listJour::ajouterRdv(const date &d, std::string nom, const temps &tDeb, const temps &tFin, const date &dFin, const
 vectorLite<contact *> &tabContacts) {
     jour *j = d_tete;
     jour *pre = nullptr;
+    jour *jFin;
     while (j != nullptr && d < j->d_date) {
         pre = j;
         j = j->suiv;
@@ -46,7 +50,27 @@ vectorLite<contact *> &tabContacts) {
     if (j == nullptr || j->d_date > d) {
         j = ajouterJour(d, pre, j);
     }
-    return j->ajouterRdv(nom, tDeb, duree, tabContacts);
+    if (dFin != d) {
+        jFin = j;
+        //jour *pre = nullptr;
+        while (jFin != nullptr && dFin < jFin->d_date) {
+            pre = jFin;
+            jFin = jFin->suiv;
+        }
+        if (jFin == nullptr || j->d_date > d) {
+            jFin = ajouterJour(dFin, pre, jFin);
+        }
+    } else {
+        jFin = j;
+    }
+    rdv *r = j->ajouterRdv(nom, tDeb, tFin, jFin, tabContacts);
+    if (dFin != d) {
+        j = j->suiv;
+        while (j != jFin) {
+            j->ajouterRdvMultiJour(r);
+        }
+        jFin->ajouterRdvMultiJour(r);
+    }
 }
 
 void listJour::ajouterContact(rdv *r, contact *c) {
@@ -64,16 +88,16 @@ bool listJour::modifHeureDeb(const date &d, const std::string &nom, const temps 
     j->modifHeureDeb(nom, t);
 }
 
-bool listJour::modifDuree(const date &d, const std::string &nom, unsigned int duree) {
+/*bool listJour::modifDuree(const date &d, const std::string &nom, unsigned int duree) {
     jour *j = chercherJour(d);
     if (!j)
         return false;
     j->modifDuree(nom, duree);
-}
+}*/
 
 
 void listJour::supprimerRdv(rdv *r) {
-    jour *j = r->getJour();
+    jour *j = r->getJourDeb();
     jour::supprimerRdv(r);
     if (j->d_tete)
         supprimerJour(j->d_date); // gros gros problème : pas opti x)
@@ -112,4 +136,14 @@ void listJour::supprimerJour(const date &d) {
     jour *j = prej->suiv;
     prej->suiv = j->suiv;
     delete j;
+}
+
+bool listJour::modifHeureFin(const date &d, const std::string &nom, const temps &t) {
+    rdv *r = chercherRdv(d, nom);
+    if (!r)
+        return false;
+    jour *j = r->getJourDeb();
+    jour *jFin = r->getJourFin();
+    if (!j->modifHeureFin(nom, t, jFin))
+        return false;
 }

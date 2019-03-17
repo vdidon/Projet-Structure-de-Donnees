@@ -28,11 +28,13 @@ public:
 
     temps &getFin() const;
 
-    unsigned int getDuree() const;
+//    unsigned int getDuree() const;
 
     vectorLite<contact *> &getContacts();
 
-    jour *getJour() const;
+    jour *getJourDeb() const;
+
+    jour *getJourFin() const;
 
     bool afficherContactDeRdv(std::ostream &out) const;
 
@@ -41,17 +43,19 @@ public:
 
 private:
     jour *d_j;
+    jour *d_jfin;
     std::string d_nom;
-    temps tDeb;
-    unsigned int d_duree;
+    temps d_tDeb;
+    temps d_tFin;
+//    unsigned int d_duree;
     vectorLite<contact *> d_tabContacts;
     rdv *d_suiv;
 
-    void modifHeureDeb(const temps &t);
+    bool modifHeureDeb(const temps &t); // si c'est plus tôt checker pour toute les personnes du rdv
 
-    void modifHeureFin(const temps &t);
+    bool modifHeureFin(const temps &t, jour *jfin); // si c'est plus tard checker pour toute les personnes du rdv
 
-    void modifDuree(unsigned int duree);
+//    void modifDuree(unsigned int duree);
 
     bool ajouterContact(contact *c);
 

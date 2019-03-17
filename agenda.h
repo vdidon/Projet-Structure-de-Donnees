@@ -21,13 +21,20 @@ public:
 
     bool modifEmail(const string &nom, const string &prenom, const string &adresse);
 
-    bool ajouterRdv(int j, int m, int a, const std::string &nom, int h, int min, unsigned int duree,
-                    const vectorLite<contact *> &tabContacts = vectorLite<contact *>{});
+    bool
+    ajouterRdv(int j, int m, int a, const std::string &nom, int h, int min, int fj, int fm, int fa, int fh, int fmin,
+               const vectorLite<contact *> &tabContacts = vectorLite<contact *>{});
 
     bool modifHeureDeb(int j, int m, int a, const std::string &nom, int h, int min);
 
-    bool modifDuree(int j, int m, int a,
-                    const std::string &nom, unsigned int duree);
+    bool modifHeureFin(int j, int m, int a, const std::string &nom, int h, int min);
+
+    bool modifJourDeb(int j, int m, int a, const std::string &nom, int newj, int newm, int newa, int h, int min);
+
+    bool modifJourFin(int j, int m, int a, const std::string &nom, int newj, int newm, int newa, int h, int min);
+
+    /*bool modifDuree(int j, int m, int a,
+                    const std::string &nom, unsigned int duree);*/
 
     bool ajouterContactARdv(const string &nom, const string &prenom,
                             const string &nom_rdv,

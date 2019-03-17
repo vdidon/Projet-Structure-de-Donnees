@@ -25,9 +25,8 @@ public:
 
     int taille();
 
-    rdv *ajouterRdv(const date &d,
-                    std::string nom, const temps &tDeb, unsigned int duree, const
-                    vectorLite<contact *> &tabContacts);
+    rdv *ajouterRdv(const date &d, std::string nom, const temps &tDeb, const temps &tFin, const date &dFin, const
+    vectorLite<contact *> &tabContacts);
 
     void ajouterContact(rdv *r, contact *c);
 
@@ -36,8 +35,16 @@ public:
     bool modifHeureDeb(const date &d,
                        const std::string &nom, const temps &t);
 
-    bool modifDuree(const date &d,
-                    const std::string &nom, unsigned int duree);
+    bool modifJourDeb(const date &d, const date &newd
+                      const std::string &nom, const temps &t);
+
+    bool modifHeureFin(const date &d,
+                       const std::string &nom, const temps &t);
+
+    bool modifJourFin(const date &d, const date &newd,
+                      const std::string &nom, const temps &t);
+
+//    bool modifDuree(const date &d,const std::string &nom, unsigned int duree);
 
     bool afficherContactDeRdv(const date &d, const std::string &nom, std::ostream &out) const;
 

@@ -18,12 +18,14 @@ class jour {
 public:
     jour(const date &d); // d_date doit être construit par recopie
 
-    ~jour(); // le tab de rdv étant vide
+    ~jour(); // le tab de rdv étant déjà vide
 
     int taille() const;
 
-    rdv *ajouterRdv(const std::string &nom, const temps &tDeb, unsigned int duree,
-                    const vectorLite<contact *> &tabContacts); // à vérifier avec d_rdvMultiJours
+    rdv *ajouterRdv(const std::string &nom, const temps &tDeb, const temps &tFin, jour *jfin,
+                    const vectorLite<contact *> &tabContacts); // que le jour même
+
+    bool ajouterRdvMultiJour(rdv *r);
 
     int getJour() const;
 
@@ -42,9 +44,11 @@ public:
 
     rdv *chercherRdv(const std::string &nom);
 
-    void modifHeureDeb(const std::string &nom, const temps &t);
+    bool modifHeureDeb(const std::string &nom, const temps &t);
 
-    void modifDuree(const std::string &nom, unsigned int duree);
+    bool modifHeureFin(const std::string &nom, const temps &t, jour *jfin);
+
+//    void modifDuree(const std::string &nom, unsigned int duree);
 
     bool afficherContactDeRdv(const std::string &nom, std::ostream &out) const;
 
