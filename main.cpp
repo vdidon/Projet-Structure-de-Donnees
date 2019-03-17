@@ -185,7 +185,18 @@ void affRdv() {
 }
 
 void affPersonne() {
-
+    string nom, prenom;
+    bool ext = false;
+    do {
+        entrerPersonne(nom, prenom);
+        if (ag.afficherRdvDeContact(nom, prenom, cout))
+            ext = true;
+        else {
+            cout << "La personne n'a pas était trouvé" << endl;
+            if (sortir())
+                ext = true;
+        }
+    } while (!ext);
 }
 
 void personneDispo() {
@@ -193,7 +204,23 @@ void personneDispo() {
 }
 
 void ajouPersonne() {
-
+    string nom, prenom;
+    bool ext = false;
+    do {
+        entrerPersonne(nom, prenom);
+        string num, email;
+        cout << "Entrer le numéro de téléphone : ";
+        cin >> num;
+        cout << "Entrer l'email : ";
+        cin >> email;
+        if (ag.ajouterContact(nom, prenom, num, email))
+            ext = true;
+        else {
+            cout << "La personne n'a pas pu être ajouter" << endl;
+            if (sortir())
+                ext = true;
+        }
+    } while (!ext);
 }
 
 void ajouRdv() {
@@ -201,7 +228,20 @@ void ajouRdv() {
 }
 
 void ajouPersonneARdv() {
-
+    string nom, prenom, nomrdv;
+    int j, m, a;
+    bool ext = false;
+    do {
+        entrerPersonne(nom, prenom);
+        entreRdv(nomrdv, j, m, a);
+        if (ag.ajouterContactARdv(nom, prenom, nomrdv, j, m, a))
+            ext = true;
+        else {
+            cout << "La personne n'a pas pu être ajouter au rdv" << endl;
+            if (sortir())
+                ext = true;
+        }
+    } while (!ext);
 }
 
 void quitter() {
