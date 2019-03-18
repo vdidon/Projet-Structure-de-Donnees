@@ -47,12 +47,12 @@ bool rdv::afficherContactDeRdv(std::ostream &out) const{
 }
 
 bool rdv::pasEnMemeTemps(rdv *r){
-    if((this.d_tDeb <= r.d_tDeb)&&(this.d_tFin >= r.d_tDeb))
+    if ((this->d_tDeb <= r->d_tDeb) && (this->d_tFin >= r->d_tDeb))
     {
         return false;
     }
 
-    if((this.d_tDeb >= r.d_tDeb)&&(this.d_tDeb <= r.d_tFin))
+    if ((this->d_tDeb >= r->d_tDeb) && (this->d_tDeb <= r->d_tFin))
     {
         return false;
     }

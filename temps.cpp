@@ -14,32 +14,32 @@ unsigned int temps::duree() const{
 
 unsigned int temps::dureeComparee(const temps &t) const{
     unsigned int temp;
-    temp = (t.*60 + t.m) - (this.h*60 + this.m); //Unsigned => retourne la valeur absolue si l'heure de this
+    temp = (t.h * 60 + t.m) - (this->h * 60 + this->m); //Unsigned => retourne la valeur absolue si l'heure de this
     return temp;                                 // est plus grande que l'heure de t
 }
 
-bool operator>(const temps &t) const{
-    if (this.duree > t.duree)
+bool temps::operator>(const temps &t) const {
+    if (this->duree > t->duree)
         return true;
 
     return false;
 }
 
-bool operator<(const temps &t) const{
+bool temps::operator<(const temps &t) const {
     if (this.duree < t.duree)
         return true;
 
     return false;
 }
 
-bool operator==(const temps &t) const{
+bool temps::operator==(const temps &t) const {
     if (this.duree == t.duree)
         return true;
 
     return false;
 }
 
-bool operator!=(const temps &t) const{
+bool temps::operator!=(const temps &t) const {
     if (this.duree != t.duree)
         return true;
 

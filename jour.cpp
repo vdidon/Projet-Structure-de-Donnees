@@ -2,7 +2,7 @@
 #include "rdv.h"
 #include "date.h"
 
-jour::jour(const date &d):
+jour::jour(const date &d)
 
     {
         d_date.a=d.a;
@@ -10,13 +10,13 @@ jour::jour(const date &d):
         d_date.j=d.j;
     }
 
-jour::~jour():
+jour::~jour()
     {
       rdv *r = d_tete;
       while(r!=nullptr)
       {
           rdv *rTemp=r;
-          r=r->suiv;
+          r = r->d_suiv;
           delete rTemp;
       }
     }
@@ -26,7 +26,7 @@ int jour::taille() const{
     int i=0;
     while(r!=d_tete)
     {
-        r=r->suiv;
+        r = r->d_suiv;
         i++;
     }
     return i;
@@ -46,6 +46,6 @@ int jour::getAnnee() const{
     return d_date.a;
 }
 
-date getDate() const{
+date jour::getDate() const {
     return d_date;
 }
