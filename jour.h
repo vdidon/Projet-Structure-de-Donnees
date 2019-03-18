@@ -16,24 +16,24 @@ class jour {
     friend class listJour;
 
 public:
-    jour(const date &d); // d_date doit être construit par recopie
+    jour(const date &d); //ska : fait        d_date doit être construit par recopie
 
-    ~jour(); // le tab de rdv étant déjà vide
+    ~jour(); //ska : fait                    le tab de rdv étant déjà vide
 
-    int taille() const;
+    int taille() const; //ska : fait
 
     rdv *ajouterRdv(const std::string &nom, const temps &tDeb, const temps &tFin, jour *jfin,
                     const vectorLite<contact *> &tabContacts); // que le jour même
 
     bool ajouterRdvMultiJour(rdv *r);
 
-    int getJour() const;
+    int getJour() const;    //ska : fait
 
-    int getMois() const;
+    int getMois() const;    //ska : fait
 
-    int getAnnee() const;
+    int getAnnee() const;   //ska : fait
 
-    date getDate() const;
+    date getDate() const;   //ska : fait
 
 
     static void ajouterContact(rdv *r, contact *c);

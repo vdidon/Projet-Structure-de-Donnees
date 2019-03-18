@@ -16,29 +16,29 @@ class rdv {
 
 public:
 
-    rdv(const std::string &nom, const temps &deb, unsigned int duree, jour *j,
-        const vectorLite<contact *> &tabContacts);
+    rdv(const std::string &nom, const temps &deb, const temps &fin,/*unsigned int duree,*/ jour *j,
+        const vectorLite<contact *> &tabContacts); //ska : fait     A voir durée ou deb+fin
 
     ~rdv();
 
     //getter
-    std::string getNom() const;
+    std::string getNom() const; //ska : fait
 
-    temps &getDeb() const;
+    temps &getDeb() const;  //ska : fait
 
-    temps &getFin() const;
+    temps &getFin() const;  //ska : fait
 
 //    unsigned int getDuree() const;
 
-    vectorLite<contact *> &getContacts();
+    vectorLite<contact *> &getContacts();   //ska : fait
 
     jour *getJourDeb() const;
 
     jour *getJourFin() const;
 
-    bool afficherContactDeRdv(std::ostream &out) const;
+    bool afficherContactDeRdv(std::ostream &out) const; //ska : fait
 
-    bool pasEnMemeTemps(rdv *r);
+    bool pasEnMemeTemps(rdv *r);    //ska : fait
 
 
 private:

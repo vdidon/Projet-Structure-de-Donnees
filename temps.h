@@ -4,19 +4,21 @@
 
 class temps {
 public:
-    temps(short h, short m);
+    temps(short t_h, short t_m); //ska : fait
 
     ~temps();
 
-    unsigned int duree(const temps &t) const;
+    unsigned int duree() const; //ska : fait
 
-    bool operator>(const temps &t) const;
+    unsigned int dureeComparee(const temps &t) const; //ska : fait
 
-    bool operator<(const temps &t) const;
+    bool operator>(const temps &t) const; //ska : fait
 
-    bool operator==(const temps &t) const;
+    bool operator<(const temps &t) const; //ska : fait
 
-    bool operator!=(const temps &t) const;
+    bool operator==(const temps &t) const;//ska : fait
+
+    bool operator!=(const temps &t) const;//ska : fait
 
     short h, m;
 

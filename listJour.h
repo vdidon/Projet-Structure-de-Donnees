@@ -35,7 +35,7 @@ public:
     bool modifHeureDeb(const date &d,
                        const std::string &nom, const temps &t);
 
-    bool modifJourDeb(const date &d, const date &newd
+    bool modifJourDeb(const date &d, const date &newd,
                       const std::string &nom, const temps &t);
 
     bool modifHeureFin(const date &d,

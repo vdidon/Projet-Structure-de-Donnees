@@ -41,8 +41,8 @@
 		<Unit filename="jour.h" />
 		<Unit filename="listContact.cpp" />
 		<Unit filename="listContact.h" />
-		<Unit filename="listRdv.cpp" />
-		<Unit filename="listRdv.h" />
+		<Unit filename="listJour.cpp" />
+		<Unit filename="listJour.h" />
 		<Unit filename="main.cpp" />
 		<Unit filename="rdv.cpp" />
 		<Unit filename="rdv.h" />
