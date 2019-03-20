@@ -16,9 +16,8 @@ class rdv {
 
 public:
 
-    rdv(const std::string &nom, const temps &deb, const temps &fin,/*unsigned int duree,*/ jour *j,
-        const vectorLite<contact *> &tabContacts); //ska : fait     A voir durée ou deb+fin
-
+    rdv(const std::string &nom, const temps &deb, const temps &fin, jour *j, jour *jfin,
+        const vectorLite<contact *> &tabContacts); //ska : fait
     ~rdv();
 
     //getter
@@ -28,7 +27,6 @@ public:
 
     temps &getFin() const;  //ska : fait
 
-//    unsigned int getDuree() const;
 
     vectorLite<contact *> &getContacts();   //ska : fait
 
@@ -47,15 +45,16 @@ private:
     std::string d_nom;
     temps d_tDeb;
     temps d_tFin;
-//    unsigned int d_duree;
     vectorLite<contact *> d_tabContacts;
     rdv *d_suiv;
 
     bool modifHeureDeb(const temps &t); // si c'est plus tôt checker pour toute les personnes du rdv
+    
+    bool modifJourDeb(const jour* j); // si c'est plus tôt checker pour toute les personnes du rdv
 
-    bool modifHeureFin(const temps &t, jour *jfin); // si c'est plus tard checker pour toute les personnes du rdv
-
-//    void modifDuree(unsigned int duree);
+    bool modifHeureFin(const temps &t); // si c'est plus tard checker pour toute les personnes du rdv
+    
+    bool modifJourFin(const jour* j); // si c'est plus tôt checker pour toute les personnes du rdv
 
     bool ajouterContact(contact *c);
 
