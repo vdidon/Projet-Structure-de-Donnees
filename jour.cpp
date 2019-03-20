@@ -2,12 +2,10 @@
 #include "rdv.h"
 #include "date.h"
 
-jour::jour(const date &d)
+jour::jour(const date &d) : d_date{d}
 
     {
-        d_date.a=d.a;
-        d_date.m=d.m;
-        d_date.j=d.j;
+        
     }
 
 jour::~jour()
