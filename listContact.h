@@ -12,27 +12,28 @@ class rdv;
 
 class listContact {
 public:
-    listContact(contact *tete = nullptr);
+    listContact(contact *tete = nullptr); /** fait */
 
-    ~listContact();
+    ~listContact(); /** fait */
 
-    contact * ajouterContact(const string &nom, const string &prenom, const string &num = "", const string &adresseMail = "");
+    contact * ajouterContact(const string &nom, const string &prenom, const string &num = "", const string &adresseMail = ""); /** fait */
 
-    bool supprimerContact(const string &nom, const string &prenom);
 
-    int taille();
+    bool supprimerContact(const string &nom, const string &prenom); /** fait */
 
-    contact *chercherContact(const string &nom, const string &prenom) const;
+    int taille(); /** fait */
 
-    bool modifNum(const string &nom, const string &prenom, const string &num);
+    contact *chercherContact(const string &nom, const string &prenom) const; /** fait */
 
-    bool modifEmail(const string &nom, const string &prenom, const string &adresse);
+    bool modifieNum(const string &nom, const string &prenom, const string &num); /** fait */
 
-    bool ajouterRdv(contact *c, rdv *r); // la classe contact teste si la personne est dispo Ã  l'heure du rdv
+    bool modifieEmail(const string &nom, const string &prenom, const string &adresse); /** fait */
 
-    bool supprimerRdv(contact *c, rdv *r); // la classe contact teste si le rdv est dans la liste
+    bool ajouteRdv(contact *c, rdv *r);  /** fait */ // la classe contact teste si la personne est dispo à l'heure du rdv
 
-    bool afficherRdvDeContact(const string &nom, const string &prenom, ostream &out) const;
+    bool supprimeRdv(contact *c, rdv *r); /** fait */ // la classe contact teste si le rdv est dans la liste
+
+    bool afficherRdvDeContact(const string &nom, const string &prenom, ostream &out) const; /** fait */
 
 private:
 

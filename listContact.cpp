@@ -1,4 +1,3 @@
-
 #include "listContact.h"
 #include "contact.h"
 
@@ -81,4 +80,56 @@ bool listContact::supprimerContact(const string &nom, const string &prenom) {
         }
     }
     return false;
+}
+
+/** modifie le numero d'un contact */
+
+bool listContact::modifieNum(const string &nom, const string &prenom, const string &num)
+{
+    contact *am = chercherContact(nom,prenom);
+    if (am)
+    {
+        am->modifNum(num);
+        return true;
+    }
+    else return false;
+}
+
+/** modifie l'adresse mail d'un contact */
+
+bool listContact::modifieEmail(const string &nom, const string &prenom, const string &adresse)
+{
+    contact *am = chercherContact(nom,prenom);
+    if (am)
+    {
+        am->modifEmail(adresse);
+        return true;
+    }
+    else return false;
+}
+
+/** ajout un contact au rdv */
+
+bool listContact::ajouteRdv(contact *c, rdv *r)
+{
+    return(c->ajouterRdv(r));
+}
+
+/** supprime un rdv donné */
+
+bool listContact::supprimeRdv(contact *c, rdv *r)
+{
+    return(c->supprimerRdv(r));
+}
+
+/** affiche les rdv d'un contact */
+
+bool listContact::afficherRdvDeContact(const string &nom, const string &prenom, ostream & os) const
+{
+    contact *af = chercherContact(nom,prenom);
+    if (af)
+    {
+        af->afficherRdvDeContact(os);
+    }
+    else return false;
 }

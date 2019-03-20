@@ -28,10 +28,10 @@ public:
 
     vectorLite<rdv *> &getTabrdv();
 
-
-    bool afficherRdvDeContact(std::ostream &out) const; // avec toute les infos sur la contact
+// avec toute les infos sur le contact
 
     bool operator==(const contact &c) const;
+    void afficherRdvDeContact(std::ostream & os);
 
 
 private:
@@ -49,6 +49,7 @@ private:
     bool ajouterRdv(rdv *r); // tester si la personne est dispo à l'heure du rdv
 
     bool supprimerRdv(rdv *r); //tester si le rdv est dans la liste
+
 
 };
 
