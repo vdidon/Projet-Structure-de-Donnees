@@ -36,13 +36,13 @@ public:
                        const std::string &nom, const temps &t);
 
     bool modifJourDeb(const date &d, const date &newd,
-                      const std::string &nom, const temps &t);
+                      const std::string &nom);
 
     bool modifHeureFin(const date &d,
                        const std::string &nom, const temps &t);
 
     bool modifJourFin(const date &d, const date &newd,
-                      const std::string &nom, const temps &t);
+                      const std::string &nom);
 
 //    bool modifDuree(const date &d,const std::string &nom, unsigned int duree);
 

@@ -147,3 +147,14 @@ bool listJour::modifHeureFin(const date &d, const std::string &nom, const temps 
     if (!j->modifHeureFin(nom, t, jFin))
         return false;
 }
+
+bool listJour::modifJourDeb(const date &d, const date &newd, const std::string &nom) {
+	jour *j = chercherJour(d);
+	if (!j)
+		return false;
+	j->modifJourDeb();
+}
+
+bool listJour::modifJourFin(const date &d, const date &newd, const std::string &nom) {
+	return false;
+}
