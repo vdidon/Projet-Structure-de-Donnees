@@ -149,12 +149,53 @@ bool listJour::modifHeureFin(const date &d, const std::string &nom, const temps 
 }
 
 bool listJour::modifJourDeb(const date &d, const date &newd, const std::string &nom) {
+	if (d == newd)
+		return true;
 	jour *j = chercherJour(d);
 	if (!j)
 		return false;
-	j->modifJourDeb();
+
+	jour *new_j = d_tete;
+	jour *pre = nullptr;
+	while (new_j != nullptr && d < new_j->d_date) {
+		pre = j;
+		j = new_j->suiv;
+	}
+	if (new_j == nullptr || new_j->d_date > d)
+		new_j = ajouterJour(d, pre, new_j);
+
+	return j->modifJourDeb(nom, new_j);
 }
 
 bool listJour::modifJourFin(const date &d, const date &newd, const std::string &nom) {
-	return false;
+	if (d == newd)
+		return true;
+	jour *j = chercherJour(d);
+	if (!j)
+		return false;
+
+	jour *new_j = d_tete;
+	jour *pre = nullptr;
+	while (new_j != nullptr && d < new_j->d_date) {
+		pre = j;
+		j = new_j->suiv;
+	}
+	if (new_j == nullptr || new_j->d_date > d)
+		new_j = ajouterJour(d, pre, new_j);
+
+	return j->modifJourFin(nom, new_j);
+}
+
+bool listJour::afficherContactDeRdv(const date &d, const std::string &nom, std::ostream &out) const {
+	jour *j = chercherJour(d);
+	if (!j)
+		return false;
+	return j->afficherContactDeRdv(nom, out);
+}
+
+bool listJour::afficherRdvDeJour(const date &d, std::ostream &out) const {
+	jour *j = chercherJour(d);
+	if (!j)
+		return false;
+	return j->afficherRdvDeJour(out);
 }
