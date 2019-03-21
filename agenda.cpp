@@ -22,11 +22,12 @@ bool agenda::supprimerContact(const string &nom, const string &prenom) {
 }
 
 bool agenda::modifNum(const string &nom, const string &prenom, const string &num) {
-    return d_listContact.modifNum(nom, prenom, num);
+	return d_listContact.modifieNum(nom, prenom, num);
+
 }
 
 bool agenda::modifEmail(const string &nom, const string &prenom, const string &adresse) {
-    return d_listContact.modifEmail(nom, prenom, adresse);
+	return d_listContact.modifieEmail(nom, prenom, adresse);
 }
 
 bool agenda::ajouterRdv(int j, int m, int a, const std::string &nom, int h, int min, int fj, int fm, int fa, int fh,
@@ -39,7 +40,7 @@ bool agenda::ajouterRdv(int j, int m, int a, const std::string &nom, int h, int 
         return false; // rdv pas créé
     if (!tabContacts.size())
         for (int i = 0; i < tabContacts.size(); ++i) {
-            d_listContact.ajouterRdv(tabContacts[i], r);
+	        d_listContact.ajouteRdv(tabContacts[i], r);
         }
     return true;
 }
@@ -57,7 +58,7 @@ bool agenda::ajouterContactARdv(const string &nom, const string &prenom, const s
     rdv *r;
     if (!chercherContactEtRdv(nom, prenom, nom_rdv, j, m, a, c, r))
         return false;
-    if (!d_listContact.ajouterRdv(c, r))
+	if (!d_listContact.ajouteRdv(c, r))
         return false; // contact pas dispo
     d_listJour.ajouterContact(r, c);
     return true;
@@ -68,7 +69,7 @@ bool agenda::supprimerContactARdv(const string &nom, const string &prenom, const
     rdv *r;
     if (!chercherContactEtRdv(nom, prenom, nom_rdv, j, m, a, c, r))
         return false;
-    if (!d_listContact.supprimerRdv(c, r))
+	if (!d_listContact.supprimeRdv(c, r))
         return false; // le contact n'a pas ce rdv
     d_listJour.supprimerContact(r, c);
     return true;
@@ -93,7 +94,7 @@ bool agenda::supprimerRdv(int j, int m, int a, const std::string &nom) {
         return false; // rdv pas trouvé
     vectorLite<contact *> cs = r->getContacts();
     for (int i = 0; i < cs.size(); ++i) {
-        d_listContact.supprimerRdv(cs[i], r);
+	    d_listContact.supprimeRdv(cs[i], r);
     }
     d_listJour.supprimerRdv(r);
     return true;
@@ -137,6 +138,31 @@ bool agenda::testRdv(const string &nom) {
 
 bool agenda::modifHeureFin(int j, int m, int a, const std::string &nom, int h, int min) {
     return d_listJour.modifHeureFin(date{j, m, a}, nom, temps{static_cast<short>(h), static_cast<short>(min)});
+}
+
+bool agenda::modifJourDeb(int j, int m, int a, const std::string &nom, int newj, int newm, int newa) {
+	return d_listJour.modifJourDeb(date{j, m, a}, date{newj, newm, newa}, nom);
+}
+
+bool agenda::modifJourFin(int j, int m, int a, const std::string &nom, int newj, int newm, int newa) {
+	return d_listJour.modifJourFin(date{j, m, a}, date{newj, newm, newa}, nom);
+}
+
+bool
+agenda::contactEstDispo(string nom, string prenom, int dj, int dm, int da, int dh, int dmin, int fj, int fm, int fa,
+                        int fh, int fmin) const {
+	contact *c = d_listContact.chercherContact(nom, prenom);
+	rdv tmp_r = rdv("tmp", temps{static_cast<short>(dh), static_cast<short>(dmin)}, temps{static_cast<short>(fh),
+	                                                                                      static_cast<short>(fmin)},
+	                jour{date{dj, dm, da}}, jour{date{fj, fm, fa}});
+	if (!c)
+		return false;
+	auto rs = c->getTabrdv();
+	for (int i = 0; i < rs.size(); ++i) {
+		if (!rs[i]->pasEnMemeTemps(&tmp_r))
+			return false;
+	}
+	return true;
 }
 
 

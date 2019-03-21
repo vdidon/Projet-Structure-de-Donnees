@@ -54,7 +54,7 @@ public:
 
 	bool
 	contactEstDispo(string nom, string prenom, int dj, int dm, int da, int dh, int dmin, int fj, int fm, int fa, int fh,
-	                int fmin) const;
+	                int fmin) const; // pas opti
 
 private:
     listJour d_listJour;
