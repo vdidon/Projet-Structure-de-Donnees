@@ -3,7 +3,7 @@
 
 class date {
 public:
-    date(int j,int m,int a);
+	date(int p_j, int p_m, int p_a);
     date(const date &d);
     bool operator>(const date &d) const;
 

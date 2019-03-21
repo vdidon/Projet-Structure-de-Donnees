@@ -1,6 +1,15 @@
 
 #include "date.h"
 
+date::date(int p_j, int p_m, int p_a) : j{p_j}, m{p_m}, a{p_a} {
+
+}
+
+date::date(const date &d) : j{d.j}, m{d.m}, a{d.a} {
+
+}
+
+
 bool date::operator>(const date &d) const {
     return (a > d.a) || (a == d.a && (m > d.m || (m == d.m && j > d.j)));
 }
@@ -16,3 +25,6 @@ bool date::operator==(const date &d) const {
 bool date::operator!=(const date &d) const {
     return !(d == *this);
 }
+
+
+
