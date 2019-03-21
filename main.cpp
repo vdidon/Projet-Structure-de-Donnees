@@ -34,7 +34,7 @@ void entrerPersonne(string &nom, string &prenom) {
     cin >> prenom;
 }
 
-void entreJour(int &j, int &m, int &a) {
+void entrerJour(int &j, int &m, int &a) {
     cout << "Entré le jour : ";
     cin >> j;
     cout << "Entré le mois : ";
@@ -43,25 +43,19 @@ void entreJour(int &j, int &m, int &a) {
     cin >> a;
 }
 
-void entreRdv(string &nom, int &j, int &m, int &a) {
+void entrerRdv(string &nom, int &j, int &m, int &a) {
     cout << "Entré le nom : ";
     cin >> nom;
-    entreJour(j, m, a);
+	entrerJour(j, m, a);
 }
 
-void entreTemps(int &h, int &m) {
+void entrerTemps(int &h, int &m) {
     cout << "Entré l'heure : ";
     cin >> h;
     cout << "Entré la minute : ";
     cin >> m;
 }
 
-unsigned int calculDuree(int dj, int dm, int da, int dh, int dmin, int fj, int fm, int fa, int fh, int fmin) {
-    return static_cast<unsigned int>(fmin) - static_cast<unsigned int>(dmin) +
-           60 * (static_cast<unsigned int>(fh) - static_cast<unsigned int>(dh)) +
-           60 * 24 * (static_cast<unsigned int>(fj) - static_cast<unsigned int>(dj)) +
-           60 * 24;
-}
 
 void suppPersonne() {
     string nom, prenom;
@@ -83,7 +77,7 @@ void suppRdv() {
     int j, m, a;
     bool ext = false;
     do {
-        entreRdv(nom, j, m, a);
+	    entrerRdv(nom, j, m, a);
         if (ag.supprimerRdv(j, m, a, nom))
             ext = true;
         else {
@@ -98,7 +92,7 @@ void modifPersonne() {
     int i;
     bool ext = false;
     do {
-        string nom, prenom;
+	    string nom, prenom, num, email;
         entrerPersonne(nom, prenom);
         cout << "Quel modification voulez vous faire : " << endl;
         cout << "1 - Heure de début" << endl;
@@ -108,7 +102,6 @@ void modifPersonne() {
         cin >> i;
         switch (i) {
             case 1:
-                string num;
                 cout << "Entrer le numéro : ";
                 cin >> num;
                 if (!ag.modifNum(nom, prenom, num)) {
@@ -118,7 +111,6 @@ void modifPersonne() {
                     ext = true;
                 break;
             case 2:
-                string email;
                 cout << "Entrer l'email : ";
                 cin >> email;
                 if (!ag.modifEmail(nom, prenom, email)) {
@@ -142,17 +134,19 @@ void modifRdv() {
     int i;
     bool ext = false;
     do {
-        entreRdv(nom, j, m, a);
+	    entrerRdv(nom, j, m, a);
         cout << "Quel modification voulez vous faire : " << endl;
         cout << "1 - Heure de début" << endl;
-        cout << "2 - Email" << endl;
+	    cout << "2 - Heure de fin" << endl;
+	    cout << "3 - Jour de début" << endl;
+	    cout << "4 - Jour de fin" << endl;
         cout << "0 - Menu principal" << endl;
-        cout << "0-2 : ";
+	    cout << "0-4 : ";
         cin >> i;
         switch (i) {
             case 1:
                 int h, min;
-                entreTemps(h, min);
+		        entrerTemps(h, min);
                 if (!ag.modifHeureDeb(j, m, a, nom, h, min)) {
                     cout << "Le rdv n'a pas était modifié";
                     ext = sortir();
@@ -160,28 +154,46 @@ void modifRdv() {
                     ext = true;
                 break;
             case 2:
-                int fj, fm, fa, fh, fmin;
-                entreJour(fj, fm, fa);
-                entreTemps(fh, fmin);
-                int duree;
-                if (!ag.modifDuree(j, m, a, nom, duree)) {
+	            int fh, fmin;
+		        entrerTemps(fh, fmin);
+		        if (!ag.modifHeureFin(j, m, a, nom, fh, fmin)) {
                     cout << "Le rdv n'a pas était modifié";
                     ext = sortir();
                 } else
                     ext = true;
                 break;
+	        case 3:
+		        int new_j, new_m, new_a;
+		        entrerJour(new_j, new_m, new_a);
+		        if (!ag.modifJourDeb(j, m, a, nom, new_j, new_m, new_a)) {
+			        cout << "Le rdv n'a pas était modifié";
+			        ext = sortir();
+		        } else
+			        ext = true;
+		        break;
+	        case 4:
+		        int fnew_j, fnew_m, fnew_a;
+		        entrerJour(fnew_j, fnew_m, fnew_a);
+		        if (!ag.modifJourFin(j, m, a, nom, fnew_j, fnew_m, fnew_a)) {
+			        cout << "Le rdv n'a pas était modifié";
+			        ext = sortir();
+		        } else
+			        ext = true;
+		        break;
             case 0:
                 ext = true;
             default:
-                cout << "Entré un nombre entre 0 et 2" << endl;
+	            cout << "Entré un nombre entre 0 et 4" << endl;
         }
     } while (!ext);
 
 
 }
 
-void affRdv() {
-
+void affRdvDeJour() {
+	int j, m, a;
+	entrerJour(j, m, a);
+	ag.afficherRdvDeJour(j, m, a, cout);
 }
 
 void affPersonne() {
@@ -200,7 +212,20 @@ void affPersonne() {
 }
 
 void personneDispo() {
-
+	string nom, prenom;
+	int j, m, a, h, min, fj, fm, fa, fh, fmin;
+	entrerPersonne(nom, prenom);
+	cout << "Heure de début : " << endl;
+	entrerJour(j, m, a);
+	entrerTemps(h, min);
+	cout << "Heure de fin : " << endl;
+	entrerJour(fj, fm, fa);
+	entrerTemps(fh, fmin);
+	if (ag.contactEstDispo(nom, prenom, j, m, a, h, min, fj, fm, fa, fh, fmin)) {
+		cout << "La personne est dispo" << endl;
+	} else {
+		cout << "La personne n'est pas dispo" << endl;
+	}
 }
 
 void ajouPersonne() {
@@ -224,7 +249,19 @@ void ajouPersonne() {
 }
 
 void ajouRdv() {
-
+	string nom;
+	int j, m, a, h, min, fj, fm, fa, fh, fmin;
+	//cout<<"Heure de début : "<<endl;
+	entrerRdv(nom, j, m, a);
+	entrerTemps(h, min);
+	cout << "Heure de fin : " << endl;
+	entrerJour(fj, fm, fa);
+	entrerTemps(fh, fmin);
+	if (ag.ajouterRdv(j, m, a, nom, h, min, fj, fm, fa, fh, fmin)) {
+		cout << "Rdv ajouté" << endl;
+	} else {
+		cout << "Rdv pas ajouté" << endl;
+	}
 }
 
 void ajouPersonneARdv() {
@@ -233,7 +270,7 @@ void ajouPersonneARdv() {
     bool ext = false;
     do {
         entrerPersonne(nom, prenom);
-        entreRdv(nomrdv, j, m, a);
+	    entrerRdv(nomrdv, j, m, a);
         if (ag.ajouterContactARdv(nom, prenom, nomrdv, j, m, a))
             ext = true;
         else {
@@ -254,7 +291,7 @@ bool menuPrincipal() {
     cout << "2 - Suppression d’un rendez-vous" << endl;
     cout << "3 - Modification d’une personne" << endl;
     cout << "4 - Modification d’un rendez-vous" << endl;
-    cout << "5 - Afficher des rdv" << endl;
+	cout << "5 - Afficher les rdv d'un jour" << endl;
     cout << "6 - Afficher une personne" << endl;
     cout << "7 - Une personne est-elle disponible ?" << endl;
     cout << "8 - Ajouter une personne" << endl;
@@ -278,7 +315,7 @@ bool menuPrincipal() {
             modifRdv();
             break;
         case 5:
-            affRdv();
+	        affRdvDeJour();
             break;
         case 6:
             affPersonne();

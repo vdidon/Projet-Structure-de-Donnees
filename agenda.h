@@ -29,9 +29,9 @@ public:
 
     bool modifHeureFin(int j, int m, int a, const std::string &nom, int h, int min);
 
-    bool modifJourDeb(int j, int m, int a, const std::string &nom, int newj, int newm, int newa, int h, int min);
+	bool modifJourDeb(int j, int m, int a, const std::string &nom, int newj, int newm, int newa);
 
-    bool modifJourFin(int j, int m, int a, const std::string &nom, int newj, int newm, int newa, int h, int min);
+	bool modifJourFin(int j, int m, int a, const std::string &nom, int newj, int newm, int newa);
 
     /*bool modifDuree(int j, int m, int a,
                     const std::string &nom, unsigned int duree);*/
@@ -51,6 +51,10 @@ public:
     bool afficherContactDeRdv(const string &nom_rdv, int j, int m, int a, std::ostream &out) const;
 
     bool afficherRdvDeJour(int j, int m, int a, std::ostream &out) const;
+
+	bool
+	contactEstDispo(string nom, string prenom, int dj, int dm, int da, int dh, int dmin, int fj, int fm, int fa, int fh,
+	                int fmin) const;
 
 private:
     listJour d_listJour;
