@@ -13,53 +13,53 @@ class contact;
 
 
 class jour {
-    friend class listJour;
+	friend class listJour;
 
 public:
-    jour(const date &d); //ska : fait        d_date doit être construit par recopie
+	jour(const date &d); //ska : fait        d_date doit être construit par recopie
 
-    ~jour(); //ska : fait                    le tab de rdv étant déjà vide
+	~jour(); //ska : fait                    le tab de rdv étant déjà vide
 
-    int taille() const; //ska : fait
+	int taille() const; //ska : fait
 
-    rdv *ajouterRdv(const std::string &nom, const temps &tDeb, const temps &tFin, jour *jfin,
-                    const vectorLite<contact *> &tabContacts); // que le jour même
+	rdv *ajouterRdv(const std::string &nom, const temps &tDeb, const temps &tFin, jour *jfin,
+	                const vectorLite<contact *> &tabContacts); // que le jour même
 
-    bool ajouterRdvMultiJour(rdv *r);
+	bool ajouterRdvMultiJour(rdv *r);
 
-    int getJour() const;    //ska : fait
+	int getJour() const;    //ska : fait
 
-    int getMois() const;    //ska : fait
+	int getMois() const;    //ska : fait
 
-    int getAnnee() const;   //ska : fait
+	int getAnnee() const;   //ska : fait
 
-    date getDate() const;   //ska : fait
+	date getDate() const;   //ska : fait
 
 
-    static void ajouterContact(rdv *r, contact *c);
+	static void ajouterContact(rdv *r, contact *c);
 
-    static void supprimerContact(rdv *r, contact *c);
+	static void supprimerContact(rdv *r, contact *c);
 
-    static void supprimerRdv(rdv *r);
+	static void supprimerRdv(rdv *r);
 
-    rdv *chercherRdv(const std::string &nom);
+	rdv *chercherRdv(const std::string &nom);
 
-    bool modifHeureDeb(const std::string &nom, const temps &t);
+	bool modifHeureDeb(const std::string &nom, const temps &t);
 
-    bool modifHeureFin(const std::string &nom, const temps &t, jour *jfin);
+	bool modifHeureFin(const std::string &nom, const temps &t, jour *jfin);
 
 //    void modifDuree(const std::string &nom, unsigned int duree);
 
-    bool afficherContactDeRdv(const std::string &nom, std::ostream &out) const;
+	bool afficherContactDeRdv(const std::string &nom, std::ostream &out) const;
 
-    bool afficherRdvDeJour(std::ostream &out) const;
+	bool afficherRdvDeJour(std::ostream &out) const;
 
 
 private:
-    date d_date;
-    rdv *d_tete;
-    vectorLite<rdv *> d_rdvMultiJours; // des jours d'avant
-    jour *suiv;
+	date d_date;
+	rdv *d_tete;
+	vectorLite<rdv *> d_rdvMultiJours; // des jours d'avant
+	jour *suiv;
 
 };
 
