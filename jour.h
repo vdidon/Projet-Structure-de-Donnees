@@ -56,7 +56,7 @@ public:
 
 //    void modifDuree(const std::string &nom, unsigned int duree);
 
-	bool afficherRdvDeJour(std::ostream &out) const;
+	bool afficherRdvDeJour(std::ostream &out) const;    //ska : fait
 
 	bool afficherContactDeRdv(const std::string &nom, std::ostream &out) const;
 

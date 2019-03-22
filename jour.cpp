@@ -153,3 +153,20 @@ bool jour::modifJourFin(const std::string &nom, const jour *j)
     chercherRdv(nom);
     rdv::modifJourFin(j);
 }
+
+
+bool jour::afficherRdvDeJour(std::ostream &out) const
+{
+    rdv*cl=d_tete;
+    if (cl==nullptr)
+    {
+        return false;
+    }
+    while(cl!=nullptr)
+    {
+        out<<cl<<endl;
+        cl=cl->d_suiv;
+    }
+
+    return true;
+}
