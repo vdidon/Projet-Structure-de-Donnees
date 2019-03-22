@@ -3,7 +3,7 @@
 #include "temps.h"
 
 rdv::rdv(const std::string &nom, const temps &deb, const temps &fin,jour *jFin,const vectorLite<contact *> &tabContacts):
-    d_nom{nom}, d_tDeb{deb}, d_tFin{fin}, d_j{j},d_tabContacts{tabContacts}
+    d_nom{nom}, d_tDeb{deb}, d_tFin{fin}, d_j{jFin},d_tabContacts{tabContacts}
     {}
 
 rdv::~rdv(){        // A FAIRE

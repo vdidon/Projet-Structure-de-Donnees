@@ -37,7 +37,7 @@ void contact::modifEmail(const string &adresse) {
 
 bool contact::operator==(const contact &c) const
 {
-    return (d_nom == c->d_nom && d_prenom == c->d_prenom);
+    return (d_nom == c.d_nom && d_prenom == c.d_prenom);
 }
 
 bool contact::ajouterRdv(rdv *r)
@@ -62,7 +62,7 @@ bool contact::supprimerRdv(rdv *r)
         {
             i++;
         }
-        supprimerRdv(i);
+        supprimerRdv(d_tabRdv[i]);
         return true;
     }
     return false;
@@ -73,13 +73,13 @@ void contact ::afficherRdvDeContact(std::ostream & os)
 {
     for(int i=0; i<d_tabRdv.size(); i++)
     {
-        cout<<d_tabRdv[i]->d_nom<<\t<<d_tabRdv[i]->d_tDeb<<\t<<d_tabRdv[i]->d_tFin<<;
-        cout<<endl;
+        os<<d_tabRdv[i]->d_nom<<"\t"<<d_tabRdv[i]->d_tDeb<<"\t"<<d_tabRdv[i]->d_tFin<<; // remplacer -> d_nom par
+        os<<endl;                                                                       // .getNom()? Idem pour d_tDeb
     }
 }
 
 
-contct ::~contact()
+contact ::~contact()
 {
 
 }

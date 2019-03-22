@@ -22,7 +22,7 @@ public:
 
 	int taille() const; //ska : fait
 
-	rdv *ajouterRdv(const std::string &nom, const temps &tDeb, const temps &tFin, jour *jfin, //ska : fait
+	rdv *ajouterRdv(const std::string &nom, const temps &tDeb, const temps &tFin, jour *j, jour *jfin, //ska : fait
 	                const vectorLite<contact *> &tabContacts); // que le jour même
 
 	rdv *chercherRdv(const std::string &nom); //ska : fait

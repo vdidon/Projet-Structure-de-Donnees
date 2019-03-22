@@ -44,9 +44,9 @@ int jour::taille() const{
     return i;
 }
 
-rdv *jour::ajouterRdv(const std::string &nom, const temps &tDeb, const temps &tFin, jour *jFin, const vectorLite<contact *> &tabContacts)
+rdv *jour::ajouterRdv(const std::string &nom, const temps &tDeb, const temps &tFin, jour *j, jour *jFin, const vectorLite<contact *> &tabContacts)
 {
-    rdv*n= new rdv(nom,tDeb,jFin, tabContacts);
+    rdv*n= new rdv(nom,tDeb, tFin, j, jFin, tabContacts);
     if(d_tete==nullptr)                         //cas liste nulle
     {
         d_tete=n;
@@ -75,7 +75,7 @@ rdv *jour::ajouterRdv(const std::string &nom, const temps &tDeb, const temps &tF
             n->d_suiv=nullptr;
         }
     }
-    return *this;
+    return n;
 }
 
 rdv *jour::chercherRdv(const std::string &nom)
