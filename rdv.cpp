@@ -2,8 +2,7 @@
 #include "contact.h"
 #include "temps.h"
 
-rdv::rdv(const std::string &nom, const temps &deb, const temps &fin,/* unsigned int duree,*/ jour *j,
-        const vectorLite<contact *> &tabContacts):
+rdv::rdv(const std::string &nom, const temps &deb, const temps &fin,jour *jFin,const vectorLite<contact *> &tabContacts):
     d_nom{nom}, d_tDeb{deb}, d_tFin{fin}, d_j{j},d_tabContacts{tabContacts}
     {}
 
@@ -67,7 +66,7 @@ bool rdv::pasEnMemeTemps(rdv *r){
 
 }
 
-// A voir avec Valere
+                                                                // A voir avec Valere
 bool rdv::modifHeureDeb(const temps &t){
         if (t<d_tDeb)
         {
@@ -85,7 +84,7 @@ bool rdv::modifHeureDeb(const temps &t){
 
 }
 
-// A voir avec Valere
+                                                                // A voir avec Valere
 bool rdv::modifJourDeb(const jour* j)
 {
     if (j<d_j)
@@ -102,7 +101,7 @@ bool rdv::modifJourDeb(const jour* j)
         }
 }
 
-// A voir avec Valere
+                                                                // A voir avec Valere
 bool rdv::modifHeureFin(const temps &t)
 {
     if (t>d_tFin)
@@ -118,7 +117,7 @@ bool rdv::modifHeureFin(const temps &t)
         return true;
         }
 }
-// A voir avec Valere
+                                                                // A voir avec Valere
 bool rdv::modifJourFin(const jour* j)
 {
     if (j>d_jfin)
