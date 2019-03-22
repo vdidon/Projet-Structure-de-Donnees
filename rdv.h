@@ -49,16 +49,16 @@ private:
     rdv *d_suiv;
 
     bool modifHeureDeb(const temps &t); // si c'est plus tôt checker pour toute les personnes du rdv
-    
+
     bool modifJourDeb(const jour* j); // si c'est plus tôt checker pour toute les personnes du rdv
 
     bool modifHeureFin(const temps &t); // si c'est plus tard checker pour toute les personnes du rdv
-    
+
     bool modifJourFin(const jour* j); // si c'est plus tôt checker pour toute les personnes du rdv
 
-    bool ajouterContact(contact *c);
+    bool ajouterContact(contact *c); //ska : fait
 
-    bool supprimeContact(contact *c);
+    bool supprimeContact(contact *c); //ska : fait
 
 };
 

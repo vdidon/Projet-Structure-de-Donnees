@@ -67,9 +67,102 @@ bool rdv::pasEnMemeTemps(rdv *r){
 
 }
 
-
+// A voir avec Valere
 bool rdv::modifHeureDeb(const temps &t){
-        
-        
-        
+        if (t<d_tDeb)
+        {
+            for(int i=0; i<d_tabContacts.size(); i++)
+            {
+
+            }
+        }
+        else
+        {
+            d_tDeb=t;
+        return true;
+        }
+
+
+}
+
+// A voir avec Valere
+bool rdv::modifJourDeb(const jour* j)
+{
+    if (j<d_j)
+        {
+            for(int i=0; i<d_tabContacts.size(); i++)
+            {
+
+            }
+        }
+        else
+        {
+            d_j=j;
+        return true;
+        }
+}
+
+// A voir avec Valere
+bool rdv::modifHeureFin(const temps &t)
+{
+    if (t>d_tFin)
+        {
+            for(int i=0; i<d_tabContacts.size(); i++)
+            {
+
+            }
+        }
+        else
+        {
+            d_tFin=t;
+        return true;
+        }
+}
+// A voir avec Valere
+bool rdv::modifJourFin(const jour* j)
+{
+    if (j>d_jfin)
+        {
+            for(int i=0; i<d_tabContacts.size(); i++)
+            {
+
+            }
+        }
+        else
+        {
+            d_jFin=j;
+        return true;
+        }
+}
+
+bool rdv::ajouterContact(contact *c){
+    vectorLite<rdv *> T() = contact::getTabrdv();
+    for(int i = 0; i<T.size();i++)
+    {
+        if (pasEnMemeTemps(T[i]))
+        {
+            i++
+        }
+        else
+        {
+            return false;
+        }
+    }
+    d_tabContacts.push_back(c);
+    return true;
+}
+
+bool rdv::supprimeContact(contact *c)
+{
+    int i = 0;
+    while(i<d_tabContacts.size()&&!(c==d_tabContacts[i]))
+    {
+        i++;
+    }
+    if(i<d_tabContacts.size())
+    {
+        d_tabContacts.supprimer(i)
+        return true;
+    }
+    return false;
 }
