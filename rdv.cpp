@@ -66,13 +66,22 @@ bool rdv::pasEnMemeTemps(rdv *r){
 
 }
 
-                                                                // A voir avec Valere
-bool rdv::modifHeureDeb(const temps &t){
-        if (t<d_tDeb)
-        {
-            for(int i=0; i<d_tabContacts.size(); i++)
-            {
 
+bool rdv::modifHeureDeb(const temps &t){
+        vectorLite<rdv *> T;
+        bool modifPossible=true;
+        if (t<d_tDeb)                                       //si le rdv est avancé, on cheque les conflits
+        {
+            for(int i=0; i<d_tabContacts.size(); i++)       //On parcour les contacts du rdv
+            {
+                T = d_tabContacts[i].getTabrdv();
+                for(int j=0; j<T.size();j++)                // On parcour les rdv de chaque contact
+                {
+                    if(!(this.pasEnMemeTemps(T[j])))
+                    {
+                       return false;                        //On return faux si un des contact ne peux pas
+                    }
+                }
             }
         }
         else
