@@ -36,7 +36,7 @@ public:
 	date getDate() const;   //ska : fait
 
 
-	static void ajouterContact(rdv *r, contact *c);
+	static void ajouterContact(rdv *r, contact *c); //Ska : fait
 
 	static void supprimerContact(rdv *r, contact *c);
 
