@@ -58,7 +58,7 @@ public:
 
 	bool afficherRdvDeJour(std::ostream &out) const;    //ska : fait
 
-	bool afficherContactDeRdv(const std::string &nom, std::ostream &out) const;
+	bool afficherContactDeRdv(const std::string &nom, std::ostream &out) const; //ska : fait
 
 
 

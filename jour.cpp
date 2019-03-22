@@ -157,16 +157,28 @@ bool jour::modifJourFin(const std::string &nom, const jour *j)
 
 bool jour::afficherRdvDeJour(std::ostream &out) const
 {
-    rdv*cl=d_tete;
-    if (cl==nullptr)
+
+    if (d_tete==nullptr)
     {
         return false;
     }
+    rdv*cl=d_tete;
     while(cl!=nullptr)
     {
         out<<cl<<endl;
         cl=cl->d_suiv;
     }
 
+    return true;
+}
+
+bool jour::afficherContactDeRdv(const std::string &nom, std::ostream &out) const
+{
+    if (d_tete==nullptr)
+    {
+        return false;
+    }
+    rdv*cl= jour::chercherRdv(nom);
+    cl.afficherContactDeRdv();
     return true;
 }
