@@ -60,7 +60,7 @@ contact *listContact::chercherContact(const string &nom, const string &prenom) c
 bool listContact::supprimerContact(const string &nom, const string &prenom) {
     contact *as = chercherContact(nom, prenom);
     if (as != nullptr) {
-        if (as->getTabrdv().size() == 0) {
+        if (as->d_tabRdv.size() == 0) {
             if (d_tete == as) {
                 contact *c = d_tete;
                 d_tete = c->d_suiv;
@@ -115,7 +115,7 @@ bool listContact::ajouteRdv(contact *c, rdv *r)
     return(c->ajouterRdv(r));
 }
 
-/** supprime un rdv donné */
+/** supprime un rdv donnÃ© */
 
 bool listContact::supprimeRdv(contact *c, rdv *r)
 {
