@@ -30,9 +30,9 @@ public:
 
     vectorLite<contact *> &getContacts();   //ska : fait
 
-    jour *getJourDeb() const;
+    jour *getJourDeb() const; //ska : fait
 
-    jour *getJourFin() const;
+    jour *getJourFin() const; //ska : fait
 
     bool afficherContactDeRdv(std::ostream &out) const; //ska : fait
 
