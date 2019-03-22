@@ -71,7 +71,13 @@ bool contact::supprimerRdv(rdv *r)
 
 void contact ::afficherRdvDeContact(std::ostream & os)
 {
+    for(int i=0; i<d_tabRdv.size(); i++)
+    {
+        cout<<d_tabRdv[i]->d_nom<<\t<<d_tabRdv[i]->d_tDeb<<\t<<d_tabRdv[i]->d_tFin<<;
+        cout<<endl;
+    }
 }
+
 
 contct ::~contact()
 {
