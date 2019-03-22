@@ -25,6 +25,10 @@ public:
 	rdv *ajouterRdv(const std::string &nom, const temps &tDeb, const temps &tFin, jour *jfin, //ska : fait
 	                const vectorLite<contact *> &tabContacts); // que le jour même
 
+	rdv *chercherRdv(const std::string &nom); //ska : fait
+
+	static void supprimerRdv(rdv *r); //ska : fait
+
 	bool ajouterRdvMultiJour(rdv *r);
 
 	int getJour() const;    //ska : fait
@@ -36,13 +40,11 @@ public:
 	date getDate() const;   //ska : fait
 
 
-	static void ajouterContact(rdv *r, contact *c); //Ska : fait
+	static void ajouterContact(rdv *r, contact *c); //ska : fait
 
-	static void supprimerContact(rdv *r, contact *c);
+	static void supprimerContact(rdv *r, contact *c); //ska : fait
 
-	static void supprimerRdv(rdv *r);
 
-	rdv *chercherRdv(const std::string &nom);
 
 	bool modifHeureDeb(const std::string &nom, const temps &t);
 

@@ -178,7 +178,7 @@ bool rdv::supprimeContact(contact *c)
     }
     if(i<d_tabContacts.size())
     {
-        d_tabContacts.supprimer(i)
+        d_tabContacts.supprimer(i);
         return true;
     }
     return false;

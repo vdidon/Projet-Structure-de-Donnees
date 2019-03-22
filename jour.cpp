@@ -78,7 +78,54 @@ rdv *jour::ajouterRdv(const std::string &nom, const temps &tDeb, const temps &tF
     return *this;
 }
 
+rdv *jour::chercherRdv(const std::string &nom)
+{
+    rdv* cl=d_tete;
+    while(cl!=nullptr)
+    {
+        cl=cl->d_suiv;
+    }
+    return cl;
+}
+
+
+static void jour::supprimerRdv(rdv *r)
+{
+    if(d_tete!=nullptr)
+    {
+        if(r==d_tete)
+        {
+            rdv *cl=d_tete->d_suiv;
+            delete d_tete;
+            d_tete=cl;
+        }
+        else
+        {
+            rdv *cl=d_tete, *prec=nullptr;
+            while(cl!=nullptr && cl!=r)
+            {
+                prec=cl;
+                cl=cl->d_suiv;
+            }
+            if(cl!=nullptr && cl==r)
+            {
+                prec->d_suiv=cl->d_suiv;
+                delete cl;
+            }
+        }
+    }
+}
+
+
+
 static void jour::ajouterContact(rdv *r, contact *c)
 {
+    rdv *cl=chercherRdv(r);
+    cl.ajouterContact(c);
+}
 
+static void jour::supprimerContact(rdv *r, contact *c)
+{
+    rdv *cl=chercherRdv(r);
+    cl.supprimeContact(c);
 }
