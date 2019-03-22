@@ -152,8 +152,9 @@ bool
 agenda::contactEstDispo(string nom, string prenom, int dj, int dm, int da, int dh, int dmin, int fj, int fm, int fa,
                         int fh, int fmin) const {
 	contact *c = d_listContact.chercherContact(nom, prenom);
-	rdv tmp_r = rdv("tmp", temps{static_cast<short>(dh), static_cast<short>(dmin)}, temps{static_cast<short>(fh),
-	                                                                                      static_cast<short>(fmin)},
+	rdv tmp_r = rdv(std::string("tmp"), temps{static_cast<short>(dh), static_cast<short>(dmin)},
+	                temps{static_cast<short>(fh),
+	                      static_cast<short>(fmin)},
 	                jour{date{dj, dm, da}}, jour{date{fj, fm, fa}});
 	if (!c)
 		return false;

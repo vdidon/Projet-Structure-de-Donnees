@@ -46,11 +46,11 @@ public:
 
 	bool modifHeureDeb(const std::string &nom, const temps &t);
 
-	bool modifJourDeb((const std::string &nom, const jour *j);
+	bool modifJourDeb(const std::string &nom, const jour *j);
 
 	bool modifHeureFin(const std::string &nom, const temps &t, jour *jfin);
 
-	bool modifJourFin((const std::string &nom, const jour *j);
+	bool modifJourFin(const std::string &nom, const jour *j);
 
 //    void modifDuree(const std::string &nom, unsigned int duree);
 

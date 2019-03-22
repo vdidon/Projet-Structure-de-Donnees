@@ -2,22 +2,29 @@
 #include "contact.h"
 #include "temps.h"
 
-rdv::rdv(const std::string &nom, const temps &deb, const temps &fin,/* unsigned int duree,*/ jour *j,
+rdv::rdv(const std::string &nom, const temps &deb, const temps &fin, jour *j, jour *jfin,
+         const vectorLite<contact *> &tabContacts) : d_nom{nom}, d_tDeb{deb}, d_tFin{fin}, d_j{j},
+                                                     d_tabContacts{tabContacts} {
+
+}
+
+
+/*rdv::rdv(const std::string &nom, const temps &deb, const temps &fin,*//* unsigned int duree,*//* jour *j,
         const vectorLite<contact *> &tabContacts):
     d_nom{nom}, d_tDeb{deb}, d_tFin{fin}, d_j{j},d_tabContacts{tabContacts}
-    {}
+    {}*/
 
-rdv::~rdv(){        // A FAIRE
+rdv::~rdv() {        // A FAIRE
 
 }
 
 //getters
 
-std::string rdv::getNom() const{
+std::string rdv::getNom() const {
     return d_nom;
 }
 
-temps &rdv::getDeb() const{
+temps &rdv::getDeb() const {
     return &d_tDeb;
 }
 
@@ -73,3 +80,4 @@ bool rdv::modifHeureDeb(const temps &t){
         
         
 }
+

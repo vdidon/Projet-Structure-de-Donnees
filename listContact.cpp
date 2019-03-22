@@ -130,6 +130,7 @@ bool listContact::afficherRdvDeContact(const string &nom, const string &prenom, 
     if (af)
     {
         af->afficherRdvDeContact(os);
+        return true;
     }
     else return false;
 }

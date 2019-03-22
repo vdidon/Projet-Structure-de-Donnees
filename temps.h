@@ -1,6 +1,7 @@
 #ifndef PROJET_STRUCTURE_DE_DONNEES_TEMPS_H
 #define PROJET_STRUCTURE_DE_DONNEES_TEMPS_H
 
+#include <iostream>
 
 class temps {
 public:
@@ -23,6 +24,8 @@ public:
     short h, m;
 
 };
+
+std::ostream &operator<<(std::ostream &out, const temps &t);
 
 
 #endif //PROJET_STRUCTURE_DE_DONNEES_TEMPS_H
