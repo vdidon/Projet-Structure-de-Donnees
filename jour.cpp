@@ -129,3 +129,27 @@ static void jour::supprimerContact(rdv *r, contact *c)
     rdv *cl=chercherRdv(r);
     cl.supprimeContact(c);
 }
+
+bool jour::modifHeureDeb(const std::string &nom, const temps &t)
+{
+    chercherRdv(nom);
+    rdv::modifHeureDeb(t);
+}
+
+bool jour::modifJourDeb(const std::string &nom, const jour *j)
+{
+    chercherRdv(nom);
+    rdv::modifJourDeb(j);
+}
+
+bool jour::modifHeureFin(const std::string &nom, const temps &t)
+{
+    chercherRdv(nom);
+    rdv::modifHeureFin(t);
+}
+
+bool jour::modifJourFin(const std::string &nom, const jour *j)
+{
+    chercherRdv(nom);
+    rdv::modifJourFin(j);
+}
