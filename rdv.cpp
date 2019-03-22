@@ -29,7 +29,13 @@ vectorLite<contact *> &rdv::getContacts(){
     return &d_tabContacts;
 }
 
+jour *rdv::getJourDeb() const{
+        return d_j;
+}
 
+jour *rdv::getJourFin() const{
+        return d_jFin;
+}
 
 //Autres
 
@@ -59,4 +65,11 @@ bool rdv::pasEnMemeTemps(rdv *r){
 
     return true;
 
+}
+
+
+bool rdv::modifHeureDeb(const temps &t){
+        
+        
+        
 }
