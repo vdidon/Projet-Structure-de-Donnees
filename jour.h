@@ -22,7 +22,7 @@ public:
 
 	int taille() const; //ska : fait
 
-	rdv *ajouterRdv(const std::string &nom, const temps &tDeb, const temps &tFin, jour *jfin,
+	rdv *ajouterRdv(const std::string &nom, const temps &tDeb, const temps &tFin, jour *jfin, //ska : fait
 	                const vectorLite<contact *> &tabContacts); // que le jour même
 
 	bool ajouterRdvMultiJour(rdv *r);
@@ -36,7 +36,7 @@ public:
 	date getDate() const;   //ska : fait
 
 
-	static void ajouterContact(rdv *r, contact *c);
+	static void ajouterContact(rdv *r, contact *c); //Ska : fait
 
 	static void supprimerContact(rdv *r, contact *c);
 
