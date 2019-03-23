@@ -1,6 +1,8 @@
 #ifndef PROJET_STRUCTURE_DE_DONNEES_VECTORLITE_H
 #define PROJET_STRUCTURE_DE_DONNEES_VECTORLITE_H
 
+#include <cstring>
+
 template<typename T> // T étant un pointeur
 class vectorLite {
 public:
