@@ -12,53 +12,53 @@ class contact;
 
 
 class rdv {
-    friend class jour;
+	friend class jour;
 
 public:
 
-    rdv(const std::string &nom, const temps &deb, const temps &fin, jour *j, jour *jfin,
-        const vectorLite<contact *> &tabContacts); //ska : fait
-    ~rdv();
+	rdv(const std::string &nom, const temps &deb, const temps &fin, jour *j, jour *jfin,
+	    const vectorLite<contact *> &tabContacts); //ska : fait
+	~rdv();
 
-    //getter
-    std::string getNom() const; //ska : fait
+	//getter
+	std::string getNom() const; //ska : fait
 
-    temps &getDeb() const;  //ska : fait
+	temps &getDeb() const;  //ska : fait
 
-    temps &getFin() const;  //ska : fait
+	temps &getFin() const;  //ska : fait
 
 
-    vectorLite<contact *> &getContacts();   //ska : fait
+	vectorLite<contact *> &getContacts();   //ska : fait
 
-    jour *getJourDeb() const; //ska : fait
+	jour *getJourDeb() const; //ska : fait
 
-    jour *getJourFin() const; //ska : fait
+	jour *getJourFin() const; //ska : fait
 
-    bool afficherContactDeRdv(std::ostream &out) const; //ska : fait
+	bool afficherContactDeRdv(std::ostream &out) const; //ska : fait
 
-    bool pasEnMemeTemps(rdv *r);    //ska : fait
+	bool pasEnMemeTemps(rdv *r);    //ska : fait
 
 
 private:
-    jour *d_j;
-    jour *d_jfin;
-    std::string d_nom;
-    temps d_tDeb;
-    temps d_tFin;
-    vectorLite<contact *> d_tabContacts;
-    rdv *d_suiv;
+	jour *d_j;
+	jour *d_jfin;
+	std::string d_nom;
+	temps d_tDeb;
+	temps d_tFin;
+	vectorLite<contact *> d_tabContacts;
+	rdv *d_suiv;
 
-    bool modifHeureDeb(const temps &t); // si c'est plus tôt checker pour toute les personnes du rdv
+	bool modifHeureDeb(const temps &t); //ska : fait
 
-    bool modifJourDeb(const jour* j); // si c'est plus tôt checker pour toute les personnes du rdv
+	bool modifJourDeb(const jour *j); // si c'est plus tôt checker pour toute les personnes du rdv
 
-    bool modifHeureFin(const temps &t); // si c'est plus tard checker pour toute les personnes du rdv
+	bool modifHeureFin(const temps &t); //ska : fait
 
-    bool modifJourFin(const jour* j); // si c'est plus tôt checker pour toute les personnes du rdv
+	bool modifJourFin(const jour *j); // si c'est plus tard checker pour toute les personnes du rdv
 
-    bool ajouterContact(contact *c); //ska : fait
+	bool ajouterContact(contact *c); //ska : fait
 
-    bool supprimeContact(contact *c); //ska : fait
+	bool supprimeContact(contact *c); //ska : fait
 
 };
 
