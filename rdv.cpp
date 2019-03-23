@@ -87,8 +87,9 @@ bool rdv::modifHeureDeb(const temps &t){
         else
         {
             d_tDeb=t;
-        return true;
+
         }
+	return true;
 }
 
 bool rdv::modifJourDeb(jour *j) {
@@ -131,7 +132,7 @@ bool rdv::modifHeureFin(const temps &t)                     //voir modifierHeure
 	            T = d_tabContacts[i]->getTabrdv();
                 for(int j=0; j<T.size();j++)
                 {
-                    if(!(this.pasEnMemeTemps(T[j])))
+	                if (!(this->pasEnMemeTemps(T[j])))
                     {
                        return false;
                     }
