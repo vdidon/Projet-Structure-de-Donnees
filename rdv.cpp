@@ -8,9 +8,7 @@ rdv::rdv(const std::string &nom, const temps &deb, const temps &fin, jour *j, jo
 		d_nom{nom}, d_tDeb{deb}, d_tFin{fin}, d_j{jfin}, d_tabContacts{tabContacts}
     {}
 
-rdv::~rdv() {
-
-}
+rdv::~rdv() = default;
 
 //getters
 
@@ -130,7 +128,7 @@ bool rdv::modifHeureFin(const temps &t)                     //voir modifierHeure
         {
             for(int i=0; i<d_tabContacts.size(); i++)
             {
-                T = d_tabContacts[i].getTabrdv();
+	            T = d_tabContacts[i]->getTabrdv();
                 for(int j=0; j<T.size();j++)
                 {
                     if(!(this.pasEnMemeTemps(T[j])))
@@ -139,12 +137,10 @@ bool rdv::modifHeureFin(const temps &t)                     //voir modifierHeure
                     }
                 }
             }
-        }
-        else
-        {
-            d_tFin=t;
+        } else {
+	    d_tFin = t;
         return true;
-        }
+    }
 }
 
 bool rdv::modifJourFin(jour *j) {
@@ -195,7 +191,7 @@ bool rdv::ajouterContact(contact *c){
 bool rdv::supprimeContact(contact *c)
 {
     int i = 0;
-    while(i<d_tabContacts.size()&&!(c==d_tabContacts[i]))
+	while (i < d_tabContacts.size() && c != d_tabContacts[i])
     {
         i++;
     }
