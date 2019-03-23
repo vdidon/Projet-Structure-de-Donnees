@@ -4,7 +4,7 @@
 template<typename T> // T étant un pointeur
 class vectorLite {
 public:
-    vectorLite(int p_size = 0, T *p_tab = nullptr);
+	explicit vectorLite(int p_size = 0, T *p_tab = nullptr);
 
     vectorLite(const vectorLite &v);
 
