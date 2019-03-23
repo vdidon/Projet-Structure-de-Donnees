@@ -140,8 +140,8 @@ bool rdv::modifHeureFin(const temps &t)                     //voir modifierHeure
             }
         } else {
 	    d_tFin = t;
-        return true;
     }
+	return true;
 }
 
 bool rdv::modifJourFin(jour *j) {
