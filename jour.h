@@ -48,11 +48,11 @@ public:
 
 	bool modifHeureDeb(const std::string &nom, const temps &t); //ska : fait
 
-	bool modifJourDeb(const std::string &nom, const jour *j);   //ska : fait
+	bool modifJourDeb(const std::string &nom, jour *j);   //ska : fait
 
 	bool modifHeureFin(const std::string &nom, const temps &t); //ska : fait
 
-	bool modifJourFin(const std::string &nom, const jour *j);   //ska : fait
+	bool modifJourFin(const std::string &nom, jour *j);   //ska : fait
 
 //    void modifDuree(const std::string &nom, unsigned int duree);
 

@@ -94,26 +94,21 @@ void jour::supprimerRdv(rdv *r) //static
 	jour *j = r->d_j;
 	if (j->d_tete != nullptr)
     {
-	    if (r == j->d_tete)
-        {
-	        rdv *cl = j->d_tete->d_suiv;
-	        delete j->d_tete;
-	        j->d_tete = cl;
-        }
-        else
-        {
-	        rdv *cl = j->d_tete, *prec = nullptr;
-	        do
-            {
-                prec=cl;
-                cl=cl->d_suiv;
-            } while (cl != nullptr && cl != r);
-            if(cl!=nullptr && cl==r)
-            {
-                prec->d_suiv=cl->d_suiv;
-                delete cl;
-            }
-        }
+	    if (r == j->d_tete) {
+		    rdv *cl = j->d_tete->d_suiv;
+		    delete j->d_tete;
+		    j->d_tete = cl;
+	    } else {
+		    rdv *cl = j->d_tete, *prec = nullptr;
+		    do {
+			    prec = cl;
+			    cl = cl->d_suiv;
+		    } while (cl != nullptr && cl != r);
+		    if (cl != nullptr && cl == r) {
+			    prec->d_suiv = cl->d_suiv;
+			    delete cl;
+		    }
+	    }
     }
 }
 
@@ -138,7 +133,7 @@ bool jour::modifHeureDeb(const std::string &nom, const temps &t)
 
 }
 
-bool jour::modifJourDeb(const std::string &nom, const jour *j)
+bool jour::modifJourDeb(const std::string &nom, jour *j)
 {
 	rdv *r = chercherRdv(nom);
 	if (r) {
@@ -156,7 +151,7 @@ bool jour::modifHeureFin(const std::string &nom, const temps &t)
 	return false;
 }
 
-bool jour::modifJourFin(const std::string &nom, const jour *j)
+bool jour::modifJourFin(const std::string &nom, jour *j)
 {
 	rdv *r = chercherRdv(nom);
 	if (r) {
