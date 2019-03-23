@@ -25,7 +25,7 @@ public:
 	rdv *ajouterRdv(const std::string &nom, const temps &tDeb, const temps &tFin, jour *j, jour *jfin, //ska : fait
 	                const vectorLite<contact *> &tabContacts); // que le jour même
 
-	rdv *chercherRdv(const std::string &nom); //ska : fait
+	rdv *chercherRdv(const std::string &nom) const; //ska : fait
 
 	static void supprimerRdv(rdv *r); //ska : fait
 

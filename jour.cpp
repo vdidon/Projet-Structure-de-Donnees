@@ -59,11 +59,11 @@ rdv *jour::ajouterRdv(const std::string &nom, const temps &tDeb, const temps &tF
     else
     {
         rdv*cl=d_tete, *prec=nullptr;
-        while(cl!=nullptr && cl->d_tDeb<tDeb)
+	    do
         {
             prec=cl;
             cl=cl->d_suiv;
-        }
+        } while (cl != nullptr && cl->d_tDeb < tDeb);
         if(cl!=nullptr)
         {
             n->d_suiv=cl;
@@ -78,7 +78,7 @@ rdv *jour::ajouterRdv(const std::string &nom, const temps &tDeb, const temps &tF
     return n;
 }
 
-rdv *jour::chercherRdv(const std::string &nom)
+rdv *jour::chercherRdv(const std::string &nom) const
 {
     rdv* cl=d_tete;
     while(cl!=nullptr)
@@ -89,24 +89,25 @@ rdv *jour::chercherRdv(const std::string &nom)
 }
 
 
-static void jour::supprimerRdv(rdv *r)
+void jour::supprimerRdv(rdv *r) //static
 {
-    if(d_tete!=nullptr)
+	jour *j = r->d_j;
+	if (j->d_tete != nullptr)
     {
-        if(r==d_tete)
+	    if (r == j->d_tete)
         {
-            rdv *cl=d_tete->d_suiv;
-            delete d_tete;
-            d_tete=cl;
+	        rdv *cl = j->d_tete->d_suiv;
+	        delete j->d_tete;
+	        j->d_tete = cl;
         }
         else
         {
-            rdv *cl=d_tete, *prec=nullptr;
-            while(cl!=nullptr && cl!=r)
+	        rdv *cl = j->d_tete, *prec = nullptr;
+	        do
             {
                 prec=cl;
                 cl=cl->d_suiv;
-            }
+            } while (cl != nullptr && cl != r);
             if(cl!=nullptr && cl==r)
             {
                 prec->d_suiv=cl->d_suiv;
@@ -117,41 +118,51 @@ static void jour::supprimerRdv(rdv *r)
 }
 
 
-
-static void jour::ajouterContact(rdv *r, contact *c)
+void jour::ajouterContact(rdv *r, contact *c) //static
 {
-    rdv *cl=chercherRdv(r);
-    cl.ajouterContact(c);
+	r->ajouterContact(c);
 }
 
-static void jour::supprimerContact(rdv *r, contact *c)
+void jour::supprimerContact(rdv *r, contact *c) //static
 {
-    rdv *cl=chercherRdv(r);
-    cl.supprimeContact(c);
+	r->supprimeContact(c);
 }
 
 bool jour::modifHeureDeb(const std::string &nom, const temps &t)
 {
-    chercherRdv(nom);
-    rdv::modifHeureDeb(t);
+	rdv *r = chercherRdv(nom);
+	if (r) {
+		return r->modifHeureDeb(t);
+	}
+	return false;
+
 }
 
 bool jour::modifJourDeb(const std::string &nom, const jour *j)
 {
-    chercherRdv(nom);
-    rdv::modifJourDeb(j);
+	rdv *r = chercherRdv(nom);
+	if (r) {
+		return r->modifJourDeb(j);
+	}
+	return false;
 }
 
 bool jour::modifHeureFin(const std::string &nom, const temps &t)
 {
-    chercherRdv(nom);
-    rdv::modifHeureFin(t);
+	rdv *r = chercherRdv(nom);
+	if (r) {
+		return r->modifHeureFin(t);
+	}
+	return false;
 }
 
 bool jour::modifJourFin(const std::string &nom, const jour *j)
 {
-    chercherRdv(nom);
-    rdv::modifJourFin(j);
+	rdv *r = chercherRdv(nom);
+	if (r) {
+		return r->modifJourFin(j);
+	}
+	return false;
 }
 
 
@@ -165,7 +176,7 @@ bool jour::afficherRdvDeJour(std::ostream &out) const
     rdv*cl=d_tete;
     while(cl!=nullptr)
     {
-        out<<cl<<endl;
+	    out << cl << std::endl;
         cl=cl->d_suiv;
     }
 
@@ -178,7 +189,7 @@ bool jour::afficherContactDeRdv(const std::string &nom, std::ostream &out) const
     {
         return false;
     }
-    rdv*cl= jour::chercherRdv(nom);
-    cl.afficherContactDeRdv();
+	rdv *cl = chercherRdv(nom);
+	cl->afficherContactDeRdv(out);
     return true;
 }
