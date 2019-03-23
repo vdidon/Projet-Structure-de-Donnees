@@ -152,10 +152,14 @@ bool
 agenda::contactEstDispo(string nom, string prenom, int dj, int dm, int da, int dh, int dmin, int fj, int fm, int fa,
                         int fh, int fmin) const {
 	contact *c = d_listContact.chercherContact(nom, prenom);
-	rdv tmp_r = rdv(std::string("tmp"), temps{static_cast<short>(dh), static_cast<short>(dmin)},
-	                temps{static_cast<short>(fh),
-	                      static_cast<short>(fmin)},
-	                jour{date{dj, dm, da}}, jour{date{fj, fm, fa}});
+	rdv tmp_r{std::string("tmp"), temps{static_cast<short>(dh), static_cast<short>(dmin)},
+	          temps{static_cast<short>(fh),
+	                static_cast<short>(fmin)},
+	          jour{date{dj, dm, da}}, jour{date{fj, fm, fa}}};
+	rdv *r = new rdv(std::string("tmp"), temps{static_cast<short>(dh), static_cast<short>(dmin)},
+	                 temps{static_cast<short>(fh),
+	                       static_cast<short>(fmin)},
+	                 jour{date{dj, dm, da}}, jour{date{fj, fm, fa}}, vectorLite<contact *>(0));
 	if (!c)
 		return false;
 	auto rs = c->getTabrdv();
