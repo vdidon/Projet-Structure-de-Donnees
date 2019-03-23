@@ -1,13 +1,14 @@
 #include "rdv.h"
 #include "contact.h"
 #include "temps.h"
+#include "jour.h"
 
 rdv::rdv(const std::string &nom, const temps &deb, const temps &fin, jour *j, jour *jfin,
          const vectorLite<contact *> &tabContacts) :
 		d_nom{nom}, d_tDeb{deb}, d_tFin{fin}, d_j{jfin}, d_tabContacts{tabContacts}
     {}
 
-rdv::~rdv(){        // A FAIRE
+rdv::~rdv() {
 
 }
 
@@ -90,25 +91,34 @@ bool rdv::modifHeureDeb(const temps &t){
             d_tDeb=t;
         return true;
         }
-
-
 }
 
-                                                                // A voir avec Valere
-                                                                bool rdv::modifJourDeb(jour *j)
-{
-    if (j<d_j)
-        {
-            for(int i=0; i<d_tabContacts.size(); i++)
-            {
-
-            }
-        }
-        else
-        {
-            d_j=j;
+bool rdv::modifJourDeb(jour *j) {
+	if (j->getDate() > d_jfin->getDate()) // aprés la date de fin
+		return false;
+	else if (j->getDate() >= d_j->getDate()) // dans les date du rdv
+	{
+		d_j = j;
         return true;
-        }
+	} else // avant la date de début
+	{
+		jour *oldJ = j;
+		d_j = j;
+		for (int i = 0; i < d_tabContacts.size(); ++i) // pour tous les contacts du rdv
+		{
+			for (int k = 0; k < d_tabContacts[i]->getTabrdv().size(); ++k) // pour tous les rdv de ce contact
+			{
+				if (d_tabContacts[i]->getTabrdv()[k] != this) // pour pas tester sur le rdv lui même
+				{
+					if (!pasEnMemeTemps(d_tabContacts[i]->getTabrdv()[k])) {
+						d_j = oldJ;
+						return false;
+					}
+				}
+			}
+		}
+		return true;
+	}
 }
 
 
@@ -136,21 +146,33 @@ bool rdv::modifHeureFin(const temps &t)                     //voir modifierHeure
         return true;
         }
 }
-                                                                // A voir avec Valere
-                                                                bool rdv::modifJourFin(jour *j)
-{
-    if (j>d_jfin)
-        {
-            for(int i=0; i<d_tabContacts.size(); i++)
-            {
 
-            }
-        }
-        else
-        {
-	        d_jfin = j;
+bool rdv::modifJourFin(jour *j) {
+	if (j->getDate() < d_j->getDate()) // avant la date de début
+		return false;
+	else if (j->getDate() <= d_jfin->getDate()) // dans les date du rdv
+	{
+		d_j = j;
+		return true;
+	} else // aprés la date de fin
+	{
+		jour *oldJ = j;
+		d_jfin = j;
+		for (int i = 0; i < d_tabContacts.size(); ++i) // pour tous les contacts du rdv
+		{
+			for (int k = 0; k < d_tabContacts[i]->getTabrdv().size(); ++k) // pour tous les rdv de ce contact
+			{
+				if (d_tabContacts[i]->getTabrdv()[k] != this) // pour pas tester sur le rdv lui même
+				{
+					if (!pasEnMemeTemps(d_tabContacts[i]->getTabrdv()[k])) {
+						d_jfin = oldJ;
+						return false;
+					}
+				}
+			}
+		}
         return true;
-        }
+	}
 }
 
 bool rdv::ajouterContact(contact *c){
