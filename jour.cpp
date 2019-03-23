@@ -46,7 +46,7 @@ int jour::taille() const{
 
 rdv *jour::ajouterRdv(const std::string &nom, const temps &tDeb, const temps &tFin, jour *j, jour *jFin, const vectorLite<contact *> &tabContacts)
 {
-    rdv*n= new rdv(nom,tDeb, tFin, j, jFin, tabContacts);
+	rdv *n = new rdv(nom, tDeb, tFin, j, jFin, tabContacts);
     if(d_tete==nullptr)                         //cas liste nulle
     {
         d_tete=n;
