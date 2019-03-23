@@ -193,8 +193,20 @@ void modifRdv() {
 
 void affRdvDeJour() {
 	int j, m, a;
-	entrerJour(j, m, a);
-	ag.afficherRdvDeJour(j, m, a, cout);
+	bool ext = false;
+	do {
+		entrerJour(j, m, a);
+		cout << endl;
+		if (ag.afficherRdvDeJour(j, m, a, cout))
+			ext = true;
+		else {
+			cout << "Le jour n'a pas était trouvé" << endl;
+			if (sortir())
+				ext = true;
+		}
+	} while (!ext);
+
+
 }
 
 void affPersonne() {
@@ -202,14 +214,32 @@ void affPersonne() {
     bool ext = false;
     do {
         entrerPersonne(nom, prenom);
+	    cout << endl;
         if (ag.afficherRdvDeContact(nom, prenom, cout))
             ext = true;
         else {
-            cout << "La personne n'a pas était trouvé" << endl;
+	        cout << "Le rdv n'a pas était trouvé" << endl;
             if (sortir())
                 ext = true;
         }
     } while (!ext);
+}
+
+void affPersonneDeRdv() {
+	string nom;
+	int j, m, a;
+	bool ext = false;
+	do {
+		entrerRdv(nom, j, m, a);
+		cout << endl;
+		if (ag.afficherContactDeRdv(nom, j, m, a, cout))
+			ext = true;
+		else {
+			cout << "La personne n'a pas était trouvé" << endl;
+			if (sortir())
+				ext = true;
+		}
+	} while (!ext);
 }
 
 void personneDispo() {
@@ -288,19 +318,20 @@ void quitter() {
 
 bool menuPrincipal() {
     cout << endl << "Menu principal : " << endl << endl;
-    cout << "1 - Suppression d’une personne" << endl;
-    cout << "2 - Suppression d’un rendez-vous" << endl;
-    cout << "3 - Modification d’une personne" << endl;
-    cout << "4 - Modification d’un rendez-vous" << endl;
-	cout << "5 - Afficher les rdv d'un jour" << endl;
-    cout << "6 - Afficher une personne" << endl;
-    cout << "7 - Une personne est-elle disponible ?" << endl;
-    cout << "8 - Ajouter une personne" << endl;
-    cout << "9 - Ajouter un rdv" << endl;
-    cout << "10 - Ajouter une personne à un rdv" << endl;
-    cout << "0 - Quitter" << endl;
+	cout << "1\t - Suppression d’une personne" << endl;
+	cout << "2\t - Suppression d’un rendez-vous" << endl;
+	cout << "3\t - Modification d’une personne" << endl;
+	cout << "4\t - Modification d’un rendez-vous" << endl;
+	cout << "5\t - Afficher les rdv d'un jour" << endl;
+	cout << "6\t - Afficher une personne" << endl;
+	cout << "7\t - Une personne est-elle disponible ?" << endl;
+	cout << "8\t - Ajouter une personne" << endl;
+	cout << "9\t - Ajouter un rdv" << endl;
+	cout << "10\t - Ajouter une personne à un rdv" << endl;
+	cout << "11\t - Afficher les personnes d'un rendez-vous" << endl;
+	cout << "0\t - Quitter" << endl;
     int i;
-    cout << "0-10 : ";
+	cout << "0-11 : ";
     cin >> i;
     switch (i) {
         case 1:
@@ -333,11 +364,14 @@ bool menuPrincipal() {
         case 10:
             ajouPersonneARdv();
             break;
+	    case 11:
+		    affPersonneDeRdv();
+		    break;
         case 0:
             quitter();
             return false;
         default:
-            cout << "Entré un nombre entre 0 et 10" << endl;
+	        cout << "Entré un nombre entre 0 et 11" << endl;
     }
     return true;
 }

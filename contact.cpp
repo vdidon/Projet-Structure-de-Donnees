@@ -71,10 +71,20 @@ bool contact::supprimerRdv(rdv *r)
 
 void contact ::afficherRdvDeContact(std::ostream & os)
 {
-    for(int i=0; i<d_tabRdv.size(); i++)
+	os << "Nom : " << d_nom << endl;
+	os << "Péenom : " << d_prenom << endl;
+	os << "Num : " << d_num << endl;
+	os << "Email : " << d_adresseMail << endl << endl;
+	if (d_tabRdv.size() == 0) {
+		os << "Pas de rdv" << endl;
+	} else
     {
-        os << d_tabRdv[i]->getNom() << '\t' << d_tabRdv[i]->getDeb() << '\t' << d_tabRdv[i]->getFin();// remplacer -> d_nom par
-        os << endl;                                                                                     // .getNom()? Idem pour d_tDeb
+	    for (int i = 0; i < d_tabRdv.size(); i++) {
+		    os << d_tabRdv[i]->getNom() << '\t' << d_tabRdv[i]->getDeb() << '\t'
+		       << d_tabRdv[i]->getFin();// remplacer -> d_nom par
+		    os
+				    << endl;                                                                                     // .getNom()? Idem pour d_tDeb
+	    }
     }
 }
 
