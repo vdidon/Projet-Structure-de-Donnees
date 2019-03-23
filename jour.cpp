@@ -188,3 +188,8 @@ bool jour::afficherContactDeRdv(const std::string &nom, std::ostream &out) const
 	cl->afficherContactDeRdv(out);
     return true;
 }
+
+bool jour::ajouterRdvMultiJour(rdv *r) {
+	d_rdvMultiJours.push_back(r);
+	return true;
+}
