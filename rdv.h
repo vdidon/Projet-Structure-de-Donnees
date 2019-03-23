@@ -23,12 +23,12 @@ public:
     //getter
     std::string getNom() const; //ska : fait
 
-    temps &getDeb() const;  //ska : fait
+	temps getDeb() const;  //ska : fait
 
-    temps &getFin() const;  //ska : fait
+	temps getFin() const;  //ska : fait
 
 
-    vectorLite<contact *> &getContacts();   //ska : fait
+	vectorLite<contact *> getContacts() const;   //ska : fait
 
     jour *getJourDeb() const; //ska : fait
 
@@ -50,11 +50,11 @@ private:
 
     bool modifHeureDeb(const temps &t); //ska : fait
 
-    bool modifJourDeb(const jour* j); // si c'est plus tôt checker pour toute les personnes du rdv
+	bool modifJourDeb(jour *j); // si c'est plus tôt checker pour toute les personnes du rdv
 
     bool modifHeureFin(const temps &t); //ska : fait
 
-    bool modifJourFin(const jour* j); // si c'est plus tard checker pour toute les personnes du rdv
+	bool modifJourFin(jour *j); // si c'est plus tard checker pour toute les personnes du rdv
 
     bool ajouterContact(contact *c); //ska : fait
 

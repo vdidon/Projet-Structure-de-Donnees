@@ -16,16 +16,16 @@ std::string rdv::getNom() const{
     return d_nom;
 }
 
-temps &rdv::getDeb() const{
-    return &d_tDeb;
+temps rdv::getDeb() const {
+	return d_tDeb;
 }
 
-temps &rdv::getFin() const{
-    return &d_tFin;
+temps rdv::getFin() const {
+	return d_tFin;
 }
 
-vectorLite<contact *> &rdv::getContacts(){
-    return &d_tabContacts;
+vectorLite<contact *> rdv::getContacts() const {
+	return d_tabContacts;
 }
 
 jour *rdv::getJourDeb() const{
@@ -33,7 +33,7 @@ jour *rdv::getJourDeb() const{
 }
 
 jour *rdv::getJourFin() const{
-        return d_jFin;
+	return d_jfin;
 }
 
 //Autres
@@ -74,10 +74,10 @@ bool rdv::modifHeureDeb(const temps &t){
         {
             for(int i=0; i<d_tabContacts.size(); i++)       //On parcour les contacts du rdv
             {
-                T = d_tabContacts[i].getTabrdv();
+	            T = d_tabContacts[i]->getTabrdv();
                 for(int j=0; j<T.size();j++)                // On parcour les rdv de chaque contact
                 {
-                    if(!(this.pasEnMemeTemps(T[j])))
+	                if (!(this->pasEnMemeTemps(T[j])))
                     {
                        return false;                        //On return faux si un des contact ne peux pas
                     }
@@ -94,7 +94,7 @@ bool rdv::modifHeureDeb(const temps &t){
 }
 
                                                                 // A voir avec Valere
-bool rdv::modifJourDeb(const jour* j)
+                                                                bool rdv::modifJourDeb(jour *j)
 {
     if (j<d_j)
         {
@@ -136,7 +136,7 @@ bool rdv::modifHeureFin(const temps &t)                     //voir modifierHeure
         }
 }
                                                                 // A voir avec Valere
-bool rdv::modifJourFin(const jour* j)
+                                                                bool rdv::modifJourFin(jour *j)
 {
     if (j>d_jfin)
         {
@@ -147,18 +147,18 @@ bool rdv::modifJourFin(const jour* j)
         }
         else
         {
-            d_jFin=j;
+	        d_jfin = j;
         return true;
         }
 }
 
 bool rdv::ajouterContact(contact *c){
-    vectorLite<rdv *> T() = contact::getTabrdv();
+	vectorLite<rdv *> T = c->getTabrdv();
     for(int i = 0; i<T.size();i++)
     {
         if (pasEnMemeTemps(T[i]))
         {
-            i++
+	        i++;
         }
         else
         {
