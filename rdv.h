@@ -17,7 +17,7 @@ class rdv {
 public:
 
     rdv(const std::string &nom, const temps &deb, const temps &fin, jour *j, jour *jfin,
-        const vectorLite<contact *> &tabContacts); //ska : fait
+        const vectorLite<contact *> &tabContacts = vectorLite<contact *>()); //ska : fait
     ~rdv();
 
     //getter
