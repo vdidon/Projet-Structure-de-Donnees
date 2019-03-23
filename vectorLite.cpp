@@ -53,23 +53,34 @@ void vectorLite<T>::recap(int p_cap) {
 
 template<typename T>
 bool vectorLite<T>::supprimer(int i) {
-    --d_size;
-    memcpy(&d_tab[i], &d_tab[i + 1], (d_size - i - 1) * sizeof(T));
+    if (i >= 0 && i < d_size) {
+        --d_size;
+        memcpy(&d_tab[i], &d_tab[i + 1], (d_size - i - 1) * sizeof(T));
+        return true;
+    }
+    return false;
 }
 
 template<typename T>
 T &vectorLite<T>::operator[](int i) {
-    return d_tab[i];
+    if (i >= 0 && i < d_size) {
+        return d_tab[i];
+    }
+    return nullptr;
 }
 
 template<typename T>
-void vectorLite<T>::inserer(int i, T val) {
-    if (d_size == d_cap) {
-        recap((d_size + 1) * 2);
+bool vectorLite<T>::inserer(int i, T val) {
+    if (i >= 0 && i < d_size) {
+        if (d_size == d_cap) {
+            recap((d_size + 1) * 2);
+        }
+        ++d_size;
+        memcpy(&d_tab[i + 1], &d_tab[i], (d_size - i - 1) * sizeof(T));
+        d_tab[i] = val;
+        return true;
     }
-    ++d_size;
-    memcpy(&d_tab[i + 1], &d_tab[i], (d_size - i - 1) * sizeof(T));
-    d_tab[i] = val;
+    return false;
 
 }
 
