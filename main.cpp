@@ -24,7 +24,8 @@ bool sortir() {
             default:
                 cout << "Entré O ou N" << endl;
         }
-    } while ("poules n'ont pas de" != "dents");
+    } while ("quand les poules auront des" != "dents");
+	return true;
 }
 
 void entrerPersonne(string &nom, string &prenom) {
