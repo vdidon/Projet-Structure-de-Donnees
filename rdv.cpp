@@ -102,7 +102,7 @@ bool rdv::modifJourDeb(jour *j) {
         return true;
 	} else // avant la date de début
 	{
-		jour *oldJ = j;
+		jour *oldJ = d_j;
 		d_j = j;
 		for (int i = 0; i < d_tabContacts.size(); ++i) // pour tous les contacts du rdv
 		{
@@ -156,7 +156,7 @@ bool rdv::modifJourFin(jour *j) {
 		return true;
 	} else // aprés la date de fin
 	{
-		jour *oldJ = j;
+		jour *oldJ = d_jfin;
 		d_jfin = j;
 		for (int i = 0; i < d_tabContacts.size(); ++i) // pour tous les contacts du rdv
 		{
