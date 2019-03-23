@@ -21,6 +21,10 @@ public:
 
     bool operator!=(const temps &t) const;//ska : fait
 
+	bool operator<=(const temps &t) const; //fait
+
+	bool operator>=(const temps &t) const; //fait
+
     short h, m;
 
 };

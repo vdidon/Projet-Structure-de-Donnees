@@ -46,6 +46,14 @@ bool temps::operator!=(const temps &t) const {
     return false;
 }
 
+bool temps::operator<=(const temps &t) const {
+	return !(*this > t);
+}
+
+bool temps::operator>=(const temps &t) const {
+	return !(*this < t);
+}
+
 
 std::ostream &operator<<(std::ostream &out, const temps &t) {
     out << '(' << t.h << ',' << t.m << ')';
