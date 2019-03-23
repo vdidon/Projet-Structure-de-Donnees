@@ -26,5 +26,13 @@ bool date::operator!=(const date &d) const {
     return !(d == *this);
 }
 
+bool date::operator>=(const date &d) const {
+	return !(*this < d);
+}
+
+bool date::operator<=(const date &d) const {
+	return !(*this > d);
+}
+
 
 

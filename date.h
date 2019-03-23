@@ -13,6 +13,10 @@ public:
 
     bool operator!=(const date &d) const;
 
+	bool operator>=(const date &d) const;
+
+	bool operator<=(const date &d) const;
+
     int j, m, a;
 };
 
