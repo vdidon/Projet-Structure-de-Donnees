@@ -87,6 +87,7 @@ bool listJour::modifHeureDeb(const date &d, const std::string &nom, const temps 
     if (!j)
         return false;
     j->modifHeureDeb(nom, t);
+	return true;
 }
 
 /*bool listJour::modifDuree(const date &d, const std::string &nom, unsigned int duree) {
@@ -145,8 +146,7 @@ bool listJour::modifHeureFin(const date &d, const std::string &nom, const temps 
         return false;
     jour *j = r->getJourDeb();
     jour *jFin = r->getJourFin();
-    if (!j->modifHeureFin(nom, t, jFin))
-        return false;
+	return j->modifHeureFin(nom, t);
 }
 
 bool listJour::modifJourDeb(const date &d, const date &newd, const std::string &nom) {
