@@ -63,7 +63,7 @@ vectorLite<contact *> &tabContacts) {
     } else {
         jFin = j;
     }
-    rdv *r = j->ajouterRdv(nom, tDeb, tFin, jFin, tabContacts);
+	rdv *r = j->ajouterRdv(nom, tDeb, tFin, j, jFin, tabContacts);
     if (dFin != d) {
         j = j->suiv;
         while (j != jFin) {
@@ -71,6 +71,7 @@ vectorLite<contact *> &tabContacts) {
         }
         jFin->ajouterRdvMultiJour(r);
     }
+	return r;
 }
 
 void listJour::ajouterContact(rdv *r, contact *c) {
