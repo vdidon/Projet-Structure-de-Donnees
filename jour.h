@@ -61,8 +61,6 @@ public:
 	bool afficherContactDeRdv(const std::string &nom, std::ostream &out) const; //ska : fait
 
 
-
-
 private:
 	date d_date;
 	rdv *d_tete;
