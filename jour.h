@@ -22,8 +22,12 @@ public:
 
 	int taille() const; //ska : fait
 
-	rdv *ajouterRdv(const std::string &nom, const temps &tDeb, const temps &tFin, jour *jfin, //ska : fait
+	rdv *ajouterRdv(const std::string &nom, const temps &tDeb, const temps &tFin, jour *j, jour *jfin, //ska : fait
 	                const vectorLite<contact *> &tabContacts); // que le jour même
+
+	rdv *chercherRdv(const std::string &nom); //ska : fait
+
+	static void supprimerRdv(rdv *r); //ska : fait
 
 	bool ajouterRdvMultiJour(rdv *r);
 
@@ -36,27 +40,27 @@ public:
 	date getDate() const;   //ska : fait
 
 
-	static void ajouterContact(rdv *r, contact *c); //Ska : fait
+	static void ajouterContact(rdv *r, contact *c); //ska : fait
 
-	static void supprimerContact(rdv *r, contact *c);
+	static void supprimerContact(rdv *r, contact *c); //ska : fait
 
-	static void supprimerRdv(rdv *r);
 
-	rdv *chercherRdv(const std::string &nom);
 
-	bool modifHeureDeb(const std::string &nom, const temps &t);
+	bool modifHeureDeb(const std::string &nom, const temps &t); //ska : fait
 
-	bool modifJourDeb(const std::string &nom, const jour *j);
+	bool modifJourDeb(const std::string &nom, const jour *j);   //ska : fait
 
-	bool modifHeureFin(const std::string &nom, const temps &t, jour *jfin);
+	bool modifHeureFin(const std::string &nom, const temps &t); //ska : fait
 
-	bool modifJourFin(const std::string &nom, const jour *j);
+	bool modifJourFin(const std::string &nom, const jour *j);   //ska : fait
 
 //    void modifDuree(const std::string &nom, unsigned int duree);
 
-	bool afficherContactDeRdv(const std::string &nom, std::ostream &out) const;
+	bool afficherRdvDeJour(std::ostream &out) const;    //ska : fait
 
-	bool afficherRdvDeJour(std::ostream &out) const;
+	bool afficherContactDeRdv(const std::string &nom, std::ostream &out) const; //ska : fait
+
+
 
 
 private:

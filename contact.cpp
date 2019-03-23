@@ -73,8 +73,8 @@ void contact ::afficherRdvDeContact(std::ostream & os)
 {
     for(int i=0; i<d_tabRdv.size(); i++)
     {
-        os << d_tabRdv[i]->getNom() << '\t' << d_tabRdv[i]->getDeb() << '\t' << d_tabRdv[i]->getFin();
-        os << endl;
+        os << d_tabRdv[i]->getNom() << '\t' << d_tabRdv[i]->getDeb() << '\t' << d_tabRdv[i]->getFin();// remplacer -> d_nom par
+        os << endl;                                                                                     // .getNom()? Idem pour d_tDeb
     }
 }
 
