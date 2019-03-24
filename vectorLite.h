@@ -53,7 +53,8 @@ vectorLite<T>::vectorLite(const vectorLite &v) : d_size{v.d_size}, d_cap{v.d_cap
 
 template<typename T>
 vectorLite<T>::~vectorLite() {
-	delete[] d_tab;
+	if (d_cap)
+		delete[] d_tab;
 }
 
 template<typename T>
