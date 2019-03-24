@@ -28,33 +28,56 @@ bool sortir() {
 	return true;
 }
 
+bool sanschiffre(const string &s) {
+	for (auto c : s) {
+		if (c >= '0' && c <= '9') {
+			return false;
+		}
+	}
+	return true;
+}
+
 void entrerPersonne(string &nom, string &prenom) {
-    cout << "Entré le nom : ";
-    cin >> nom;
-    cout << "Entré le prenom : ";
-    cin >> prenom;
+	bool ext = false;
+	do {
+		cout << "Entrer le nom : ";
+		cin >> nom;
+		cout << "Entrer le prenom : ";
+		cin >> prenom;
+		if (sanschiffre(nom) && sanschiffre(prenom))
+			ext = true;
+		else
+			cout << "Pas de chiffre SVP" << endl;
+	} while (!ext);
+
 }
 
 void entrerJour(int &j, int &m, int &a) {
-    cout << "Entré le jour : ";
-    cin >> j;
-    cout << "Entré le mois : ";
-    cin >> m;
-    cout << "Entré l'année : ";
-    cin >> a;
+	char c;
+	cout << "Enter la date (jj/mm/aaaa) : ";
+	cin >> j >> c >> m >> c >> a;
+	/*cout<<endl<<"SAISIE DE LA DATE"<<endl;
+	cout << "Entrer l'année : ";
+	cin >> a;
+	cout << "Entrer le mois 1-12 : ";
+	cin >> m;
+    cout << "Entrer le jour 1-31 : ";
+    cin >> j;*/
 }
 
 void entrerRdv(string &nom, int &j, int &m, int &a) {
-    cout << "Entré le nom : ";
+	cout << "Entrer le nom : ";
     cin >> nom;
 	entrerJour(j, m, a);
 }
 
 void entrerTemps(int &h, int &m) {
-    cout << "Entré l'heure : ";
+	char c;
+	//cout<<endl<<"SAISIE DE L'HEURE"<<endl;
+	cout << "Entrer l'heure (hh:mm) : ";
     cin >> h;
-    cout << "Entré la minute : ";
-    cin >> m;
+	cin >> c;
+	cin >> m;
 }
 
 
@@ -246,10 +269,10 @@ void personneDispo() {
 	string nom, prenom;
 	int j, m, a, h, min, fj, fm, fa, fh, fmin;
 	entrerPersonne(nom, prenom);
-	cout << "Heure de début : " << endl;
+	cout << endl << "HEURE DE DEBUT : " << endl;
 	entrerJour(j, m, a);
 	entrerTemps(h, min);
-	cout << "Heure de fin : " << endl;
+	cout << endl << "HEURE DE FIN : " << endl;
 	entrerJour(fj, fm, fa);
 	entrerTemps(fh, fmin);
 	if (ag.contactEstDispo(nom, prenom, j, m, a, h, min, fj, fm, fa, fh, fmin)) {
@@ -282,10 +305,10 @@ void ajouPersonne() {
 void ajouRdv() {
 	string nom;
 	int j, m, a, h, min, fj, fm, fa, fh, fmin;
-	//cout<<"Heure de début : "<<endl;
 	entrerRdv(nom, j, m, a);
+	cout << endl << "HEURE DE DEBUT : " << endl;
 	entrerTemps(h, min);
-	cout << "Heure de fin : " << endl;
+	cout << endl << "HEURE DE FIN : " << endl;
 	entrerJour(fj, fm, fa);
 	entrerTemps(fh, fmin);
 	if (ag.ajouterRdv(j, m, a, nom, h, min, fj, fm, fa, fh, fmin)) {
@@ -377,5 +400,7 @@ bool menuPrincipal() {
 }
 
 int main() {
-    while (menuPrincipal());
+	// while (menuPrincipal());
+	ag.ajouterRdv(9, 9, 9, "coucou", 9, 9, 9, 9, 9, 9, 20);
+	ag.afficherRdvDeJour(9, 9, 9, cout);
 }
