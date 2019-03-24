@@ -5,7 +5,7 @@
 
 rdv::rdv(const std::string &nom, const temps &deb, const temps &fin, jour *j, jour *jfin,
          const vectorLite<contact *> &tabContacts) :
-		d_nom{nom}, d_tDeb{deb}, d_tFin{fin}, d_j{jfin}, d_tabContacts{tabContacts}
+		d_nom{nom}, d_tDeb{deb}, d_tFin{fin}, d_j{jfin}, d_tabContacts{tabContacts}, d_suiv{nullptr}
     {}
 
 rdv::~rdv() = default;
@@ -202,4 +202,13 @@ bool rdv::supprimeContact(contact *c)
         return true;
     }
     return false;
+}
+
+bool rdv::afficherRdv(std::ostream &out) const {
+	out << "nom : " << d_nom;
+	out << "date de debut : " << d_j->getJour() << '/' << d_j->getMois() << '/' << d_j->getAnnee() << endl;
+	out << "l'heure de debut" << d_tDeb.h << ':' << d_tDeb.m << endl;
+	out << "date de fin : " << d_jfin->getJour() << '/' << d_jfin->getMois() << '/' << d_jfin->getAnnee() << endl;
+	out << "l'heure de fin" << d_tFin.h << ':' << d_tFin.m << endl << endl;
+	return true;
 }

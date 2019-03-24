@@ -38,6 +38,8 @@ public:
 
     bool pasEnMemeTemps(rdv *r);    //ska : fait
 
+	bool afficherRdv(std::ostream &out) const;
+
 
 private:
     jour *d_j;
