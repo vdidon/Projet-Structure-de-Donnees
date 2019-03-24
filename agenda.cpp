@@ -1,4 +1,4 @@
-#include <sys/param.h>
+//#include <sys/param.h>
 #include "agenda.h"
 #include "listContact.h"
 #include "listJour.h"
