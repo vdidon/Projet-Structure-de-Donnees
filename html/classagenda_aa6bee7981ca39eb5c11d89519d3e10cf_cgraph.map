@@ -1,0 +1,8 @@
+<map id="agenda::afficherContactDeRdv" name="agenda::afficherContactDeRdv">
+<area shape="rect" id="node1" title=" " alt="" coords="5,81,200,108"/>
+<area shape="rect" id="node2" href="$classlist_jour.html#a070863ff30debc040f2871454438297d" title=" " alt="" coords="261,56,404,83"/>
+<area shape="rect" id="node5" href="$classrdv.html#a2d6cb81f3c09f7e67508ebf1d72204fe" title=" " alt="" coords="248,107,417,133"/>
+<area shape="rect" id="node3" href="$classlist_jour.html#afebeeeb0ef31c438086b6419352c263b" title=" " alt="" coords="465,5,611,32"/>
+<area shape="rect" id="node4" href="$classjour.html#a5bc5d8ce6e5f2f541f7e2664970df69d" title=" " alt="" coords="477,56,599,83"/>
+<area shape="rect" id="node6" href="$classvector_lite.html#a6a02f775c0157d9a7e40ed93c6e6a814" title=" " alt="" coords="483,107,593,133"/>
+</map>

@@ -1,0 +1,10 @@
+<map id="agenda::modifHeureFin" name="agenda::modifHeureFin">
+<area shape="rect" id="node1" title=" " alt="" coords="5,81,160,108"/>
+<area shape="rect" id="node2" href="$classlist_jour.html#ae867f69af6b94abbd95db281e96ba8c5" title=" " alt="" coords="208,81,363,108"/>
+<area shape="rect" id="node3" href="$classlist_jour.html#a070863ff30debc040f2871454438297d" title=" " alt="" coords="411,5,553,32"/>
+<area shape="rect" id="node6" href="$classrdv.html#a766046b8f7e3efed4407fd26d16a3064" title=" " alt="" coords="427,56,537,83"/>
+<area shape="rect" id="node7" href="$classrdv.html#a6e4b60b2a68b75ebe3f24c487b448540" title=" " alt="" coords="429,107,535,133"/>
+<area shape="rect" id="node8" href="$classjour.html#ad2ef77b78c18b70049fd29431d3ef6c0" title=" " alt="" coords="415,157,549,184"/>
+<area shape="rect" id="node4" href="$classlist_jour.html#afebeeeb0ef31c438086b6419352c263b" title=" " alt="" coords="601,5,747,32"/>
+<area shape="rect" id="node5" href="$classjour.html#a5bc5d8ce6e5f2f541f7e2664970df69d" title=" " alt="" coords="613,107,735,133"/>
+</map>

@@ -1,0 +1,393 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta content="text/xhtml;charset=UTF-8" http-equiv="Content-Type"/>
+    <meta content="IE=9" http-equiv="X-UA-Compatible"/>
+    <meta content="Doxygen 1.8.15" name="generator"/>
+    <meta content="width=device-width, initial-scale=1" name="viewport"/>
+    <title>Projet-Structure-de-Donnees: Fichier source de jour.h</title>
+    <link href="tabs.css" rel="stylesheet" type="text/css"/>
+    <script src="jquery.js" type="text/javascript"></script>
+    <script src="dynsections.js" type="text/javascript"></script>
+    <link href="search/search.css" rel="stylesheet" type="text/css"/>
+    <script src="search/searchdata.js" type="text/javascript"></script>
+    <script src="search/search.js" type="text/javascript"></script>
+    <link href="doxygen.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+    <div id="titlearea">
+        <table cellpadding="0" cellspacing="0">
+            <tbody>
+            <tr style="height: 56px;">
+                <td id="projectalign" style="padding-left: 0.5em;">
+                    <div id="projectname">Projet-Structure-de-Donnees
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <!-- end header part -->
+    <!-- Généré par Doxygen 1.8.15 -->
+    <script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
+/* @license-end */
+
+    </script>
+    <script src="menudata.js" type="text/javascript"></script>
+    <script src="menu.js" type="text/javascript"></script>
+    <script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Recherche');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+    </script>
+    <div id="main-nav"></div>
+</div><!-- top -->
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onkeydown="return searchBox.OnSearchSelectKey(event)"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onmouseover="return searchBox.OnSearchSelectShow()">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+    <iframe frameborder="0" id="MSearchResults"
+            name="MSearchResults" src="javascript:void(0)">
+    </iframe>
+</div>
+
+<div class="header">
+    <div class="headertitle">
+        <div class="title">jour.h</div>
+    </div>
+</div><!--header-->
+<div class="contents">
+    <a href="jour_8h.html">Aller à la documentation de ce fichier.</a>
+    <div class="fragment">
+        <div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef PROJET_STRUCTURE_DE_DONNEES_JOUR_H</span>
+        </div>
+        <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define PROJET_STRUCTURE_DE_DONNEES_JOUR_H</span>
+        </div>
+        <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;</div>
+        <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span>
+        </div>
+        <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &quot;<a
+                class="code" href="temps_8h.html">temps.h</a>&quot;</span></div>
+        <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &quot;<a
+                class="code" href="date_8h.html">date.h</a>&quot;</span></div>
+        <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &lt;ostream&gt;</span>
+        </div>
+        <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &quot;<a
+                class="code" href="vector_lite_8h.html">vectorLite.h</a>&quot;</span></div>
+        <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;</div>
+        <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span
+                class="keyword">class </span><a class="code" href="classrdv.html">rdv</a>;
+        </div>
+        <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;</div>
+        <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span
+                class="keyword">class </span><a class="code" href="classcontact.html">contact</a>;
+        </div>
+        <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;</div>
+        <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;</div>
+        <div class="line"><a name="l00015"></a><span class="lineno"><a class="line"
+                                                                       href="classjour.html">   15</a></span>&#160;<span
+                class="keyword">class </span><a class="code" href="classjour.html">jour</a> {
+        </div>
+        <div class="line"><a name="l00016"></a><span class="lineno"><a class="line"
+                                                                       href="classjour.html#a2ed49b4cc26795e1f521997a2ec615d3">   16</a></span>&#160;
+            <span class="keyword">friend</span> <span class="keyword">class </span><a class="code"
+                                                                                      href="classlist_jour.html">listJour</a>;
+        </div>
+        <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;</div>
+        <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span
+                class="keyword">public</span>:
+        </div>
+        <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; <a class="code"
+                                                                                          href="classjour.html#a544e9980e31a28ae40199f18e93ad1ae">jour</a>(<span
+                class="keyword">const</span> <a class="code" href="classdate.html">date</a> &amp;d); <span
+                class="comment">//ska : fait        d_date doit être construit par recopie</span></div>
+        <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;</div>
+        <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; <a class="code"
+                                                                                          href="classjour.html#a920a1ad2a2b4b0d746a84f17f0bc2289">~jour</a>();
+            <span class="comment">//ska : fait                    le tab de rdv étant déjà vide</span></div>
+        <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;</div>
+        <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; <span
+                class="keywordtype">int</span> <a class="code" href="classjour.html#ac96148c2824a32df7171aea7499a20f4">taille</a>()
+            <span class="keyword">const</span>; <span class="comment">//ska : fait</span></div>
+        <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;</div>
+        <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; <a class="code"
+                                                                                          href="classrdv.html">rdv</a> *<a
+                class="code" href="classjour.html#a3a4aabf1ceb612d524c1559c13360c86">ajouterRdv</a>(<span
+                class="keyword">const</span> std::string &amp;nom, <span class="keyword">const</span> <a class="code"
+                                                                                                         href="classtemps.html">temps</a>
+            &amp;tDeb, <span class="keyword">const</span> <a class="code" href="classtemps.html">temps</a> &amp;tFin, <a
+                    class="code" href="classjour.html">jour</a> *j, <a class="code" href="classjour.html">jour</a>
+            *jfin, <span class="comment">//ska : fait</span></div>
+        <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; <span
+                class="keyword">const</span> <a class="code" href="classvector_lite.html">vectorLite&lt;contact
+            *&gt;</a> &amp;tabContacts); <span class="comment">// que le jour même</span></div>
+        <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;</div>
+        <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; <a class="code"
+                                                                                          href="classrdv.html">rdv</a> *<a
+                class="code" href="classjour.html#a5bc5d8ce6e5f2f541f7e2664970df69d">chercherRdv</a>(<span
+                class="keyword">const</span> std::string &amp;nom) <span class="keyword">const</span>; <span
+                class="comment">//ska : fait</span></div>
+        <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;</div>
+        <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; <span
+                class="keyword">static</span> <span class="keywordtype">void</span> <a class="code"
+                                                                                       href="classjour.html#a009ab77e0dccf78c08426594658364b8">supprimerRdv</a>(<a
+                class="code" href="classrdv.html">rdv</a> *r); <span class="comment">//ska : fait</span></div>
+        <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;</div>
+        <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; <span
+                class="keywordtype">bool</span> <a class="code" href="classjour.html#a12f337290eda2b3797b0a4b1e8720878">ajouterRdvMultiJour</a>(<a
+                class="code" href="classrdv.html">rdv</a> *r);
+        </div>
+        <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;</div>
+        <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; <span
+                class="keywordtype">int</span> <a class="code" href="classjour.html#abd87a38ec28e34408a1766be4ce19a4e">getJour</a>()
+            <span class="keyword">const</span>; <span class="comment">//ska : fait</span></div>
+        <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;</div>
+        <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; <span
+                class="keywordtype">int</span> <a class="code" href="classjour.html#a69fa1f37e96a79a03ecf0cd53a1016d6">getMois</a>()
+            <span class="keyword">const</span>; <span class="comment">//ska : fait</span></div>
+        <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;</div>
+        <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; <span
+                class="keywordtype">int</span> <a class="code" href="classjour.html#a94e5b745b320c52f16fd3664834310e2">getAnnee</a>()
+            <span class="keyword">const</span>; <span class="comment">//ska : fait</span></div>
+        <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;</div>
+        <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; <a class="code"
+                                                                                          href="classdate.html">date</a>
+            <a class="code" href="classjour.html#abb5f2fddc3fda2e8ee4e97d44867925e">getDate</a>() <span class="keyword">const</span>;
+            <span class="comment">//ska : fait</span></div>
+        <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;</div>
+        <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;</div>
+        <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; <span
+                class="keyword">static</span> <span class="keywordtype">void</span> <a class="code"
+                                                                                       href="classjour.html#a705d15368dbfbf6ff60fe67ca5399127">ajouterContact</a>(<a
+                class="code" href="classrdv.html">rdv</a> *r, <a class="code" href="classcontact.html">contact</a> *c);
+            <span class="comment">//ska : fait</span></div>
+        <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;</div>
+        <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; <span
+                class="keyword">static</span> <span class="keywordtype">void</span> <a class="code"
+                                                                                       href="classjour.html#a7393a5564beeadf97d29b8f377b3fa72">supprimerContact</a>(<a
+                class="code" href="classrdv.html">rdv</a> *r, <a class="code" href="classcontact.html">contact</a> *c);
+            <span class="comment">//ska : fait</span></div>
+        <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;</div>
+        <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;</div>
+        <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;</div>
+        <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; <span
+                class="keywordtype">bool</span> <a class="code" href="classjour.html#af4ac954f9ca2d1bf56f5b3c8da21dbd7">modifHeureDeb</a>(<span
+                class="keyword">const</span> std::string &amp;nom, <span class="keyword">const</span> <a class="code"
+                                                                                                         href="classtemps.html">temps</a>
+            &amp;t); <span class="comment">//ska : fait</span></div>
+        <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;</div>
+        <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; <span
+                class="keywordtype">bool</span> <a class="code" href="classjour.html#a126a1140b8a7296f69d4c7b02050c352">modifJourDeb</a>(<span
+                class="keyword">const</span> std::string &amp;nom, <a class="code" href="classjour.html">jour</a> *j);
+            <span class="comment">//ska : fait</span></div>
+        <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;</div>
+        <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; <span
+                class="keywordtype">bool</span> <a class="code" href="classjour.html#ad2ef77b78c18b70049fd29431d3ef6c0">modifHeureFin</a>(<span
+                class="keyword">const</span> std::string &amp;nom, <span class="keyword">const</span> <a class="code"
+                                                                                                         href="classtemps.html">temps</a>
+            &amp;t); <span class="comment">//ska : fait</span></div>
+        <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;</div>
+        <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160; <span
+                class="keywordtype">bool</span> <a class="code" href="classjour.html#a4005b92c055df89a807ee4c1f090ab7a">modifJourFin</a>(<span
+                class="keyword">const</span> std::string &amp;nom, <a class="code" href="classjour.html">jour</a> *j);
+            <span class="comment">//ska : fait</span></div>
+        <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;</div>
+        <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="comment">//    void modifDuree(const std::string &amp;nom, unsigned int duree);</span>
+        </div>
+        <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;</div>
+        <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160; <span
+                class="keywordtype">bool</span> <a class="code" href="classjour.html#a82fc9c55950c63dde08e98674219e62d">afficherRdvDeJour</a>(std::ostream
+            &amp;out) <span class="keyword">const</span>; <span class="comment">//ska : fait</span></div>
+        <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;</div>
+        <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160; <span
+                class="keywordtype">bool</span> <a class="code" href="classjour.html#ac47e1988f45f26bbae1d28693241f3b4">afficherContactDeRdv</a>(<span
+                class="keyword">const</span> std::string &amp;nom, std::ostream &amp;out) <span
+                class="keyword">const</span>; <span class="comment">//ska : fait</span></div>
+        <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;</div>
+        <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;</div>
+        <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;<span
+                class="keyword">private</span>:
+        </div>
+        <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160; <a class="code"
+                                                                                          href="classdate.html">date</a>
+            d_date;
+        </div>
+        <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160; <a class="code"
+                                                                                          href="classrdv.html">rdv</a>
+            *d_tete;
+        </div>
+        <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160; <a class="code"
+                                                                                          href="classvector_lite.html">vectorLite&lt;rdv
+            *&gt;</a> d_rdvMultiJours; <span class="comment">// des jours d&#39;avant</span></div>
+        <div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160; <a class="code"
+                                                                                          href="classjour.html">jour</a>
+            *suiv;
+        </div>
+        <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;</div>
+        <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;};</div>
+        <div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;</div>
+        <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;</div>
+        <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;<span class="preprocessor">#endif //PROJET_STRUCTURE_DE_DONNEES_JOUR_H</span>
+        </div>
+        <div class="ttc" id="classjour_html_a7393a5564beeadf97d29b8f377b3fa72">
+            <div class="ttname"><a href="classjour.html#a7393a5564beeadf97d29b8f377b3fa72">jour::supprimerContact</a>
+            </div>
+            <div class="ttdeci">static void supprimerContact(rdv *r, contact *c)</div>
+            <div class="ttdef"><b>Definition:</b> <a href="jour_8cpp_source.html#l00121">jour.cpp:121</a></div>
+        </div>
+        <div class="ttc" id="classjour_html_ad2ef77b78c18b70049fd29431d3ef6c0">
+            <div class="ttname"><a href="classjour.html#ad2ef77b78c18b70049fd29431d3ef6c0">jour::modifHeureFin</a></div>
+            <div class="ttdeci">bool modifHeureFin(const std::string &amp;nom, const temps &amp;t)</div>
+            <div class="ttdef"><b>Definition:</b> <a href="jour_8cpp_source.html#l00145">jour.cpp:145</a></div>
+        </div>
+        <div class="ttc" id="classjour_html_a3a4aabf1ceb612d524c1559c13360c86">
+            <div class="ttname"><a href="classjour.html#a3a4aabf1ceb612d524c1559c13360c86">jour::ajouterRdv</a></div>
+            <div class="ttdeci">rdv * ajouterRdv(const std::string &amp;nom, const temps &amp;tDeb, const temps &amp;tFin,
+                jour *j, jour *jfin, const vectorLite&lt; contact * &gt; &amp;tabContacts)
+            </div>
+            <div class="ttdef"><b>Definition:</b> <a href="jour_8cpp_source.html#l00047">jour.cpp:47</a></div>
+        </div>
+        <div class="ttc" id="classjour_html_a82fc9c55950c63dde08e98674219e62d">
+            <div class="ttname"><a href="classjour.html#a82fc9c55950c63dde08e98674219e62d">jour::afficherRdvDeJour</a>
+            </div>
+            <div class="ttdeci">bool afficherRdvDeJour(std::ostream &amp;out) const</div>
+            <div class="ttdef"><b>Definition:</b> <a href="jour_8cpp_source.html#l00164">jour.cpp:164</a></div>
+        </div>
+        <div class="ttc" id="classjour_html_a920a1ad2a2b4b0d746a84f17f0bc2289">
+            <div class="ttname"><a href="classjour.html#a920a1ad2a2b4b0d746a84f17f0bc2289">jour::~jour</a></div>
+            <div class="ttdeci">~jour()</div>
+            <div class="ttdef"><b>Definition:</b> <a href="jour_8cpp_source.html#l00008">jour.cpp:8</a></div>
+        </div>
+        <div class="ttc" id="classtemps_html">
+            <div class="ttname"><a href="classtemps.html">temps</a></div>
+            <div class="ttdef"><b>Definition:</b> <a href="temps_8h_source.html#l00006">temps.h:6</a></div>
+        </div>
+        <div class="ttc" id="classlist_jour_html">
+            <div class="ttname"><a href="classlist_jour.html">listJour</a></div>
+            <div class="ttdef"><b>Definition:</b> <a href="list_jour_8h_source.html#l00016">listJour.h:16</a></div>
+        </div>
+        <div class="ttc" id="classjour_html_a12f337290eda2b3797b0a4b1e8720878">
+            <div class="ttname"><a href="classjour.html#a12f337290eda2b3797b0a4b1e8720878">jour::ajouterRdvMultiJour</a>
+            </div>
+            <div class="ttdeci">bool ajouterRdvMultiJour(rdv *r)</div>
+            <div class="ttdef"><b>Definition:</b> <a href="jour_8cpp_source.html#l00192">jour.cpp:192</a></div>
+        </div>
+        <div class="ttc" id="classcontact_html">
+            <div class="ttname"><a href="classcontact.html">contact</a></div>
+            <div class="ttdef"><b>Definition:</b> <a href="contact_8h_source.html#l00012">contact.h:12</a></div>
+        </div>
+        <div class="ttc" id="classjour_html_a94e5b745b320c52f16fd3664834310e2">
+            <div class="ttname"><a href="classjour.html#a94e5b745b320c52f16fd3664834310e2">jour::getAnnee</a></div>
+            <div class="ttdeci">int getAnnee() const</div>
+            <div class="ttdef"><b>Definition:</b> <a href="jour_8cpp_source.html#l00028">jour.cpp:28</a></div>
+        </div>
+        <div class="ttc" id="classjour_html_a69fa1f37e96a79a03ecf0cd53a1016d6">
+            <div class="ttname"><a href="classjour.html#a69fa1f37e96a79a03ecf0cd53a1016d6">jour::getMois</a></div>
+            <div class="ttdeci">int getMois() const</div>
+            <div class="ttdef"><b>Definition:</b> <a href="jour_8cpp_source.html#l00024">jour.cpp:24</a></div>
+        </div>
+        <div class="ttc" id="classjour_html_a5bc5d8ce6e5f2f541f7e2664970df69d">
+            <div class="ttname"><a href="classjour.html#a5bc5d8ce6e5f2f541f7e2664970df69d">jour::chercherRdv</a></div>
+            <div class="ttdeci">rdv * chercherRdv(const std::string &amp;nom) const</div>
+            <div class="ttdef"><b>Definition:</b> <a href="jour_8cpp_source.html#l00081">jour.cpp:81</a></div>
+        </div>
+        <div class="ttc" id="classvector_lite_html">
+            <div class="ttname"><a href="classvector_lite.html">vectorLite&lt; contact * &gt;</a></div>
+        </div>
+        <div class="ttc" id="classjour_html_a4005b92c055df89a807ee4c1f090ab7a">
+            <div class="ttname"><a href="classjour.html#a4005b92c055df89a807ee4c1f090ab7a">jour::modifJourFin</a></div>
+            <div class="ttdeci">bool modifJourFin(const std::string &amp;nom, jour *j)</div>
+            <div class="ttdef"><b>Definition:</b> <a href="jour_8cpp_source.html#l00154">jour.cpp:154</a></div>
+        </div>
+        <div class="ttc" id="classjour_html_a544e9980e31a28ae40199f18e93ad1ae">
+            <div class="ttname"><a href="classjour.html#a544e9980e31a28ae40199f18e93ad1ae">jour::jour</a></div>
+            <div class="ttdeci">jour(const date &amp;d)</div>
+            <div class="ttdef"><b>Definition:</b> <a href="jour_8cpp_source.html#l00005">jour.cpp:5</a></div>
+        </div>
+        <div class="ttc" id="classjour_html_a009ab77e0dccf78c08426594658364b8">
+            <div class="ttname"><a href="classjour.html#a009ab77e0dccf78c08426594658364b8">jour::supprimerRdv</a></div>
+            <div class="ttdeci">static void supprimerRdv(rdv *r)</div>
+            <div class="ttdef"><b>Definition:</b> <a href="jour_8cpp_source.html#l00092">jour.cpp:92</a></div>
+        </div>
+        <div class="ttc" id="classdate_html">
+            <div class="ttname"><a href="classdate.html">date</a></div>
+            <div class="ttdef"><b>Definition:</b> <a href="date_8h_source.html#l00004">date.h:4</a></div>
+        </div>
+        <div class="ttc" id="classjour_html_a705d15368dbfbf6ff60fe67ca5399127">
+            <div class="ttname"><a href="classjour.html#a705d15368dbfbf6ff60fe67ca5399127">jour::ajouterContact</a>
+            </div>
+            <div class="ttdeci">static void ajouterContact(rdv *r, contact *c)</div>
+            <div class="ttdef"><b>Definition:</b> <a href="jour_8cpp_source.html#l00116">jour.cpp:116</a></div>
+        </div>
+        <div class="ttc" id="classrdv_html">
+            <div class="ttname"><a href="classrdv.html">rdv</a></div>
+            <div class="ttdef"><b>Definition:</b> <a href="rdv_8h_source.html#l00014">rdv.h:14</a></div>
+        </div>
+        <div class="ttc" id="classjour_html_ac96148c2824a32df7171aea7499a20f4">
+            <div class="ttname"><a href="classjour.html#ac96148c2824a32df7171aea7499a20f4">jour::taille</a></div>
+            <div class="ttdeci">int taille() const</div>
+            <div class="ttdef"><b>Definition:</b> <a href="jour_8cpp_source.html#l00036">jour.cpp:36</a></div>
+        </div>
+        <div class="ttc" id="vector_lite_8h_html">
+            <div class="ttname"><a href="vector_lite_8h.html">vectorLite.h</a></div>
+        </div>
+        <div class="ttc" id="temps_8h_html">
+            <div class="ttname"><a href="temps_8h.html">temps.h</a></div>
+        </div>
+        <div class="ttc" id="classjour_html_af4ac954f9ca2d1bf56f5b3c8da21dbd7">
+            <div class="ttname"><a href="classjour.html#af4ac954f9ca2d1bf56f5b3c8da21dbd7">jour::modifHeureDeb</a></div>
+            <div class="ttdeci">bool modifHeureDeb(const std::string &amp;nom, const temps &amp;t)</div>
+            <div class="ttdef"><b>Definition:</b> <a href="jour_8cpp_source.html#l00126">jour.cpp:126</a></div>
+        </div>
+        <div class="ttc" id="classjour_html_abb5f2fddc3fda2e8ee4e97d44867925e">
+            <div class="ttname"><a href="classjour.html#abb5f2fddc3fda2e8ee4e97d44867925e">jour::getDate</a></div>
+            <div class="ttdeci">date getDate() const</div>
+            <div class="ttdef"><b>Definition:</b> <a href="jour_8cpp_source.html#l00032">jour.cpp:32</a></div>
+        </div>
+        <div class="ttc" id="classjour_html_abd87a38ec28e34408a1766be4ce19a4e">
+            <div class="ttname"><a href="classjour.html#abd87a38ec28e34408a1766be4ce19a4e">jour::getJour</a></div>
+            <div class="ttdeci">int getJour() const</div>
+            <div class="ttdef"><b>Definition:</b> <a href="jour_8cpp_source.html#l00020">jour.cpp:20</a></div>
+        </div>
+        <div class="ttc" id="classjour_html">
+            <div class="ttname"><a href="classjour.html">jour</a></div>
+            <div class="ttdef"><b>Definition:</b> <a href="jour_8h_source.html#l00015">jour.h:15</a></div>
+        </div>
+        <div class="ttc" id="classjour_html_ac47e1988f45f26bbae1d28693241f3b4">
+            <div class="ttname"><a
+                    href="classjour.html#ac47e1988f45f26bbae1d28693241f3b4">jour::afficherContactDeRdv</a></div>
+            <div class="ttdeci">bool afficherContactDeRdv(const std::string &amp;nom, std::ostream &amp;out) const</div>
+            <div class="ttdef"><b>Definition:</b> <a href="jour_8cpp_source.html#l00181">jour.cpp:181</a></div>
+        </div>
+        <div class="ttc" id="date_8h_html">
+            <div class="ttname"><a href="date_8h.html">date.h</a></div>
+        </div>
+        <div class="ttc" id="classjour_html_a126a1140b8a7296f69d4c7b02050c352">
+            <div class="ttname"><a href="classjour.html#a126a1140b8a7296f69d4c7b02050c352">jour::modifJourDeb</a></div>
+            <div class="ttdeci">bool modifJourDeb(const std::string &amp;nom, jour *j)</div>
+            <div class="ttdef"><b>Definition:</b> <a href="jour_8cpp_source.html#l00136">jour.cpp:136</a></div>
+        </div>
+    </div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/>
+<address class="footer">
+    <small>
+        Généré par &#160;<a href="http://www.doxygen.org/index.html">
+        <img alt="doxygen" class="footer" src="doxygen.png"/>
+    </a> 1.8.15
+    </small>
+</address>
+</body>
+</html>

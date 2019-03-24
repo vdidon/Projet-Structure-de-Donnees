@@ -318,16 +318,16 @@ void quitter() {
 
 bool menuPrincipal() {
     cout << endl << "Menu principal : " << endl << endl;
-	cout << "1\t - Suppression d’une personne" << endl;
-	cout << "2\t - Suppression d’un rendez-vous" << endl;
-	cout << "3\t - Modification d’une personne" << endl;
-	cout << "4\t - Modification d’un rendez-vous" << endl;
+	cout << "1\t - Suppression d une personne" << endl;
+	cout << "2\t - Suppression d un rendez-vous" << endl;
+	cout << "3\t - Modification d une personne" << endl;
+	cout << "4\t - Modification d un rendez-vous" << endl;
 	cout << "5\t - Afficher les rdv d'un jour" << endl;
 	cout << "6\t - Afficher une personne" << endl;
 	cout << "7\t - Une personne est-elle disponible ?" << endl;
 	cout << "8\t - Ajouter une personne" << endl;
 	cout << "9\t - Ajouter un rdv" << endl;
-	cout << "10\t - Ajouter une personne à un rdv" << endl;
+	cout << "10\t - Ajouter une personne a un rdv" << endl;
 	cout << "11\t - Afficher les personnes d'un rendez-vous" << endl;
 	cout << "0\t - Quitter" << endl;
     int i;

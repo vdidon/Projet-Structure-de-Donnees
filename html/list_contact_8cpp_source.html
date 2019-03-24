@@ -1,0 +1,489 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta content="text/xhtml;charset=UTF-8" http-equiv="Content-Type"/>
+    <meta content="IE=9" http-equiv="X-UA-Compatible"/>
+    <meta content="Doxygen 1.8.15" name="generator"/>
+    <meta content="width=device-width, initial-scale=1" name="viewport"/>
+    <title>Projet-Structure-de-Donnees: Fichier source de listContact.cpp</title>
+    <link href="tabs.css" rel="stylesheet" type="text/css"/>
+    <script src="jquery.js" type="text/javascript"></script>
+    <script src="dynsections.js" type="text/javascript"></script>
+    <link href="search/search.css" rel="stylesheet" type="text/css"/>
+    <script src="search/searchdata.js" type="text/javascript"></script>
+    <script src="search/search.js" type="text/javascript"></script>
+    <link href="doxygen.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+    <div id="titlearea">
+        <table cellpadding="0" cellspacing="0">
+            <tbody>
+            <tr style="height: 56px;">
+                <td id="projectalign" style="padding-left: 0.5em;">
+                    <div id="projectname">Projet-Structure-de-Donnees
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <!-- end header part -->
+    <!-- Généré par Doxygen 1.8.15 -->
+    <script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
+/* @license-end */
+
+    </script>
+    <script src="menudata.js" type="text/javascript"></script>
+    <script src="menu.js" type="text/javascript"></script>
+    <script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Recherche');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+    </script>
+    <div id="main-nav"></div>
+</div><!-- top -->
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onkeydown="return searchBox.OnSearchSelectKey(event)"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onmouseover="return searchBox.OnSearchSelectShow()">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+    <iframe frameborder="0" id="MSearchResults"
+            name="MSearchResults" src="javascript:void(0)">
+    </iframe>
+</div>
+
+<div class="header">
+    <div class="headertitle">
+        <div class="title">listContact.cpp</div>
+    </div>
+</div><!--header-->
+<div class="contents">
+    <a href="list_contact_8cpp.html">Aller à la documentation de ce fichier.</a>
+    <div class="fragment">
+        <div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#include &quot;<a
+                class="code" href="list_contact_8h.html">listContact.h</a>&quot;</span></div>
+        <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#include &quot;<a
+                class="code" href="contact_8h.html">contact.h</a>&quot;</span></div>
+        <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;</div>
+        <div class="line"><a name="l00006"></a><span class="lineno"><a class="line"
+                                                                       href="classlist_contact.html#a2db7cbea7981e5aa219b1fe476fbe490">    6</a></span>&#160;<a
+                class="code"
+                href="classlist_contact.html#a2db7cbea7981e5aa219b1fe476fbe490">listContact::listContact</a>(<a
+                class="code" href="classcontact.html">contact</a> *tete) : d_tete{tete} {}
+        </div>
+        <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;</div>
+        <div class="line"><a name="l00010"></a><span class="lineno"><a class="line"
+                                                                       href="classlist_contact.html#a9b5d29548217c86725cb0d0e7957bc29">   10</a></span>&#160;<a
+                class="code"
+                href="classlist_contact.html#a9b5d29548217c86725cb0d0e7957bc29">listContact::~listContact</a>() {
+        </div>
+        <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160; <a class="code"
+                                                                                          href="classcontact.html">contact</a>
+            *c = d_tete;
+        </div>
+        <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; <span
+                class="keywordflow">while</span> (c != <span class="keyword">nullptr</span>) {
+        </div>
+        <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160; <a class="code"
+                                                                                          href="classcontact.html">contact</a>
+            *n = c;
+        </div>
+        <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; c = c-&gt;d_suiv;</div>
+        <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; <span
+                class="keyword">delete</span> n;
+        </div>
+        <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; }</div>
+        <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;}</div>
+        <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;</div>
+        <div class="line"><a name="l00021"></a><span class="lineno"><a class="line"
+                                                                       href="classlist_contact.html#a59c7a45c06237918b4eb03d62d43b3ce">   21</a></span>&#160;<a
+                class="code" href="classcontact.html">contact</a> * <a class="code"
+                                                                       href="classlist_contact.html#a59c7a45c06237918b4eb03d62d43b3ce">listContact::ajouterContact</a>(<span
+                class="keyword">const</span> <span class="keywordtype">string</span> &amp;nom, <span class="keyword">const</span>
+            <span class="keywordtype">string</span> &amp;prenom, <span class="keyword">const</span> <span
+                    class="keywordtype">string</span> &amp;num, <span class="keyword">const</span> <span
+                    class="keywordtype">string</span> &amp;adresseMail) {
+        </div>
+        <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; <a class="code"
+                                                                                          href="classcontact.html">contact</a>
+            *n = <span class="keyword">new</span> <a class="code" href="classcontact.html">contact</a>(nom, prenom, num,
+            adresseMail);
+        </div>
+        <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; <span
+                class="keywordflow">if</span> (d_tete == <span class="keyword">nullptr</span>) {
+        </div>
+        <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; d_tete = n;</div>
+        <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; } <span
+                class="keywordflow">else</span> {
+        </div>
+        <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; n-&gt;d_suiv = d_tete;</div>
+        <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; d_tete = n;</div>
+        <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; }</div>
+        <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; <span
+                class="keywordflow">return</span> n;
+        </div>
+        <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;}</div>
+        <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;</div>
+        <div class="line"><a name="l00034"></a><span class="lineno"><a class="line"
+                                                                       href="classlist_contact.html#abfce8f151a357b9d0de0bcd48f4b9f3c">   34</a></span>&#160;<span
+                class="keywordtype">int</span> <a class="code"
+                                                  href="classlist_contact.html#abfce8f151a357b9d0de0bcd48f4b9f3c">listContact::taille</a>()
+            {
+        </div>
+        <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; <span
+                class="keywordtype">int</span> nb = 0;
+        </div>
+        <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; <a class="code"
+                                                                                          href="classcontact.html">contact</a>
+            *c = d_tete;
+        </div>
+        <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; <span
+                class="keywordflow">while</span> (c != <span class="keyword">nullptr</span>) {
+        </div>
+        <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; nb++;</div>
+        <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; c = c-&gt;d_suiv;</div>
+        <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; }</div>
+        <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; <span
+                class="keywordflow">return</span> nb;
+        </div>
+        <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;}</div>
+        <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;</div>
+        <div class="line"><a name="l00046"></a><span class="lineno"><a class="line"
+                                                                       href="classlist_contact.html#afc5dd585e340b43b3e24c034e899b05a">   46</a></span>&#160;<a
+                class="code" href="classcontact.html">contact</a> *<a class="code"
+                                                                      href="classlist_contact.html#afc5dd585e340b43b3e24c034e899b05a">listContact::chercherContact</a>(<span
+                class="keyword">const</span> <span class="keywordtype">string</span> &amp;nom, <span class="keyword">const</span>
+            <span class="keywordtype">string</span> &amp;prenom)<span class="keyword"> const </span>{
+        </div>
+        <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; <a class="code"
+                                                                                          href="classcontact.html">contact</a>
+            *c = d_tete;
+        </div>
+        <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; <span
+                class="keywordflow">while</span> (c != <span class="keyword">nullptr</span> &amp;&amp; (c-&gt;d_nom !=
+            nom &amp;&amp; c-&gt;d_prenom != prenom)) {
+        </div>
+        <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; c = c-&gt;d_suiv;</div>
+        <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; }</div>
+        <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; <span
+                class="keywordflow">if</span> (c == <span class="keyword">nullptr</span>) {
+        </div>
+        <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; <span
+                class="keywordflow">return</span> <span class="keyword">nullptr</span>;
+        </div>
+        <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; } <span
+                class="keywordflow">else</span> {
+        </div>
+        <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; <span
+                class="keywordflow">return</span> c;
+        </div>
+        <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160; }</div>
+        <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;}</div>
+        <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;</div>
+        <div class="line"><a name="l00060"></a><span class="lineno"><a class="line"
+                                                                       href="classlist_contact.html#aa4935a6742534d79a37bc22ee4534e2f">   60</a></span>&#160;<span
+                class="keywordtype">bool</span> <a class="code"
+                                                   href="classlist_contact.html#aa4935a6742534d79a37bc22ee4534e2f">listContact::supprimerContact</a>(<span
+                class="keyword">const</span> <span class="keywordtype">string</span> &amp;nom, <span class="keyword">const</span>
+            <span class="keywordtype">string</span> &amp;prenom) {
+        </div>
+        <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160; <a class="code"
+                                                                                          href="classcontact.html">contact</a>
+            *as = <a class="code" href="classlist_contact.html#afc5dd585e340b43b3e24c034e899b05a">chercherContact</a>(nom,
+            prenom);
+        </div>
+        <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160; <span
+                class="keywordflow">if</span> (as != <span class="keyword">nullptr</span>) {
+        </div>
+        <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160; <span
+                class="keywordflow">if</span> (as-&gt;d_tabRdv.<a class="code"
+                                                                  href="classvector_lite.html#a6a02f775c0157d9a7e40ed93c6e6a814">size</a>()
+            == 0) {
+        </div>
+        <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160; <span
+                class="keywordflow">if</span> (d_tete == as) {
+        </div>
+        <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160; <a class="code"
+                                                                                          href="classcontact.html">contact</a>
+            *c = d_tete;
+        </div>
+        <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160; d_tete = c-&gt;d_suiv;</div>
+        <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160; <span
+                class="keyword">delete</span> c;
+        </div>
+        <div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160; } <span
+                class="keywordflow">else</span> {
+        </div>
+        <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160; <a class="code"
+                                                                                          href="classcontact.html">contact</a>
+            *precC = <span class="keyword">nullptr</span>, *c = d_tete;
+        </div>
+        <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160; <span
+                class="keywordflow">while</span> (c != as) {
+        </div>
+        <div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160; precC = c;</div>
+        <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160; c = c-&gt;d_suiv;</div>
+        <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160; }</div>
+        <div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160; precC-&gt;d_suiv = c-&gt;d_suiv;
+        </div>
+        <div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160; <span
+                class="keyword">delete</span> c;
+        </div>
+        <div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160; }</div>
+        <div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160; <span
+                class="keywordflow">return</span> <span class="keyword">true</span>;
+        </div>
+        <div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160; } <span
+                class="keywordflow">else</span> {
+        </div>
+        <div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160; <span
+                class="keywordflow">return</span> <span class="keyword">false</span>;
+        </div>
+        <div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160; }</div>
+        <div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160; }</div>
+        <div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160; <span
+                class="keywordflow">return</span> <span class="keyword">false</span>;
+        </div>
+        <div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;}</div>
+        <div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;</div>
+        <div class="line"><a name="l00087"></a><span class="lineno"><a class="line"
+                                                                       href="classlist_contact.html#a02032ebf157198b52289873e8081de45">   87</a></span>&#160;<span
+                class="keywordtype">bool</span> <a class="code"
+                                                   href="classlist_contact.html#a02032ebf157198b52289873e8081de45">listContact::modifieNum</a>(<span
+                class="keyword">const</span> <span class="keywordtype">string</span> &amp;nom, <span class="keyword">const</span>
+            <span class="keywordtype">string</span> &amp;prenom, <span class="keyword">const</span> <span
+                    class="keywordtype">string</span> &amp;num)
+        </div>
+        <div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;{</div>
+        <div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160; <a class="code"
+                                                                                          href="classcontact.html">contact</a>
+            *am = <a class="code" href="classlist_contact.html#afc5dd585e340b43b3e24c034e899b05a">chercherContact</a>(nom,prenom);
+        </div>
+        <div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160; <span
+                class="keywordflow">if</span> (am)
+        </div>
+        <div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160; {</div>
+        <div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160; am-&gt;modifNum(num);</div>
+        <div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160; <span
+                class="keywordflow">return</span> <span class="keyword">true</span>;
+        </div>
+        <div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160; }</div>
+        <div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160; <span
+                class="keywordflow">else</span> <span class="keywordflow">return</span> <span
+                class="keyword">false</span>;
+        </div>
+        <div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;}</div>
+        <div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;</div>
+        <div class="line"><a name="l00100"></a><span class="lineno"><a class="line"
+                                                                       href="classlist_contact.html#a378b8bb4e41b38ef881d93da60a31924">  100</a></span>&#160;<span
+                class="keywordtype">bool</span> <a class="code"
+                                                   href="classlist_contact.html#a378b8bb4e41b38ef881d93da60a31924">listContact::modifieEmail</a>(<span
+                class="keyword">const</span> <span class="keywordtype">string</span> &amp;nom, <span class="keyword">const</span>
+            <span class="keywordtype">string</span> &amp;prenom, <span class="keyword">const</span> <span
+                    class="keywordtype">string</span> &amp;adresse)
+        </div>
+        <div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;{</div>
+        <div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160; <a class="code"
+                                                                                          href="classcontact.html">contact</a>
+            *am = <a class="code" href="classlist_contact.html#afc5dd585e340b43b3e24c034e899b05a">chercherContact</a>(nom,prenom);
+        </div>
+        <div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160; <span
+                class="keywordflow">if</span> (am)
+        </div>
+        <div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160; {</div>
+        <div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160; am-&gt;modifEmail(adresse);</div>
+        <div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160; <span
+                class="keywordflow">return</span> <span class="keyword">true</span>;
+        </div>
+        <div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160; }</div>
+        <div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160; <span
+                class="keywordflow">else</span> <span class="keywordflow">return</span> <span
+                class="keyword">false</span>;
+        </div>
+        <div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;}</div>
+        <div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;</div>
+        <div class="line"><a name="l00113"></a><span class="lineno"><a class="line"
+                                                                       href="classlist_contact.html#ac3a3a3d8fd16d8ff02fcd2ec8731b4fc">  113</a></span>&#160;<span
+                class="keywordtype">bool</span> <a class="code"
+                                                   href="classlist_contact.html#ac3a3a3d8fd16d8ff02fcd2ec8731b4fc">listContact::ajouteRdv</a>(<a
+                class="code" href="classcontact.html">contact</a> *c, <a class="code" href="classrdv.html">rdv</a> *r)
+        </div>
+        <div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;{</div>
+        <div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160; <span
+                class="keywordflow">return</span>(c-&gt;ajouterRdv(r));
+        </div>
+        <div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;}</div>
+        <div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;</div>
+        <div class="line"><a name="l00120"></a><span class="lineno"><a class="line"
+                                                                       href="classlist_contact.html#afca2eb8e202e9c12106943984d96229f">  120</a></span>&#160;<span
+                class="keywordtype">bool</span> <a class="code"
+                                                   href="classlist_contact.html#afca2eb8e202e9c12106943984d96229f">listContact::supprimeRdv</a>(<a
+                class="code" href="classcontact.html">contact</a> *c, <a class="code" href="classrdv.html">rdv</a> *r)
+        </div>
+        <div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;{</div>
+        <div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160; <span
+                class="keywordflow">return</span>(c-&gt;supprimerRdv(r));
+        </div>
+        <div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;}</div>
+        <div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;</div>
+        <div class="line"><a name="l00127"></a><span class="lineno"><a class="line"
+                                                                       href="classlist_contact.html#ad3de586dec529f9849dd27d8eec85a1f">  127</a></span>&#160;<span
+                class="keywordtype">bool</span> <a class="code"
+                                                   href="classlist_contact.html#ad3de586dec529f9849dd27d8eec85a1f">listContact::afficherRdvDeContact</a>(<span
+                class="keyword">const</span> <span class="keywordtype">string</span> &amp;nom, <span class="keyword">const</span>
+            <span class="keywordtype">string</span> &amp;prenom, ostream &amp; os)<span class="keyword"> const</span>
+        </div>
+        <div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;<span class="keyword"></span>{
+        </div>
+        <div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160; <a class="code"
+                                                                                          href="classcontact.html">contact</a>
+            *af = <a class="code" href="classlist_contact.html#afc5dd585e340b43b3e24c034e899b05a">chercherContact</a>(nom,prenom);
+        </div>
+        <div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160; <span
+                class="keywordflow">if</span> (af)
+        </div>
+        <div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160; {</div>
+        <div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160; af-&gt;<a class="code"
+                                                                                                 href="classcontact.html#a3ad7a618d777ec1e3032ce2c6eb7b9b9">afficherRdvDeContact</a>(os);
+        </div>
+        <div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160; <span
+                class="keywordflow">return</span> <span class="keyword">true</span>;
+        </div>
+        <div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160; }</div>
+        <div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160; <span
+                class="keywordflow">else</span> <span class="keywordflow">return</span> <span
+                class="keyword">false</span>;
+        </div>
+        <div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;}</div>
+        <div class="ttc" id="contact_8h_html">
+            <div class="ttname"><a href="contact_8h.html">contact.h</a></div>
+        </div>
+        <div class="ttc" id="classlist_contact_html_a59c7a45c06237918b4eb03d62d43b3ce">
+            <div class="ttname"><a href="classlist_contact.html#a59c7a45c06237918b4eb03d62d43b3ce">listContact::ajouterContact</a>
+            </div>
+            <div class="ttdeci">contact * ajouterContact(const string &amp;nom, const string &amp;prenom, const string
+                &amp;num=&quot;&quot;, const string &amp;adresseMail=&quot;&quot;)
+            </div>
+            <div class="ttdef"><b>Definition:</b> <a href="list_contact_8cpp_source.html#l00021">listContact.cpp:21</a>
+            </div>
+        </div>
+        <div class="ttc" id="classlist_contact_html_afca2eb8e202e9c12106943984d96229f">
+            <div class="ttname"><a href="classlist_contact.html#afca2eb8e202e9c12106943984d96229f">listContact::supprimeRdv</a>
+            </div>
+            <div class="ttdeci">bool supprimeRdv(contact *c, rdv *r)</div>
+            <div class="ttdef"><b>Definition:</b> <a href="list_contact_8cpp_source.html#l00120">listContact.cpp:120</a>
+            </div>
+        </div>
+        <div class="ttc" id="classlist_contact_html_aa4935a6742534d79a37bc22ee4534e2f">
+            <div class="ttname"><a href="classlist_contact.html#aa4935a6742534d79a37bc22ee4534e2f">listContact::supprimerContact</a>
+            </div>
+            <div class="ttdeci">bool supprimerContact(const string &amp;nom, const string &amp;prenom)</div>
+            <div class="ttdef"><b>Definition:</b> <a href="list_contact_8cpp_source.html#l00060">listContact.cpp:60</a>
+            </div>
+        </div>
+        <div class="ttc" id="classlist_contact_html_a02032ebf157198b52289873e8081de45">
+            <div class="ttname"><a href="classlist_contact.html#a02032ebf157198b52289873e8081de45">listContact::modifieNum</a>
+            </div>
+            <div class="ttdeci">bool modifieNum(const string &amp;nom, const string &amp;prenom, const string
+                &amp;num)
+            </div>
+            <div class="ttdef"><b>Definition:</b> <a href="list_contact_8cpp_source.html#l00087">listContact.cpp:87</a>
+            </div>
+        </div>
+        <div class="ttc" id="classlist_contact_html_a2db7cbea7981e5aa219b1fe476fbe490">
+            <div class="ttname"><a href="classlist_contact.html#a2db7cbea7981e5aa219b1fe476fbe490">listContact::listContact</a>
+            </div>
+            <div class="ttdeci">listContact(contact *tete=nullptr)</div>
+            <div class="ttdef"><b>Definition:</b> <a href="list_contact_8cpp_source.html#l00006">listContact.cpp:6</a>
+            </div>
+        </div>
+        <div class="ttc" id="classlist_contact_html_a9b5d29548217c86725cb0d0e7957bc29">
+            <div class="ttname"><a href="classlist_contact.html#a9b5d29548217c86725cb0d0e7957bc29">listContact::~listContact</a>
+            </div>
+            <div class="ttdeci">~listContact()</div>
+            <div class="ttdef"><b>Definition:</b> <a href="list_contact_8cpp_source.html#l00010">listContact.cpp:10</a>
+            </div>
+        </div>
+        <div class="ttc" id="classlist_contact_html_afc5dd585e340b43b3e24c034e899b05a">
+            <div class="ttname"><a href="classlist_contact.html#afc5dd585e340b43b3e24c034e899b05a">listContact::chercherContact</a>
+            </div>
+            <div class="ttdeci">contact * chercherContact(const string &amp;nom, const string &amp;prenom) const</div>
+            <div class="ttdef"><b>Definition:</b> <a href="list_contact_8cpp_source.html#l00046">listContact.cpp:46</a>
+            </div>
+        </div>
+        <div class="ttc" id="classcontact_html">
+            <div class="ttname"><a href="classcontact.html">contact</a></div>
+            <div class="ttdef"><b>Definition:</b> <a href="contact_8h_source.html#l00012">contact.h:12</a></div>
+        </div>
+        <div class="ttc" id="classcontact_html_a3ad7a618d777ec1e3032ce2c6eb7b9b9">
+            <div class="ttname"><a href="classcontact.html#a3ad7a618d777ec1e3032ce2c6eb7b9b9">contact::afficherRdvDeContact</a>
+            </div>
+            <div class="ttdeci">void afficherRdvDeContact(std::ostream &amp;os)</div>
+            <div class="ttdef"><b>Definition:</b> <a href="contact_8cpp_source.html#l00072">contact.cpp:72</a></div>
+        </div>
+        <div class="ttc" id="classvector_lite_html_a6a02f775c0157d9a7e40ed93c6e6a814">
+            <div class="ttname"><a href="classvector_lite.html#a6a02f775c0157d9a7e40ed93c6e6a814">vectorLite::size</a>
+            </div>
+            <div class="ttdeci">int size() const</div>
+            <div class="ttdef"><b>Definition:</b> <a href="vector_lite_8h_source.html#l00068">vectorLite.h:68</a></div>
+        </div>
+        <div class="ttc" id="classlist_contact_html_abfce8f151a357b9d0de0bcd48f4b9f3c">
+            <div class="ttname"><a
+                    href="classlist_contact.html#abfce8f151a357b9d0de0bcd48f4b9f3c">listContact::taille</a></div>
+            <div class="ttdeci">int taille()</div>
+            <div class="ttdef"><b>Definition:</b> <a href="list_contact_8cpp_source.html#l00034">listContact.cpp:34</a>
+            </div>
+        </div>
+        <div class="ttc" id="classrdv_html">
+            <div class="ttname"><a href="classrdv.html">rdv</a></div>
+            <div class="ttdef"><b>Definition:</b> <a href="rdv_8h_source.html#l00014">rdv.h:14</a></div>
+        </div>
+        <div class="ttc" id="classlist_contact_html_a378b8bb4e41b38ef881d93da60a31924">
+            <div class="ttname"><a href="classlist_contact.html#a378b8bb4e41b38ef881d93da60a31924">listContact::modifieEmail</a>
+            </div>
+            <div class="ttdeci">bool modifieEmail(const string &amp;nom, const string &amp;prenom, const string &amp;adresse)</div>
+            <div class="ttdef"><b>Definition:</b> <a href="list_contact_8cpp_source.html#l00100">listContact.cpp:100</a>
+            </div>
+        </div>
+        <div class="ttc" id="list_contact_8h_html">
+            <div class="ttname"><a href="list_contact_8h.html">listContact.h</a></div>
+        </div>
+        <div class="ttc" id="classlist_contact_html_ad3de586dec529f9849dd27d8eec85a1f">
+            <div class="ttname"><a href="classlist_contact.html#ad3de586dec529f9849dd27d8eec85a1f">listContact::afficherRdvDeContact</a>
+            </div>
+            <div class="ttdeci">bool afficherRdvDeContact(const string &amp;nom, const string &amp;prenom, ostream &amp;out)
+                const
+            </div>
+            <div class="ttdef"><b>Definition:</b> <a href="list_contact_8cpp_source.html#l00127">listContact.cpp:127</a>
+            </div>
+        </div>
+        <div class="ttc" id="classlist_contact_html_ac3a3a3d8fd16d8ff02fcd2ec8731b4fc">
+            <div class="ttname"><a href="classlist_contact.html#ac3a3a3d8fd16d8ff02fcd2ec8731b4fc">listContact::ajouteRdv</a>
+            </div>
+            <div class="ttdeci">bool ajouteRdv(contact *c, rdv *r)</div>
+            <div class="ttdef"><b>Definition:</b> <a href="list_contact_8cpp_source.html#l00113">listContact.cpp:113</a>
+            </div>
+        </div>
+    </div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/>
+<address class="footer">
+    <small>
+        Généré par &#160;<a href="http://www.doxygen.org/index.html">
+        <img alt="doxygen" class="footer" src="doxygen.png"/>
+    </a> 1.8.15
+    </small>
+</address>
+</body>
+</html>

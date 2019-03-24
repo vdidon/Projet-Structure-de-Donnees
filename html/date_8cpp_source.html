@@ -1,0 +1,259 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta content="text/xhtml;charset=UTF-8" http-equiv="Content-Type"/>
+    <meta content="IE=9" http-equiv="X-UA-Compatible"/>
+    <meta content="Doxygen 1.8.15" name="generator"/>
+    <meta content="width=device-width, initial-scale=1" name="viewport"/>
+    <title>Projet-Structure-de-Donnees: Fichier source de date.cpp</title>
+    <link href="tabs.css" rel="stylesheet" type="text/css"/>
+    <script src="jquery.js" type="text/javascript"></script>
+    <script src="dynsections.js" type="text/javascript"></script>
+    <link href="search/search.css" rel="stylesheet" type="text/css"/>
+    <script src="search/searchdata.js" type="text/javascript"></script>
+    <script src="search/search.js" type="text/javascript"></script>
+    <link href="doxygen.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+    <div id="titlearea">
+        <table cellpadding="0" cellspacing="0">
+            <tbody>
+            <tr style="height: 56px;">
+                <td id="projectalign" style="padding-left: 0.5em;">
+                    <div id="projectname">Projet-Structure-de-Donnees
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <!-- end header part -->
+    <!-- Généré par Doxygen 1.8.15 -->
+    <script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
+/* @license-end */
+
+    </script>
+    <script src="menudata.js" type="text/javascript"></script>
+    <script src="menu.js" type="text/javascript"></script>
+    <script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Recherche');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+    </script>
+    <div id="main-nav"></div>
+</div><!-- top -->
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onkeydown="return searchBox.OnSearchSelectKey(event)"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onmouseover="return searchBox.OnSearchSelectShow()">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+    <iframe frameborder="0" id="MSearchResults"
+            name="MSearchResults" src="javascript:void(0)">
+    </iframe>
+</div>
+
+<div class="header">
+    <div class="headertitle">
+        <div class="title">date.cpp</div>
+    </div>
+</div><!--header-->
+<div class="contents">
+    <a href="date_8cpp.html">Aller à la documentation de ce fichier.</a>
+    <div class="fragment">
+        <div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;</div>
+        <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#include &quot;<a
+                class="code" href="date_8h.html">date.h</a>&quot;</span></div>
+        <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;</div>
+        <div class="line"><a name="l00004"></a><span class="lineno"><a class="line"
+                                                                       href="classdate.html#af227c2ef28f35ba9e62270f12a5b136a">    4</a></span>&#160;<a
+                class="code" href="classdate.html#af227c2ef28f35ba9e62270f12a5b136a">date::date</a>(<span
+                class="keywordtype">int</span> p_j, <span class="keywordtype">int</span> p_m, <span class="keywordtype">int</span>
+            p_a) : j{p_j}, m{p_m}, a{p_a} {
+        </div>
+        <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;</div>
+        <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;}</div>
+        <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;</div>
+        <div class="line"><a name="l00008"></a><span class="lineno"><a class="line"
+                                                                       href="classdate.html#adfca19a94f9095bb8c7fb65fdcc84804">    8</a></span>&#160;<a
+                class="code" href="classdate.html#af227c2ef28f35ba9e62270f12a5b136a">date::date</a>(<span
+                class="keyword">const</span> <a class="code" href="classdate.html">date</a> &amp;d) : j{d.<a
+                class="code" href="classdate.html#a62382381fa8538d3c543638d188990a5">j</a>}, m{d.m}, a{d.a} {
+        </div>
+        <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;</div>
+        <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;}</div>
+        <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;</div>
+        <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;</div>
+        <div class="line"><a name="l00013"></a><span class="lineno"><a class="line"
+                                                                       href="classdate.html#a5d37be77a71924bff61a056f2a7be8c5">   13</a></span>&#160;<span
+                class="keywordtype">bool</span> <a class="code" href="classdate.html#a5d37be77a71924bff61a056f2a7be8c5">date::operator&gt;</a>(<span
+                class="keyword">const</span> <a class="code" href="classdate.html">date</a> &amp;d)<span
+                class="keyword"> const </span>{
+        </div>
+        <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; <span
+                class="keywordflow">return</span> (<a class="code"
+                                                      href="classdate.html#a009217d1f534ce974f96667cca2e2d71">a</a> &gt;
+            d.<a class="code" href="classdate.html#a009217d1f534ce974f96667cca2e2d71">a</a>) || (<a class="code"
+                                                                                                    href="classdate.html#a009217d1f534ce974f96667cca2e2d71">a</a>
+            == d.<a class="code" href="classdate.html#a009217d1f534ce974f96667cca2e2d71">a</a> &amp;&amp; (<a
+                    class="code" href="classdate.html#ae59ed39957f6c0da6ef0fc32726351a6">m</a> &gt; d.<a class="code"
+                                                                                                         href="classdate.html#ae59ed39957f6c0da6ef0fc32726351a6">m</a>
+            || (<a class="code" href="classdate.html#ae59ed39957f6c0da6ef0fc32726351a6">m</a> == d.<a class="code"
+                                                                                                      href="classdate.html#ae59ed39957f6c0da6ef0fc32726351a6">m</a>
+            &amp;&amp; <a class="code" href="classdate.html#a62382381fa8538d3c543638d188990a5">j</a> &gt; d.<a
+                    class="code" href="classdate.html#a62382381fa8538d3c543638d188990a5">j</a>)));
+        </div>
+        <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;}</div>
+        <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;</div>
+        <div class="line"><a name="l00017"></a><span class="lineno"><a class="line"
+                                                                       href="classdate.html#a370ef4b1b9718356c954250d30ffdddb">   17</a></span>&#160;<span
+                class="keywordtype">bool</span> <a class="code" href="classdate.html#a370ef4b1b9718356c954250d30ffdddb">date::operator&lt;</a>(<span
+                class="keyword">const</span> <a class="code" href="classdate.html">date</a> &amp;d)<span
+                class="keyword"> const </span>{
+        </div>
+        <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; <span
+                class="keywordflow">return</span> (<a class="code"
+                                                      href="classdate.html#a009217d1f534ce974f96667cca2e2d71">a</a> &lt;
+            d.<a class="code" href="classdate.html#a009217d1f534ce974f96667cca2e2d71">a</a>) || (<a class="code"
+                                                                                                    href="classdate.html#a009217d1f534ce974f96667cca2e2d71">a</a>
+            == d.<a class="code" href="classdate.html#a009217d1f534ce974f96667cca2e2d71">a</a> &amp;&amp; (<a
+                    class="code" href="classdate.html#ae59ed39957f6c0da6ef0fc32726351a6">m</a> &lt; d.<a class="code"
+                                                                                                         href="classdate.html#ae59ed39957f6c0da6ef0fc32726351a6">m</a>
+            || (<a class="code" href="classdate.html#ae59ed39957f6c0da6ef0fc32726351a6">m</a> == d.<a class="code"
+                                                                                                      href="classdate.html#ae59ed39957f6c0da6ef0fc32726351a6">m</a>
+            &amp;&amp; <a class="code" href="classdate.html#a62382381fa8538d3c543638d188990a5">j</a> &lt; d.<a
+                    class="code" href="classdate.html#a62382381fa8538d3c543638d188990a5">j</a>)));
+        </div>
+        <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;}</div>
+        <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;</div>
+        <div class="line"><a name="l00021"></a><span class="lineno"><a class="line"
+                                                                       href="classdate.html#af41dababcab50a7ef62c36d4073987d5">   21</a></span>&#160;<span
+                class="keywordtype">bool</span> <a class="code" href="classdate.html#af41dababcab50a7ef62c36d4073987d5">date::operator==</a>(<span
+                class="keyword">const</span> <a class="code" href="classdate.html">date</a> &amp;d)<span
+                class="keyword"> const </span>{
+        </div>
+        <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; <span
+                class="keywordflow">return</span> <a class="code"
+                                                     href="classdate.html#a009217d1f534ce974f96667cca2e2d71">a</a> == d.<a
+                class="code" href="classdate.html#a009217d1f534ce974f96667cca2e2d71">a</a> &amp;&amp; <a class="code"
+                                                                                                         href="classdate.html#ae59ed39957f6c0da6ef0fc32726351a6">m</a>
+            == d.<a class="code" href="classdate.html#ae59ed39957f6c0da6ef0fc32726351a6">m</a> &amp;&amp; <a
+                    class="code" href="classdate.html#a62382381fa8538d3c543638d188990a5">j</a> == d.<a class="code"
+                                                                                                       href="classdate.html#a62382381fa8538d3c543638d188990a5">j</a>;
+        </div>
+        <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;}</div>
+        <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;</div>
+        <div class="line"><a name="l00025"></a><span class="lineno"><a class="line"
+                                                                       href="classdate.html#a1fb328843ff08e94ff8827ff65e79370">   25</a></span>&#160;<span
+                class="keywordtype">bool</span> <a class="code" href="classdate.html#a1fb328843ff08e94ff8827ff65e79370">date::operator!=</a>(<span
+                class="keyword">const</span> <a class="code" href="classdate.html">date</a> &amp;d)<span
+                class="keyword"> const </span>{
+        </div>
+        <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; <span
+                class="keywordflow">return</span> !(d == *<span class="keyword">this</span>);
+        </div>
+        <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;}</div>
+        <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;</div>
+        <div class="line"><a name="l00029"></a><span class="lineno"><a class="line"
+                                                                       href="classdate.html#a627ba4c9669a1c6c7cdd30fe2ac104f6">   29</a></span>&#160;<span
+                class="keywordtype">bool</span> <a class="code" href="classdate.html#a627ba4c9669a1c6c7cdd30fe2ac104f6">date::operator&gt;=</a>(<span
+                class="keyword">const</span> <a class="code" href="classdate.html">date</a> &amp;d)<span
+                class="keyword"> const </span>{
+        </div>
+        <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; <span
+                class="keywordflow">return</span> !(*<span class="keyword">this</span> &lt; d);
+        </div>
+        <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;}</div>
+        <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;</div>
+        <div class="line"><a name="l00033"></a><span class="lineno"><a class="line"
+                                                                       href="classdate.html#a07f6fbccecabf8eaf4bfbe5452eefa65">   33</a></span>&#160;<span
+                class="keywordtype">bool</span> <a class="code" href="classdate.html#a07f6fbccecabf8eaf4bfbe5452eefa65">date::operator&lt;=</a>(<span
+                class="keyword">const</span> <a class="code" href="classdate.html">date</a> &amp;d)<span
+                class="keyword"> const </span>{
+        </div>
+        <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; <span
+                class="keywordflow">return</span> !(*<span class="keyword">this</span> &gt; d);
+        </div>
+        <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;}</div>
+        <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;</div>
+        <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;</div>
+        <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;</div>
+        <div class="ttc" id="classdate_html_a62382381fa8538d3c543638d188990a5">
+            <div class="ttname"><a href="classdate.html#a62382381fa8538d3c543638d188990a5">date::j</a></div>
+            <div class="ttdeci">int j</div>
+            <div class="ttdef"><b>Definition:</b> <a href="date_8h_source.html#l00020">date.h:20</a></div>
+        </div>
+        <div class="ttc" id="classdate_html_af41dababcab50a7ef62c36d4073987d5">
+            <div class="ttname"><a href="classdate.html#af41dababcab50a7ef62c36d4073987d5">date::operator==</a></div>
+            <div class="ttdeci">bool operator==(const date &amp;d) const</div>
+            <div class="ttdef"><b>Definition:</b> <a href="date_8cpp_source.html#l00021">date.cpp:21</a></div>
+        </div>
+        <div class="ttc" id="classdate_html_a370ef4b1b9718356c954250d30ffdddb">
+            <div class="ttname"><a href="classdate.html#a370ef4b1b9718356c954250d30ffdddb">date::operator&lt;</a></div>
+            <div class="ttdeci">bool operator&lt;(const date &amp;d) const</div>
+            <div class="ttdef"><b>Definition:</b> <a href="date_8cpp_source.html#l00017">date.cpp:17</a></div>
+        </div>
+        <div class="ttc" id="classdate_html_a07f6fbccecabf8eaf4bfbe5452eefa65">
+            <div class="ttname"><a href="classdate.html#a07f6fbccecabf8eaf4bfbe5452eefa65">date::operator&lt;=</a></div>
+            <div class="ttdeci">bool operator&lt;=(const date &amp;d) const</div>
+            <div class="ttdef"><b>Definition:</b> <a href="date_8cpp_source.html#l00033">date.cpp:33</a></div>
+        </div>
+        <div class="ttc" id="classdate_html_a009217d1f534ce974f96667cca2e2d71">
+            <div class="ttname"><a href="classdate.html#a009217d1f534ce974f96667cca2e2d71">date::a</a></div>
+            <div class="ttdeci">int a</div>
+            <div class="ttdef"><b>Definition:</b> <a href="date_8h_source.html#l00020">date.h:20</a></div>
+        </div>
+        <div class="ttc" id="classdate_html_af227c2ef28f35ba9e62270f12a5b136a">
+            <div class="ttname"><a href="classdate.html#af227c2ef28f35ba9e62270f12a5b136a">date::date</a></div>
+            <div class="ttdeci">date(int p_j, int p_m, int p_a)</div>
+            <div class="ttdef"><b>Definition:</b> <a href="date_8cpp_source.html#l00004">date.cpp:4</a></div>
+        </div>
+        <div class="ttc" id="classdate_html">
+            <div class="ttname"><a href="classdate.html">date</a></div>
+            <div class="ttdef"><b>Definition:</b> <a href="date_8h_source.html#l00004">date.h:4</a></div>
+        </div>
+        <div class="ttc" id="classdate_html_a1fb328843ff08e94ff8827ff65e79370">
+            <div class="ttname"><a href="classdate.html#a1fb328843ff08e94ff8827ff65e79370">date::operator!=</a></div>
+            <div class="ttdeci">bool operator!=(const date &amp;d) const</div>
+            <div class="ttdef"><b>Definition:</b> <a href="date_8cpp_source.html#l00025">date.cpp:25</a></div>
+        </div>
+        <div class="ttc" id="date_8h_html">
+            <div class="ttname"><a href="date_8h.html">date.h</a></div>
+        </div>
+        <div class="ttc" id="classdate_html_ae59ed39957f6c0da6ef0fc32726351a6">
+            <div class="ttname"><a href="classdate.html#ae59ed39957f6c0da6ef0fc32726351a6">date::m</a></div>
+            <div class="ttdeci">int m</div>
+            <div class="ttdef"><b>Definition:</b> <a href="date_8h_source.html#l00020">date.h:20</a></div>
+        </div>
+        <div class="ttc" id="classdate_html_a627ba4c9669a1c6c7cdd30fe2ac104f6">
+            <div class="ttname"><a href="classdate.html#a627ba4c9669a1c6c7cdd30fe2ac104f6">date::operator&gt;=</a></div>
+            <div class="ttdeci">bool operator&gt;=(const date &amp;d) const</div>
+            <div class="ttdef"><b>Definition:</b> <a href="date_8cpp_source.html#l00029">date.cpp:29</a></div>
+        </div>
+        <div class="ttc" id="classdate_html_a5d37be77a71924bff61a056f2a7be8c5">
+            <div class="ttname"><a href="classdate.html#a5d37be77a71924bff61a056f2a7be8c5">date::operator&gt;</a></div>
+            <div class="ttdeci">bool operator&gt;(const date &amp;d) const</div>
+            <div class="ttdef"><b>Definition:</b> <a href="date_8cpp_source.html#l00013">date.cpp:13</a></div>
+        </div>
+    </div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/>
+<address class="footer">
+    <small>
+        Généré par &#160;<a href="http://www.doxygen.org/index.html">
+        <img alt="doxygen" class="footer" src="doxygen.png"/>
+    </a> 1.8.15
+    </small>
+</address>
+</body>
+</html>

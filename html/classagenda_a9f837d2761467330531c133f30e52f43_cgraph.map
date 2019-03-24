@@ -1,0 +1,12 @@
+<map id="agenda::supprimerRdv" name="agenda::supprimerRdv">
+<area shape="rect" id="node1" title=" " alt="" coords="5,132,156,159"/>
+<area shape="rect" id="node2" href="$classlist_jour.html#a070863ff30debc040f2871454438297d" title=" " alt="" coords="216,31,359,57"/>
+<area shape="rect" id="node5" href="$classrdv.html#a731be20a7099999aace7305b0fab16ee" title=" " alt="" coords="229,81,345,108"/>
+<area shape="rect" id="node6" href="$classvector_lite.html#a6a02f775c0157d9a7e40ed93c6e6a814" title=" " alt="" coords="233,132,342,159"/>
+<area shape="rect" id="node7" href="$classlist_contact.html#afca2eb8e202e9c12106943984d96229f" title=" " alt="" coords="204,183,371,209"/>
+<area shape="rect" id="node8" href="$classlist_jour.html#a19cb31bec5d7bccc943b047d81d11ff2" title=" " alt="" coords="213,233,362,260"/>
+<area shape="rect" id="node3" href="$classlist_jour.html#afebeeeb0ef31c438086b6419352c263b" title=" " alt="" coords="419,5,564,32"/>
+<area shape="rect" id="node4" href="$classjour.html#a5bc5d8ce6e5f2f541f7e2664970df69d" title=" " alt="" coords="430,56,553,83"/>
+<area shape="rect" id="node9" href="$classrdv.html#a766046b8f7e3efed4407fd26d16a3064" title=" " alt="" coords="436,208,547,235"/>
+<area shape="rect" id="node10" href="$classjour.html#a009ab77e0dccf78c08426594658364b8" title=" " alt="" coords="427,259,556,285"/>
+</map>

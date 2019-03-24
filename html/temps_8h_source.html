@@ -1,0 +1,246 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta content="text/xhtml;charset=UTF-8" http-equiv="Content-Type"/>
+    <meta content="IE=9" http-equiv="X-UA-Compatible"/>
+    <meta content="Doxygen 1.8.15" name="generator"/>
+    <meta content="width=device-width, initial-scale=1" name="viewport"/>
+    <title>Projet-Structure-de-Donnees: Fichier source de temps.h</title>
+    <link href="tabs.css" rel="stylesheet" type="text/css"/>
+    <script src="jquery.js" type="text/javascript"></script>
+    <script src="dynsections.js" type="text/javascript"></script>
+    <link href="search/search.css" rel="stylesheet" type="text/css"/>
+    <script src="search/searchdata.js" type="text/javascript"></script>
+    <script src="search/search.js" type="text/javascript"></script>
+    <link href="doxygen.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+    <div id="titlearea">
+        <table cellpadding="0" cellspacing="0">
+            <tbody>
+            <tr style="height: 56px;">
+                <td id="projectalign" style="padding-left: 0.5em;">
+                    <div id="projectname">Projet-Structure-de-Donnees
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <!-- end header part -->
+    <!-- Généré par Doxygen 1.8.15 -->
+    <script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
+/* @license-end */
+
+    </script>
+    <script src="menudata.js" type="text/javascript"></script>
+    <script src="menu.js" type="text/javascript"></script>
+    <script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Recherche');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+    </script>
+    <div id="main-nav"></div>
+</div><!-- top -->
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onkeydown="return searchBox.OnSearchSelectKey(event)"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onmouseover="return searchBox.OnSearchSelectShow()">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+    <iframe frameborder="0" id="MSearchResults"
+            name="MSearchResults" src="javascript:void(0)">
+    </iframe>
+</div>
+
+<div class="header">
+    <div class="headertitle">
+        <div class="title">temps.h</div>
+    </div>
+</div><!--header-->
+<div class="contents">
+    <a href="temps_8h.html">Aller à la documentation de ce fichier.</a>
+    <div class="fragment">
+        <div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef PROJET_STRUCTURE_DE_DONNEES_TEMPS_H</span>
+        </div>
+        <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define PROJET_STRUCTURE_DE_DONNEES_TEMPS_H</span>
+        </div>
+        <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;</div>
+        <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;iostream&gt;</span>
+        </div>
+        <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;</div>
+        <div class="line"><a name="l00006"></a><span class="lineno"><a class="line"
+                                                                       href="classtemps.html">    6</a></span>&#160;<span
+                class="keyword">class </span><a class="code" href="classtemps.html">temps</a> {
+        </div>
+        <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span
+                class="keyword">public</span>:
+        </div>
+        <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160; <a class="code"
+                                                                                          href="classtemps.html#acd4d4d6629063f29f56960df371562dc">temps</a>(<span
+                class="keywordtype">short</span> t_h, <span class="keywordtype">short</span> t_m); <span
+                class="comment">//ska : fait</span></div>
+        <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;</div>
+        <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; <a class="code"
+                                                                                          href="classtemps.html#a60c62f523f976838770bcc7897cd95dd">~temps</a>();
+        </div>
+        <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;</div>
+        <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; <span class="keywordtype">unsigned</span>
+            <span class="keywordtype">int</span> <a class="code"
+                                                    href="classtemps.html#adb5279d52fa99dd337f9da85be9f7508">duree</a>()
+            <span class="keyword">const</span>; <span class="comment">//ska : fait</span></div>
+        <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;</div>
+        <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; <span class="keywordtype">unsigned</span>
+            <span class="keywordtype">int</span> <a class="code"
+                                                    href="classtemps.html#a1b15a52246bd917d71e5b0ff0c72de2e">dureeComparee</a>(<span
+                    class="keyword">const</span> <a class="code" href="classtemps.html">temps</a> &amp;t) <span
+                    class="keyword">const</span>; <span class="comment">//ska : fait</span></div>
+        <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;</div>
+        <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; <span
+                class="keywordtype">bool</span> <a class="code"
+                                                   href="classtemps.html#aed7bdd83ac64173da9d28941851e6c6f">operator&gt;</a>(<span
+                class="keyword">const</span> <a class="code" href="classtemps.html">temps</a> &amp;t) <span
+                class="keyword">const</span>; <span class="comment">//ska : fait</span></div>
+        <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;</div>
+        <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; <span
+                class="keywordtype">bool</span> <a class="code"
+                                                   href="classtemps.html#a855ddf4f3694aeef1ea73e67eb04752e">operator&lt;</a>(<span
+                class="keyword">const</span> <a class="code" href="classtemps.html">temps</a> &amp;t) <span
+                class="keyword">const</span>; <span class="comment">//ska : fait</span></div>
+        <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;</div>
+        <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; <span
+                class="keywordtype">bool</span> <a class="code"
+                                                   href="classtemps.html#acfc2fc3861403140d99f8fb0d5bc9605">operator==</a>(<span
+                class="keyword">const</span> <a class="code" href="classtemps.html">temps</a> &amp;t) <span
+                class="keyword">const</span>;<span class="comment">//ska : fait</span></div>
+        <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;</div>
+        <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; <span
+                class="keywordtype">bool</span> <a class="code"
+                                                   href="classtemps.html#ac8a215a3a82e3862126f8a53e34dff24">operator!=</a>(<span
+                class="keyword">const</span> <a class="code" href="classtemps.html">temps</a> &amp;t) <span
+                class="keyword">const</span>;<span class="comment">//ska : fait</span></div>
+        <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;</div>
+        <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; <span
+                class="keywordtype">bool</span> <a class="code"
+                                                   href="classtemps.html#ac157dc6dc948547a4308be4e245533e0">operator&lt;=</a>(<span
+                class="keyword">const</span> <a class="code" href="classtemps.html">temps</a> &amp;t) <span
+                class="keyword">const</span>; <span class="comment">//fait</span></div>
+        <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;</div>
+        <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; <span
+                class="keywordtype">bool</span> <a class="code"
+                                                   href="classtemps.html#abd702ee4fe6d04d43a9f1644c47431cb">operator&gt;=</a>(<span
+                class="keyword">const</span> <a class="code" href="classtemps.html">temps</a> &amp;t) <span
+                class="keyword">const</span>; <span class="comment">//fait</span></div>
+        <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;</div>
+        <div class="line"><a name="l00028"></a><span class="lineno"><a class="line"
+                                                                       href="classtemps.html#aa4f4b54be00d9b0300316501b64bd01d">   28</a></span>&#160;
+            <span class="keywordtype">short</span> <a class="code"
+                                                      href="classtemps.html#a8eacc51175804867cb2b7e39d10397fe">h</a>, <a
+                    class="code" href="classtemps.html#aa4f4b54be00d9b0300316501b64bd01d">m</a>;
+        </div>
+        <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;</div>
+        <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;};</div>
+        <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;</div>
+        <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;std::ostream &amp;<a class="code"
+                                                                                                           href="temps_8h.html#a990744c6ca705a97692194922fc51686">operator&lt;&lt;</a>(std::ostream
+            &amp;out, <span class="keyword">const</span> <a class="code" href="classtemps.html">temps</a> &amp;t);
+        </div>
+        <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;</div>
+        <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;</div>
+        <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="preprocessor">#endif //PROJET_STRUCTURE_DE_DONNEES_TEMPS_H</span>
+        </div>
+        <div class="ttc" id="classtemps_html_ac8a215a3a82e3862126f8a53e34dff24">
+            <div class="ttname"><a href="classtemps.html#ac8a215a3a82e3862126f8a53e34dff24">temps::operator!=</a></div>
+            <div class="ttdeci">bool operator!=(const temps &amp;t) const</div>
+            <div class="ttdef"><b>Definition:</b> <a href="temps_8cpp_source.html#l00042">temps.cpp:42</a></div>
+        </div>
+        <div class="ttc" id="classtemps_html">
+            <div class="ttname"><a href="classtemps.html">temps</a></div>
+            <div class="ttdef"><b>Definition:</b> <a href="temps_8h_source.html#l00006">temps.h:6</a></div>
+        </div>
+        <div class="ttc" id="classtemps_html_acd4d4d6629063f29f56960df371562dc">
+            <div class="ttname"><a href="classtemps.html#acd4d4d6629063f29f56960df371562dc">temps::temps</a></div>
+            <div class="ttdeci">temps(short t_h, short t_m)</div>
+            <div class="ttdef"><b>Definition:</b> <a href="temps_8cpp_source.html#l00004">temps.cpp:4</a></div>
+        </div>
+        <div class="ttc" id="classtemps_html_ac157dc6dc948547a4308be4e245533e0">
+            <div class="ttname"><a href="classtemps.html#ac157dc6dc948547a4308be4e245533e0">temps::operator&lt;=</a>
+            </div>
+            <div class="ttdeci">bool operator&lt;=(const temps &amp;t) const</div>
+            <div class="ttdef"><b>Definition:</b> <a href="temps_8cpp_source.html#l00049">temps.cpp:49</a></div>
+        </div>
+        <div class="ttc" id="classtemps_html_adb5279d52fa99dd337f9da85be9f7508">
+            <div class="ttname"><a href="classtemps.html#adb5279d52fa99dd337f9da85be9f7508">temps::duree</a></div>
+            <div class="ttdeci">unsigned int duree() const</div>
+            <div class="ttdef"><b>Definition:</b> <a href="temps_8cpp_source.html#l00008">temps.cpp:8</a></div>
+        </div>
+        <div class="ttc" id="classtemps_html_acfc2fc3861403140d99f8fb0d5bc9605">
+            <div class="ttname"><a href="classtemps.html#acfc2fc3861403140d99f8fb0d5bc9605">temps::operator==</a></div>
+            <div class="ttdeci">bool operator==(const temps &amp;t) const</div>
+            <div class="ttdef"><b>Definition:</b> <a href="temps_8cpp_source.html#l00035">temps.cpp:35</a></div>
+        </div>
+        <div class="ttc" id="classtemps_html_a60c62f523f976838770bcc7897cd95dd">
+            <div class="ttname"><a href="classtemps.html#a60c62f523f976838770bcc7897cd95dd">temps::~temps</a></div>
+            <div class="ttdeci">~temps()</div>
+        </div>
+        <div class="ttc" id="classtemps_html_aed7bdd83ac64173da9d28941851e6c6f">
+            <div class="ttname"><a href="classtemps.html#aed7bdd83ac64173da9d28941851e6c6f">temps::operator&gt;</a>
+            </div>
+            <div class="ttdeci">bool operator&gt;(const temps &amp;t) const</div>
+            <div class="ttdef"><b>Definition:</b> <a href="temps_8cpp_source.html#l00021">temps.cpp:21</a></div>
+        </div>
+        <div class="ttc" id="classtemps_html_a1b15a52246bd917d71e5b0ff0c72de2e">
+            <div class="ttname"><a href="classtemps.html#a1b15a52246bd917d71e5b0ff0c72de2e">temps::dureeComparee</a>
+            </div>
+            <div class="ttdeci">unsigned int dureeComparee(const temps &amp;t) const</div>
+            <div class="ttdef"><b>Definition:</b> <a href="temps_8cpp_source.html#l00015">temps.cpp:15</a></div>
+        </div>
+        <div class="ttc" id="classtemps_html_a8eacc51175804867cb2b7e39d10397fe">
+            <div class="ttname"><a href="classtemps.html#a8eacc51175804867cb2b7e39d10397fe">temps::h</a></div>
+            <div class="ttdeci">short h</div>
+            <div class="ttdef"><b>Definition:</b> <a href="temps_8h_source.html#l00028">temps.h:28</a></div>
+        </div>
+        <div class="ttc" id="classtemps_html_abd702ee4fe6d04d43a9f1644c47431cb">
+            <div class="ttname"><a href="classtemps.html#abd702ee4fe6d04d43a9f1644c47431cb">temps::operator&gt;=</a>
+            </div>
+            <div class="ttdeci">bool operator&gt;=(const temps &amp;t) const</div>
+            <div class="ttdef"><b>Definition:</b> <a href="temps_8cpp_source.html#l00053">temps.cpp:53</a></div>
+        </div>
+        <div class="ttc" id="classtemps_html_a855ddf4f3694aeef1ea73e67eb04752e">
+            <div class="ttname"><a href="classtemps.html#a855ddf4f3694aeef1ea73e67eb04752e">temps::operator&lt;</a>
+            </div>
+            <div class="ttdeci">bool operator&lt;(const temps &amp;t) const</div>
+            <div class="ttdef"><b>Definition:</b> <a href="temps_8cpp_source.html#l00028">temps.cpp:28</a></div>
+        </div>
+        <div class="ttc" id="classtemps_html_aa4f4b54be00d9b0300316501b64bd01d">
+            <div class="ttname"><a href="classtemps.html#aa4f4b54be00d9b0300316501b64bd01d">temps::m</a></div>
+            <div class="ttdeci">short m</div>
+            <div class="ttdef"><b>Definition:</b> <a href="temps_8h_source.html#l00028">temps.h:28</a></div>
+        </div>
+        <div class="ttc" id="temps_8h_html_a990744c6ca705a97692194922fc51686">
+            <div class="ttname"><a href="temps_8h.html#a990744c6ca705a97692194922fc51686">operator&lt;&lt;</a></div>
+            <div class="ttdeci">std::ostream &amp; operator&lt;&lt;(std::ostream &amp;out, const temps &amp;t)</div>
+            <div class="ttdef"><b>Definition:</b> <a href="temps_8cpp_source.html#l00060">temps.cpp:60</a></div>
+        </div>
+    </div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/>
+<address class="footer">
+    <small>
+        Généré par &#160;<a href="http://www.doxygen.org/index.html">
+        <img alt="doxygen" class="footer" src="doxygen.png"/>
+    </a> 1.8.15
+    </small>
+</address>
+</body>
+</html>

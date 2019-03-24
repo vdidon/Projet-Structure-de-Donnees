@@ -1,0 +1,12 @@
+<map id="agenda.h" name="agenda.h">
+<area shape="rect" id="node1" title=" " alt="" coords="143,5,217,32"/>
+<area shape="rect" id="node2" href="$list_jour_8h.html" title=" " alt="" coords="197,80,272,107"/>
+<area shape="rect" id="node7" href="$vector_lite_8h.html" title=" " alt="" coords="355,155,443,181"/>
+<area shape="rect" id="node9" href="$list_contact_8h.html" title=" " alt="" coords="78,80,173,107"/>
+<area shape="rect" id="node10" title=" " alt="" coords="5,155,75,181"/>
+<area shape="rect" id="node3" title=" " alt="" coords="99,155,154,181"/>
+<area shape="rect" id="node4" href="$temps_8h.html" title=" " alt="" coords="179,155,248,181"/>
+<area shape="rect" id="node6" href="$date_8h.html" title=" " alt="" coords="272,155,331,181"/>
+<area shape="rect" id="node5" title=" " alt="" coords="177,229,249,256"/>
+<area shape="rect" id="node8" title=" " alt="" coords="368,229,429,256"/>
+</map>

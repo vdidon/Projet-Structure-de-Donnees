@@ -1,0 +1,126 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta content="text/xhtml;charset=UTF-8" http-equiv="Content-Type"/>
+    <meta content="IE=9" http-equiv="X-UA-Compatible"/>
+    <meta content="Doxygen 1.8.15" name="generator"/>
+    <meta content="width=device-width, initial-scale=1" name="viewport"/>
+    <title>Projet-Structure-de-Donnees: Projet de Structure de Données</title>
+    <link href="tabs.css" rel="stylesheet" type="text/css"/>
+    <script src="jquery.js" type="text/javascript"></script>
+    <script src="dynsections.js" type="text/javascript"></script>
+    <link href="search/search.css" rel="stylesheet" type="text/css"/>
+    <script src="search/searchdata.js" type="text/javascript"></script>
+    <script src="search/search.js" type="text/javascript"></script>
+    <link href="doxygen.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+    <div id="titlearea">
+        <table cellpadding="0" cellspacing="0">
+            <tbody>
+            <tr style="height: 56px;">
+                <td id="projectalign" style="padding-left: 0.5em;">
+                    <div id="projectname">Projet-Structure-de-Donnees
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <!-- end header part -->
+    <!-- Généré par Doxygen 1.8.15 -->
+    <script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
+/* @license-end */
+
+    </script>
+    <script src="menudata.js" type="text/javascript"></script>
+    <script src="menu.js" type="text/javascript"></script>
+    <script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Recherche');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+    </script>
+    <div id="main-nav"></div>
+    <!-- window showing the filter options -->
+    <div id="MSearchSelectWindow"
+         onkeydown="return searchBox.OnSearchSelectKey(event)"
+         onmouseout="return searchBox.OnSearchSelectHide()"
+         onmouseover="return searchBox.OnSearchSelectShow()">
+    </div>
+
+    <!-- iframe showing the search results (closed by default) -->
+    <div id="MSearchResultsWindow">
+        <iframe frameborder="0" id="MSearchResults"
+                name="MSearchResults" src="javascript:void(0)">
+        </iframe>
+    </div>
+
+</div><!-- top -->
+<div class="PageDoc">
+    <div class="header">
+        <div class="headertitle">
+            <div class="title">Projet de Structure de Données</div>
+        </div>
+    </div><!--header-->
+    <div class="contents">
+        <div class="textblock"><img alt="Schéma global" class="inline" src="Schema_global.png"/>
+            <p><b>Mémo GitHub / Git</b></p>
+            <hr/>
+            <p>Créer un compte sur <a href="https://github.com">https://github.com</a></p>
+            <p>Installer git : <a href="https://git-scm.com/downloads">https://git-scm.com/downloads</a></p>
+            <p>Dans votre ligne de commande, tapez :</p>
+            <p><code>git config --global user.name "[Prenom] [Nom]"</code></p>
+            <p><code>git config --global user.email "[username]@[…]"</code></p>
+            <p>Afin de vous créer un clone de travail local, tapez :</p>
+            <p><code>git clone <a href="https://github.com/vdidon/Projet-Structure-de-Donnees.git">https://github.com/vdidon/Projet-Structure-de-Donnees.git</a></code>
+            </p>
+            <p>Cela a pour effet de créer un dossier [projectname] dans lequel vous pourrez travailler.</p>
+            <p>*_Commandes git courantes_*</p>
+            <p><code>git status</code></p>
+            <p>Permet de connaître l'état actuel de votre dépôt local : liste des fichiers sous contrôle contenant des
+                modifications, liste des fichiers présents et non contrôlés, etc.</p>
+            <p><code>git remote -v</code></p>
+            <p>Permet de voir la liste des dépôts distants connus (origin est le nom du dépôt distant depuis lequel le
+                dépôt local a été cloné)</p>
+            <p><code>git diff [file]</code></p>
+            <p>Permet de voir les modifications apportées à un fichier et non encore commitées</p>
+            <p><code>git checkout -- [file]</code></p>
+            <p>Permet d'annuler les modifications apportées à un fichier et de le remettre dans l'état où il était
+                précédemment</p>
+            <p><code>git add [file]</code></p>
+            <p>Permet d'ajouter un fichier non contrôlé au dépôt lors du prochain commit</p>
+            <p><code>git reset HEAD [file]</code></p>
+            <p>Permet d'enlever un fichier de la liste des fichiers à ajouter au prochain commit</p>
+            <p><code>git commit --all -m "..."</code></p>
+            <p>Permet d'ajouter un commit au dépôt (sous réserve d'avoir fait au moins un add avant). Cette commande
+                permet de saisir le message du commit et voir au passage la liste des fichiers concernés</p>
+            <p><code>git pull</code></p>
+            <p>Récupère les commits du dépôt d'origine dont le dépôt local ne dispose pas encore</p>
+            <p><code>git push</code></p>
+            <p>Envoie vers le dépôt d'origine les commits dont il ne dispose pas encore (vous pouvez constater sur
+                l'interface web GitHub que vos nouveaux commits ont bien été ajoutés)</p>
+            <p>*_Mise en commun du travail_*</p>
+            <p>Une fois que vous avez créé des commits dans votre dépôt de travail (<code>git commit</code>) et envoyé
+                ces commits dans votre dépôt distant (<code>git push</code>), vous allez pouvoir les proposer pour
+                intégration au sein du dépôt commun du groupe. </p>
+        </div>
+    </div><!-- PageDoc -->
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/>
+<address class="footer">
+    <small>
+        Généré par &#160;<a href="http://www.doxygen.org/index.html">
+        <img alt="doxygen" class="footer" src="doxygen.png"/>
+    </a> 1.8.15
+    </small>
+</address>
+</body>
+</html>

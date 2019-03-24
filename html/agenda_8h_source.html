@@ -1,0 +1,482 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta content="text/xhtml;charset=UTF-8" http-equiv="Content-Type"/>
+    <meta content="IE=9" http-equiv="X-UA-Compatible"/>
+    <meta content="Doxygen 1.8.15" name="generator"/>
+    <meta content="width=device-width, initial-scale=1" name="viewport"/>
+    <title>Projet-Structure-de-Donnees: Fichier source de agenda.h</title>
+    <link href="tabs.css" rel="stylesheet" type="text/css"/>
+    <script src="jquery.js" type="text/javascript"></script>
+    <script src="dynsections.js" type="text/javascript"></script>
+    <link href="search/search.css" rel="stylesheet" type="text/css"/>
+    <script src="search/searchdata.js" type="text/javascript"></script>
+    <script src="search/search.js" type="text/javascript"></script>
+    <link href="doxygen.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+    <div id="titlearea">
+        <table cellpadding="0" cellspacing="0">
+            <tbody>
+            <tr style="height: 56px;">
+                <td id="projectalign" style="padding-left: 0.5em;">
+                    <div id="projectname">Projet-Structure-de-Donnees
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <!-- end header part -->
+    <!-- Généré par Doxygen 1.8.15 -->
+    <script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
+/* @license-end */
+
+    </script>
+    <script src="menudata.js" type="text/javascript"></script>
+    <script src="menu.js" type="text/javascript"></script>
+    <script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Recherche');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+    </script>
+    <div id="main-nav"></div>
+</div><!-- top -->
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onkeydown="return searchBox.OnSearchSelectKey(event)"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onmouseover="return searchBox.OnSearchSelectShow()">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+    <iframe frameborder="0" id="MSearchResults"
+            name="MSearchResults" src="javascript:void(0)">
+    </iframe>
+</div>
+
+<div class="header">
+    <div class="headertitle">
+        <div class="title">agenda.h</div>
+    </div>
+</div><!--header-->
+<div class="contents">
+    <a href="agenda_8h.html">Aller à la documentation de ce fichier.</a>
+    <div class="fragment">
+        <div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef PROJET_STRUCTURE_DE_DONNEES_AGENDA_H</span>
+        </div>
+        <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define PROJET_STRUCTURE_DE_DONNEES_AGENDA_H</span>
+        </div>
+        <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;</div>
+        <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &quot;<a
+                class="code" href="list_jour_8h.html">listJour.h</a>&quot;</span></div>
+        <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &quot;<a
+                class="code" href="list_contact_8h.html">listContact.h</a>&quot;</span></div>
+        <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &quot;<a
+                class="code" href="vector_lite_8h.html">vectorLite.h</a>&quot;</span></div>
+        <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &lt;ostream&gt;</span>
+        </div>
+        <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;</div>
+        <div class="line"><a name="l00009"></a><span class="lineno"><a class="line"
+                                                                       href="classagenda.html">    9</a></span>&#160;<span
+                class="keyword">class </span><a class="code" href="classagenda.html">agenda</a> {
+        </div>
+        <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span
+                class="keyword">public</span>:
+        </div>
+        <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160; <a class="code"
+                                                                                          href="classagenda.html#ad55460dcfaa7b29ed0cb231b65cbdbdd">agenda</a>();
+        </div>
+        <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; <span class="comment">//agenda(const listContact &amp;c,const listJour &amp;j);</span>
+        </div>
+        <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;</div>
+        <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; <a class="code"
+                                                                                          href="classagenda.html#a242dd9655ad62c90ba9476bd03bb4b38">~agenda</a>();
+        </div>
+        <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;</div>
+        <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; <span
+                class="keywordtype">bool</span> <a class="code"
+                                                   href="classagenda.html#a0a6cdc45378b562327f080e10107bca8">ajouterContact</a>(<span
+                class="keyword">const</span> <span class="keywordtype">string</span> &amp;nom, <span class="keyword">const</span>
+            <span class="keywordtype">string</span> &amp;prenom, <span class="keyword">const</span> <span
+                    class="keywordtype">string</span> &amp;num = <span class="stringliteral">&quot;&quot;</span>, <span
+                    class="keyword">const</span> <span class="keywordtype">string</span> &amp;adresseMail = <span
+                    class="stringliteral">&quot;&quot;</span>);
+        </div>
+        <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;</div>
+        <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; <span
+                class="keywordtype">bool</span> <a class="code"
+                                                   href="classagenda.html#a98c6c88ce2e5bfa5e782d7cc8960664e">supprimerContact</a>(<span
+                class="keyword">const</span> <span class="keywordtype">string</span> &amp;nom, <span class="keyword">const</span>
+            <span class="keywordtype">string</span> &amp;prenom);
+        </div>
+        <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;</div>
+        <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; <span
+                class="keywordtype">bool</span> <a class="code"
+                                                   href="classagenda.html#a9961645c1ca2cbf5ec41cf261a91427d">modifNum</a>(<span
+                class="keyword">const</span> <span class="keywordtype">string</span> &amp;nom, <span class="keyword">const</span>
+            <span class="keywordtype">string</span> &amp;prenom, <span class="keyword">const</span> <span
+                    class="keywordtype">string</span> &amp;num);
+        </div>
+        <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;</div>
+        <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; <span
+                class="keywordtype">bool</span> <a class="code"
+                                                   href="classagenda.html#afbece8de08bc8271f688049828745797">modifEmail</a>(<span
+                class="keyword">const</span> <span class="keywordtype">string</span> &amp;nom, <span class="keyword">const</span>
+            <span class="keywordtype">string</span> &amp;prenom, <span class="keyword">const</span> <span
+                    class="keywordtype">string</span> &amp;adresse);
+        </div>
+        <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;</div>
+        <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; <span
+                class="keywordtype">bool</span></div>
+        <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; <a class="code"
+                                                                                          href="classagenda.html#a32a4c18a8696dde8cbe9b52d410590a8">ajouterRdv</a>(<span
+                class="keywordtype">int</span> j, <span class="keywordtype">int</span> m, <span
+                class="keywordtype">int</span> a, <span class="keyword">const</span> std::string &amp;nom, <span
+                class="keywordtype">int</span> h, <span class="keywordtype">int</span> min, <span class="keywordtype">int</span>
+            fj, <span class="keywordtype">int</span> fm, <span class="keywordtype">int</span> fa, <span
+                    class="keywordtype">int</span> fh, <span class="keywordtype">int</span> fmin,
+        </div>
+        <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; <span
+                class="keyword">const</span> <a class="code" href="classvector_lite.html">vectorLite&lt;contact
+            *&gt;</a> &amp;tabContacts = <a class="code" href="classvector_lite.html">vectorLite&lt;contact *&gt;</a>{});
+        </div>
+        <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;</div>
+        <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; <span
+                class="keywordtype">bool</span> <a class="code"
+                                                   href="classagenda.html#a398a0115cbf5d95ff794cd85a0f47700">modifHeureDeb</a>(<span
+                class="keywordtype">int</span> j, <span class="keywordtype">int</span> m, <span
+                class="keywordtype">int</span> a, <span class="keyword">const</span> std::string &amp;nom, <span
+                class="keywordtype">int</span> h, <span class="keywordtype">int</span> min);
+        </div>
+        <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;</div>
+        <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; <span
+                class="keywordtype">bool</span> <a class="code"
+                                                   href="classagenda.html#a3264449942afdcd6fe891db66a3768aa">modifHeureFin</a>(<span
+                class="keywordtype">int</span> j, <span class="keywordtype">int</span> m, <span
+                class="keywordtype">int</span> a, <span class="keyword">const</span> std::string &amp;nom, <span
+                class="keywordtype">int</span> h, <span class="keywordtype">int</span> min);
+        </div>
+        <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;</div>
+        <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; <span
+                class="keywordtype">bool</span> <a class="code"
+                                                   href="classagenda.html#abd03d778a6f46f0108a246d3f06b52de">modifJourDeb</a>(<span
+                class="keywordtype">int</span> j, <span class="keywordtype">int</span> m, <span
+                class="keywordtype">int</span> a, <span class="keyword">const</span> std::string &amp;nom, <span
+                class="keywordtype">int</span> newj, <span class="keywordtype">int</span> newm, <span
+                class="keywordtype">int</span> newa);
+        </div>
+        <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;</div>
+        <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; <span
+                class="keywordtype">bool</span> <a class="code"
+                                                   href="classagenda.html#a0e52c8960b34d354efda46e27562aff7">modifJourFin</a>(<span
+                class="keywordtype">int</span> j, <span class="keywordtype">int</span> m, <span
+                class="keywordtype">int</span> a, <span class="keyword">const</span> std::string &amp;nom, <span
+                class="keywordtype">int</span> newj, <span class="keywordtype">int</span> newm, <span
+                class="keywordtype">int</span> newa);
+        </div>
+        <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;</div>
+        <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; <span class="comment">/*bool modifDuree(int j, int m, int a,</span>
+        </div>
+        <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="comment">                    const std::string &amp;nom, unsigned int duree);*/</span>
+        </div>
+        <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;</div>
+        <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; <span
+                class="keywordtype">bool</span> <a class="code"
+                                                   href="classagenda.html#a1a19f8c5de443ea0fc40ee75926e1cdf">ajouterContactARdv</a>(<span
+                class="keyword">const</span> <span class="keywordtype">string</span> &amp;nom, <span class="keyword">const</span>
+            <span class="keywordtype">string</span> &amp;prenom,
+        </div>
+        <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; <span
+                class="keyword">const</span> <span class="keywordtype">string</span> &amp;nom_rdv,
+        </div>
+        <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; <span
+                class="keywordtype">int</span> j, <span class="keywordtype">int</span> m, <span
+                class="keywordtype">int</span> a);
+        </div>
+        <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;</div>
+        <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; <span
+                class="keywordtype">bool</span> <a class="code"
+                                                   href="classagenda.html#ab95dc37830464dc5dd32d432a43bf9f7">supprimerContactARdv</a>(<span
+                class="keyword">const</span> <span class="keywordtype">string</span> &amp;nom, <span class="keyword">const</span>
+            <span class="keywordtype">string</span> &amp;prenom,
+        </div>
+        <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; <span
+                class="keyword">const</span> <span class="keywordtype">string</span> &amp;nom_rdv,
+        </div>
+        <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; <span
+                class="keywordtype">int</span> j, <span class="keywordtype">int</span> m, <span
+                class="keywordtype">int</span> a);
+        </div>
+        <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;</div>
+        <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; <span
+                class="keywordtype">bool</span> <a class="code"
+                                                   href="classagenda.html#a9f837d2761467330531c133f30e52f43">supprimerRdv</a>(<span
+                class="keywordtype">int</span> j, <span class="keywordtype">int</span> m, <span
+                class="keywordtype">int</span> a, <span class="keyword">const</span> std::string &amp;nom);
+        </div>
+        <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;</div>
+        <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; <span
+                class="keywordtype">bool</span> <a class="code"
+                                                   href="classagenda.html#ae68bc9166b8d210e46acaf0ab04765e0">afficherRdvDeContact</a>(<span
+                class="keyword">const</span> <span class="keywordtype">string</span> &amp;nom, <span class="keyword">const</span>
+            <span class="keywordtype">string</span> &amp;prenom, std::ostream &amp;out) <span
+                    class="keyword">const</span>;
+        </div>
+        <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;</div>
+        <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; <span
+                class="keywordtype">bool</span> <a class="code"
+                                                   href="classagenda.html#aa6bee7981ca39eb5c11d89519d3e10cf">afficherContactDeRdv</a>(<span
+                class="keyword">const</span> <span class="keywordtype">string</span> &amp;nom_rdv, <span
+                class="keywordtype">int</span> j, <span class="keywordtype">int</span> m, <span
+                class="keywordtype">int</span> a, std::ostream &amp;out) <span class="keyword">const</span>;
+        </div>
+        <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;</div>
+        <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; <span
+                class="keywordtype">bool</span> <a class="code"
+                                                   href="classagenda.html#a687ee552b9b9bbc86a0b45951507a30a">afficherRdvDeJour</a>(<span
+                class="keywordtype">int</span> j, <span class="keywordtype">int</span> m, <span
+                class="keywordtype">int</span> a, std::ostream &amp;out) <span class="keyword">const</span>;
+        </div>
+        <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;</div>
+        <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160; <span
+                class="keywordtype">bool</span></div>
+        <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160; <a class="code"
+                                                                                          href="classagenda.html#a5d0f1f68ba92cfa3daa818a4c94fb794">contactEstDispo</a>(<span
+                class="keywordtype">string</span> nom, <span class="keywordtype">string</span> prenom, <span
+                class="keywordtype">int</span> dj, <span class="keywordtype">int</span> dm, <span class="keywordtype">int</span>
+            da, <span class="keywordtype">int</span> dh, <span class="keywordtype">int</span> dmin, <span
+                    class="keywordtype">int</span> fj, <span class="keywordtype">int</span> fm, <span
+                    class="keywordtype">int</span> fa, <span class="keywordtype">int</span> fh,
+        </div>
+        <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160; <span
+                class="keywordtype">int</span> fmin) <span class="keyword">const</span>; <span class="comment">// pas opti</span>
+        </div>
+        <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;</div>
+        <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<span
+                class="keyword">private</span>:
+        </div>
+        <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160; <a class="code"
+                                                                                          href="classlist_jour.html">listJour</a>
+            d_listJour;
+        </div>
+        <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160; <a class="code"
+                                                                                          href="classlist_contact.html">listContact</a>
+            d_listContact;
+        </div>
+        <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;</div>
+        <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160; <span
+                class="keywordtype">bool</span> chercherContactEtRdv(<span class="keyword">const</span> <span
+                class="keywordtype">string</span> &amp;nom, <span class="keyword">const</span> <span
+                class="keywordtype">string</span> &amp;prenom,
+        </div>
+        <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160; <span
+                class="keyword">const</span> <span class="keywordtype">string</span> &amp;nom_rdv, <span
+                class="keywordtype">int</span> j, <span class="keywordtype">int</span> m, <span
+                class="keywordtype">int</span> a,
+        </div>
+        <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160; <a class="code"
+                                                                                          href="classcontact.html">contact</a>
+            *&amp;c, <a class="code" href="classrdv.html">rdv</a> *&amp;r);
+        </div>
+        <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;</div>
+        <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160; <span
+                class="keywordtype">bool</span> testContact(<span class="keyword">const</span> <span
+                class="keywordtype">string</span> &amp;nom, <span class="keyword">const</span> <span
+                class="keywordtype">string</span> &amp;prenom);
+        </div>
+        <div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;</div>
+        <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160; <span
+                class="keywordtype">bool</span> testJour(<span class="keywordtype">int</span> j, <span
+                class="keywordtype">int</span> m, <span class="keywordtype">int</span> a);
+        </div>
+        <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;</div>
+        <div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160; <span
+                class="keywordtype">bool</span> testRdv(<span class="keyword">const</span> <span class="keywordtype">string</span>
+            &amp;nom);
+        </div>
+        <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;</div>
+        <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;};</div>
+        <div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;</div>
+        <div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;</div>
+        <div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;<span class="preprocessor">#endif //PROJET_STRUCTURE_DE_DONNEES_AGENDA_H</span>
+        </div>
+        <div class="ttc" id="classagenda_html_a3264449942afdcd6fe891db66a3768aa">
+            <div class="ttname"><a href="classagenda.html#a3264449942afdcd6fe891db66a3768aa">agenda::modifHeureFin</a>
+            </div>
+            <div class="ttdeci">bool modifHeureFin(int j, int m, int a, const std::string &amp;nom, int h, int min)
+            </div>
+            <div class="ttdef"><b>Definition:</b> <a href="agenda_8cpp_source.html#l00139">agenda.cpp:139</a></div>
+        </div>
+        <div class="ttc" id="classagenda_html_aa6bee7981ca39eb5c11d89519d3e10cf">
+            <div class="ttname"><a href="classagenda.html#aa6bee7981ca39eb5c11d89519d3e10cf">agenda::afficherContactDeRdv</a>
+            </div>
+            <div class="ttdeci">bool afficherContactDeRdv(const string &amp;nom_rdv, int j, int m, int a, std::ostream
+                &amp;out) const
+            </div>
+            <div class="ttdef"><b>Definition:</b> <a href="agenda_8cpp_source.html#l00111">agenda.cpp:111</a></div>
+        </div>
+        <div class="ttc" id="classagenda_html">
+            <div class="ttname"><a href="classagenda.html">agenda</a></div>
+            <div class="ttdef"><b>Definition:</b> <a href="agenda_8h_source.html#l00009">agenda.h:9</a></div>
+        </div>
+        <div class="ttc" id="classlist_contact_html">
+            <div class="ttname"><a href="classlist_contact.html">listContact</a></div>
+            <div class="ttdef"><b>Definition:</b> <a href="list_contact_8h_source.html#l00013">listContact.h:13</a>
+            </div>
+        </div>
+        <div class="ttc" id="classagenda_html_a5d0f1f68ba92cfa3daa818a4c94fb794">
+            <div class="ttname"><a href="classagenda.html#a5d0f1f68ba92cfa3daa818a4c94fb794">agenda::contactEstDispo</a>
+            </div>
+            <div class="ttdeci">bool contactEstDispo(string nom, string prenom, int dj, int dm, int da, int dh, int
+                dmin, int fj, int fm, int fa, int fh, int fmin) const
+            </div>
+            <div class="ttdef"><b>Definition:</b> <a href="agenda_8cpp_source.html#l00152">agenda.cpp:152</a></div>
+        </div>
+        <div class="ttc" id="classagenda_html_ab95dc37830464dc5dd32d432a43bf9f7">
+            <div class="ttname"><a href="classagenda.html#ab95dc37830464dc5dd32d432a43bf9f7">agenda::supprimerContactARdv</a>
+            </div>
+            <div class="ttdeci">bool supprimerContactARdv(const string &amp;nom, const string &amp;prenom, const string
+                &amp;nom_rdv, int j, int m, int a)
+            </div>
+            <div class="ttdef"><b>Definition:</b> <a href="agenda_8cpp_source.html#l00067">agenda.cpp:67</a></div>
+        </div>
+        <div class="ttc" id="classagenda_html_a9961645c1ca2cbf5ec41cf261a91427d">
+            <div class="ttname"><a href="classagenda.html#a9961645c1ca2cbf5ec41cf261a91427d">agenda::modifNum</a></div>
+            <div class="ttdeci">bool modifNum(const string &amp;nom, const string &amp;prenom, const string &amp;num)
+            </div>
+            <div class="ttdef"><b>Definition:</b> <a href="agenda_8cpp_source.html#l00024">agenda.cpp:24</a></div>
+        </div>
+        <div class="ttc" id="classlist_jour_html">
+            <div class="ttname"><a href="classlist_jour.html">listJour</a></div>
+            <div class="ttdef"><b>Definition:</b> <a href="list_jour_8h_source.html#l00016">listJour.h:16</a></div>
+        </div>
+        <div class="ttc" id="classagenda_html_a687ee552b9b9bbc86a0b45951507a30a">
+            <div class="ttname"><a
+                    href="classagenda.html#a687ee552b9b9bbc86a0b45951507a30a">agenda::afficherRdvDeJour</a></div>
+            <div class="ttdeci">bool afficherRdvDeJour(int j, int m, int a, std::ostream &amp;out) const</div>
+            <div class="ttdef"><b>Definition:</b> <a href="agenda_8cpp_source.html#l00119">agenda.cpp:119</a></div>
+        </div>
+        <div class="ttc" id="classcontact_html">
+            <div class="ttname"><a href="classcontact.html">contact</a></div>
+            <div class="ttdef"><b>Definition:</b> <a href="contact_8h_source.html#l00012">contact.h:12</a></div>
+        </div>
+        <div class="ttc" id="classagenda_html_afbece8de08bc8271f688049828745797">
+            <div class="ttname"><a href="classagenda.html#afbece8de08bc8271f688049828745797">agenda::modifEmail</a>
+            </div>
+            <div class="ttdeci">bool modifEmail(const string &amp;nom, const string &amp;prenom, const string &amp;adresse)</div>
+            <div class="ttdef"><b>Definition:</b> <a href="agenda_8cpp_source.html#l00029">agenda.cpp:29</a></div>
+        </div>
+        <div class="ttc" id="classagenda_html_a1a19f8c5de443ea0fc40ee75926e1cdf">
+            <div class="ttname"><a
+                    href="classagenda.html#a1a19f8c5de443ea0fc40ee75926e1cdf">agenda::ajouterContactARdv</a></div>
+            <div class="ttdeci">bool ajouterContactARdv(const string &amp;nom, const string &amp;prenom, const string
+                &amp;nom_rdv, int j, int m, int a)
+            </div>
+            <div class="ttdef"><b>Definition:</b> <a href="agenda_8cpp_source.html#l00056">agenda.cpp:56</a></div>
+        </div>
+        <div class="ttc" id="classagenda_html_a32a4c18a8696dde8cbe9b52d410590a8">
+            <div class="ttname"><a href="classagenda.html#a32a4c18a8696dde8cbe9b52d410590a8">agenda::ajouterRdv</a>
+            </div>
+            <div class="ttdeci">bool ajouterRdv(int j, int m, int a, const std::string &amp;nom, int h, int min, int fj,
+                int fm, int fa, int fh, int fmin, const vectorLite&lt; contact * &gt; &amp;tabContacts=vectorLite&lt;
+                contact * &gt;{})
+            </div>
+            <div class="ttdef"><b>Definition:</b> <a href="agenda_8cpp_source.html#l00033">agenda.cpp:33</a></div>
+        </div>
+        <div class="ttc" id="classvector_lite_html">
+            <div class="ttname"><a href="classvector_lite.html">vectorLite&lt; contact * &gt;</a></div>
+        </div>
+        <div class="ttc" id="classagenda_html_a0a6cdc45378b562327f080e10107bca8">
+            <div class="ttname"><a href="classagenda.html#a0a6cdc45378b562327f080e10107bca8">agenda::ajouterContact</a>
+            </div>
+            <div class="ttdeci">bool ajouterContact(const string &amp;nom, const string &amp;prenom, const string &amp;num=&quot;&quot;,
+                const string &amp;adresseMail=&quot;&quot;)
+            </div>
+            <div class="ttdef"><b>Definition:</b> <a href="agenda_8cpp_source.html#l00014">agenda.cpp:14</a></div>
+        </div>
+        <div class="ttc" id="list_jour_8h_html">
+            <div class="ttname"><a href="list_jour_8h.html">listJour.h</a></div>
+        </div>
+        <div class="ttc" id="classagenda_html_a9f837d2761467330531c133f30e52f43">
+            <div class="ttname"><a href="classagenda.html#a9f837d2761467330531c133f30e52f43">agenda::supprimerRdv</a>
+            </div>
+            <div class="ttdeci">bool supprimerRdv(int j, int m, int a, const std::string &amp;nom)</div>
+            <div class="ttdef"><b>Definition:</b> <a href="agenda_8cpp_source.html#l00089">agenda.cpp:89</a></div>
+        </div>
+        <div class="ttc" id="classrdv_html">
+            <div class="ttname"><a href="classrdv.html">rdv</a></div>
+            <div class="ttdef"><b>Definition:</b> <a href="rdv_8h_source.html#l00014">rdv.h:14</a></div>
+        </div>
+        <div class="ttc" id="classagenda_html_a98c6c88ce2e5bfa5e782d7cc8960664e">
+            <div class="ttname"><a
+                    href="classagenda.html#a98c6c88ce2e5bfa5e782d7cc8960664e">agenda::supprimerContact</a></div>
+            <div class="ttdeci">bool supprimerContact(const string &amp;nom, const string &amp;prenom)</div>
+            <div class="ttdef"><b>Definition:</b> <a href="agenda_8cpp_source.html#l00018">agenda.cpp:18</a></div>
+        </div>
+        <div class="ttc" id="vector_lite_8h_html">
+            <div class="ttname"><a href="vector_lite_8h.html">vectorLite.h</a></div>
+        </div>
+        <div class="ttc" id="classagenda_html_a398a0115cbf5d95ff794cd85a0f47700">
+            <div class="ttname"><a href="classagenda.html#a398a0115cbf5d95ff794cd85a0f47700">agenda::modifHeureDeb</a>
+            </div>
+            <div class="ttdeci">bool modifHeureDeb(int j, int m, int a, const std::string &amp;nom, int h, int min)
+            </div>
+            <div class="ttdef"><b>Definition:</b> <a href="agenda_8cpp_source.html#l00048">agenda.cpp:48</a></div>
+        </div>
+        <div class="ttc" id="list_contact_8h_html">
+            <div class="ttname"><a href="list_contact_8h.html">listContact.h</a></div>
+        </div>
+        <div class="ttc" id="classagenda_html_abd03d778a6f46f0108a246d3f06b52de">
+            <div class="ttname"><a href="classagenda.html#abd03d778a6f46f0108a246d3f06b52de">agenda::modifJourDeb</a>
+            </div>
+            <div class="ttdeci">bool modifJourDeb(int j, int m, int a, const std::string &amp;nom, int newj, int newm,
+                int newa)
+            </div>
+            <div class="ttdef"><b>Definition:</b> <a href="agenda_8cpp_source.html#l00143">agenda.cpp:143</a></div>
+        </div>
+        <div class="ttc" id="classagenda_html_a242dd9655ad62c90ba9476bd03bb4b38">
+            <div class="ttname"><a href="classagenda.html#a242dd9655ad62c90ba9476bd03bb4b38">agenda::~agenda</a></div>
+            <div class="ttdeci">~agenda()</div>
+        </div>
+        <div class="ttc" id="classagenda_html_ae68bc9166b8d210e46acaf0ab04765e0">
+            <div class="ttname"><a href="classagenda.html#ae68bc9166b8d210e46acaf0ab04765e0">agenda::afficherRdvDeContact</a>
+            </div>
+            <div class="ttdeci">bool afficherRdvDeContact(const string &amp;nom, const string &amp;prenom, std::ostream
+                &amp;out) const
+            </div>
+            <div class="ttdef"><b>Definition:</b> <a href="agenda_8cpp_source.html#l00103">agenda.cpp:103</a></div>
+        </div>
+        <div class="ttc" id="classagenda_html_a0e52c8960b34d354efda46e27562aff7">
+            <div class="ttname"><a href="classagenda.html#a0e52c8960b34d354efda46e27562aff7">agenda::modifJourFin</a>
+            </div>
+            <div class="ttdeci">bool modifJourFin(int j, int m, int a, const std::string &amp;nom, int newj, int newm,
+                int newa)
+            </div>
+            <div class="ttdef"><b>Definition:</b> <a href="agenda_8cpp_source.html#l00147">agenda.cpp:147</a></div>
+        </div>
+        <div class="ttc" id="classagenda_html_ad55460dcfaa7b29ed0cb231b65cbdbdd">
+            <div class="ttname"><a href="classagenda.html#ad55460dcfaa7b29ed0cb231b65cbdbdd">agenda::agenda</a></div>
+            <div class="ttdeci">agenda()</div>
+            <div class="ttdef"><b>Definition:</b> <a href="agenda_8cpp_source.html#l00010">agenda.cpp:10</a></div>
+        </div>
+    </div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/>
+<address class="footer">
+    <small>
+        Généré par &#160;<a href="http://www.doxygen.org/index.html">
+        <img alt="doxygen" class="footer" src="doxygen.png"/>
+    </a> 1.8.15
+    </small>
+</address>
+</body>
+</html>
