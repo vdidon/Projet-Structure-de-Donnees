@@ -2,7 +2,7 @@
 #include "rdv.h"
 #include "date.h"
 
-jour::jour(const date &d) : d_date{d}
+jour::jour(const date &d, rdv *tete) : d_date{d}, d_tete{tete}
     {}
 
 jour::~jour()
@@ -169,11 +169,13 @@ bool jour::afficherRdvDeJour(std::ostream &out) const
         return false;
     }
     rdv*cl=d_tete;
-    while(cl!=nullptr)
+	while (cl->d_suiv != nullptr)
     {
-	    out << cl << std::endl;
+//	    out << cl << std::endl;
+		cl->afficherRdv(out);
         cl=cl->d_suiv;
     }
+	cl->afficherRdv(out);
 
     return true;
 }

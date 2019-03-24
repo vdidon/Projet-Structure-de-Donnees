@@ -16,7 +16,7 @@ class jour {
 	friend class listJour;
 
 public:
-	jour(const date &d); //ska : fait        d_date doit être construit par recopie
+	jour(const date &d, rdv *tete = nullptr); //ska : fait        d_date doit être construit par recopie
 
 	~jour(); //ska : fait                    le tab de rdv étant déjà vide
 
