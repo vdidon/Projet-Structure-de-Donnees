@@ -53,11 +53,11 @@ vectorLite<contact *> &tabContacts) {
     if (dFin != d) {
         jFin = j;
         //jour *pre = nullptr;
-        while (jFin != nullptr && dFin < jFin->d_date) {
+	    while (jFin != nullptr && jFin->d_date < dFin) {
             pre = jFin;
             jFin = jFin->suiv;
         }
-        if (jFin == nullptr || j->d_date > d) {
+	    if (jFin == nullptr || jFin->d_date > d) {
             jFin = ajouterJour(dFin, pre, jFin);
         }
     } else {
@@ -100,9 +100,25 @@ bool listJour::modifHeureDeb(const date &d, const std::string &nom, const temps 
 
 void listJour::supprimerRdv(rdv *r) {
     jour *j = r->getJourDeb();
-    jour::supprimerRdv(r);
-    if (j->d_tete)
-        supprimerJour(j->d_date); // gros gros problème : pas opti x)
+	jour *jFin = r->getJourFin();
+	if (j != jFin) {
+		jour *jDeb = j;
+		jour *pre = j;
+		j = j->suiv;
+		do {
+			int i;
+			for (i = 0; j->d_rdvMultiJours[i] != r; ++i);
+			j->d_rdvMultiJours.supprimer(i);
+			if (!j->d_tete && j->d_rdvMultiJours.size())
+				supprimerJour(pre, j->suiv);
+			pre = pre->suiv;
+			j = pre->suiv->suiv;
+
+		} while (j != jFin);
+	}
+	jour::supprimerRdv(r);
+	if (!j->d_tete && j->d_rdvMultiJours.size())
+		supprimerJour(j->d_date); // gros gros problème : pas opti x)
 }
 
 jour *listJour::ajouterJour(const date &d, jour *pre, jour *suiv) {
