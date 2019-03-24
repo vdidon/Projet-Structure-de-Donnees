@@ -81,7 +81,7 @@ rdv *jour::ajouterRdv(const std::string &nom, const temps &tDeb, const temps &tF
 rdv *jour::chercherRdv(const std::string &nom) const
 {
     rdv* cl=d_tete;
-    while(cl!=nullptr)
+	while (cl != nullptr && cl->d_nom != nom)
     {
         cl=cl->d_suiv;
     }
@@ -113,9 +113,9 @@ void jour::supprimerRdv(rdv *r) //static
 }
 
 
-void jour::ajouterContact(rdv *r, contact *c) //static
+bool jour::ajouterContact(rdv *r, contact *c) //static
 {
-	r->ajouterContact(c);
+	return r->ajouterContact(c);
 }
 
 void jour::supprimerContact(rdv *r, contact *c) //static

@@ -5,7 +5,7 @@
 
 rdv::rdv(const std::string &nom, const temps &deb, const temps &fin, jour *j, jour *jfin,
          const vectorLite<contact *> &tabContacts) :
-		d_nom{nom}, d_tDeb{deb}, d_tFin{fin}, d_j{jfin}, d_tabContacts{tabContacts}, d_suiv{nullptr}
+		d_nom{nom}, d_tDeb{deb}, d_tFin{fin}, d_j{jfin}, d_jfin{jfin}, d_tabContacts{tabContacts}, d_suiv{nullptr}
     {}
 
 rdv::~rdv() = default;
@@ -45,7 +45,10 @@ bool rdv::afficherContactDeRdv(std::ostream &out) const{
     out<<endl;
     for(int i=0; i<d_tabContacts.size(); i++)
     {
-        out<<d_tabContacts[i]<<endl;
+	    out << "Nom : " << d_tabContacts[i]->getNom() << endl;
+	    out << "Péenom : " << d_tabContacts[i]->getPrenom() << endl;
+	    out << "Num : " << d_tabContacts[i]->getNum() << endl;
+	    out << "Email : " << d_tabContacts[i]->getAdresse() << endl << endl;
     }
 
     return true;
@@ -173,10 +176,10 @@ bool rdv::modifJourFin(jour *j) {
 }
 
 bool rdv::ajouterContact(contact *c){
-	vectorLite<rdv *> T = c->getTabrdv();
-    for(int i = 0; i<T.size();i++)
+	vectorLite<rdv *> *T = &c->getTabrdv();
+	for (int i = 0; i < T->size(); i++)
     {
-        if (pasEnMemeTemps(T[i]))
+	    if (pasEnMemeTemps((*T)[i]))
         {
 	        i++;
         }
@@ -205,10 +208,10 @@ bool rdv::supprimeContact(contact *c)
 }
 
 bool rdv::afficherRdv(std::ostream &out) const {
-	out << "nom : " << d_nom;
+	out << "nom : " << d_nom << endl;
 	out << "date de debut : " << d_j->getJour() << '/' << d_j->getMois() << '/' << d_j->getAnnee() << endl;
-	out << "l'heure de debut" << d_tDeb.h << ':' << d_tDeb.m << endl;
+	out << "l'heure de debut : " << d_tDeb.h << ':' << d_tDeb.m << endl;
 	out << "date de fin : " << d_jfin->getJour() << '/' << d_jfin->getMois() << '/' << d_jfin->getAnnee() << endl;
-	out << "l'heure de fin" << d_tFin.h << ':' << d_tFin.m << endl << endl;
+	out << "l'heure de fin : " << d_tFin.h << ':' << d_tFin.m << endl << endl;
 	return true;
 }

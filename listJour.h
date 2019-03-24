@@ -28,7 +28,7 @@ public:
     rdv *ajouterRdv(const date &d, std::string nom, const temps &tDeb, const temps &tFin, const date &dFin, const
     vectorLite<contact *> &tabContacts);
 
-    void ajouterContact(rdv *r, contact *c);
+	bool ajouterContact(rdv *r, contact *c);
 
     void supprimerContact(rdv *r, contact *c);
 

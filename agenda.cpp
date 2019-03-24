@@ -38,7 +38,7 @@ bool agenda::ajouterRdv(int j, int m, int a, const std::string &nom, int h, int 
                                    tabContacts);
     if (r == nullptr)
         return false; // rdv pas créé
-    if (!tabContacts.size())
+	if (tabContacts.size())
         for (int i = 0; i < tabContacts.size(); ++i) {
 	        d_listContact.ajouteRdv(tabContacts[i], r);
         }
@@ -58,9 +58,9 @@ bool agenda::ajouterContactARdv(const string &nom, const string &prenom, const s
     rdv *r;
     if (!chercherContactEtRdv(nom, prenom, nom_rdv, j, m, a, c, r))
         return false;
-	if (!d_listContact.ajouteRdv(c, r))
+	if (!d_listJour.ajouterContact(r, c))
         return false; // contact pas dispo
-    d_listJour.ajouterContact(r, c);
+	d_listContact.ajouteRdv(c, r);
     return true;
 }
 
@@ -80,9 +80,9 @@ bool agenda::chercherContactEtRdv(const string &nom, const string &prenom, const
                                   contact *&c,
                                   rdv *&r) {
     c = d_listContact.chercherContact(nom, prenom);
-    if (c)
+	if (!c)
         return false; // le contact n'existe pas
-    r = d_listJour.chercherRdv(date{j, m, a}, nom);
+	r = d_listJour.chercherRdv(date{j, m, a}, nom_rdv);
     return r != nullptr; // le rdv n'existe pas
 }
 

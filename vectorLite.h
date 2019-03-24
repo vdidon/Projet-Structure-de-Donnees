@@ -82,6 +82,7 @@ void vectorLite<T>::recap(int p_cap) {
 		memcpy(tmpTab, d_tab, p_cap * sizeof(T));
 		delete[] d_tab;
 	}
+	d_tab = tmpTab;
 	d_cap = p_cap;
 }
 

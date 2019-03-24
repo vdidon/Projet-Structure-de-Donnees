@@ -40,7 +40,7 @@ public:
 	date getDate() const;   //ska : fait
 
 
-	static void ajouterContact(rdv *r, contact *c); //ska : fait
+	static bool ajouterContact(rdv *r, contact *c); //ska : fait
 
 	static void supprimerContact(rdv *r, contact *c); //ska : fait
 

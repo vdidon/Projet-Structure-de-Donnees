@@ -400,7 +400,12 @@ bool menuPrincipal() {
 }
 
 int main() {
-	// while (menuPrincipal());
+	//while (menuPrincipal());
 	ag.ajouterRdv(9, 9, 9, "coucou", 9, 9, 9, 9, 9, 9, 20);
-	ag.afficherRdvDeJour(9, 9, 9, cout);
+	ag.ajouterContact("didon", "valère", "1234567890", "vdidon@live.fr");
+	ag.ajouterContactARdv("didon", "valère", "coucou", 9, 9, 9);
+	ag.afficherContactDeRdv("coucou", 9, 9, 9, cout);
+	ag.afficherRdvDeContact("didon", "prenom", cout);
+	//ag.afficherRdvDeJour(9, 9, 9, cout);
+	return 0;
 }

@@ -3,7 +3,7 @@
 #include "temps.h" // pour ajouter un rdv à un contact (test si il est dispo)
 #include "ostream"
 contact::contact(const string &nom, const string &prenom, const string &num, const string &adresse) :
-        d_nom{nom}, d_prenom{prenom}, d_num{num}, d_adresseMail{adresse}
+		d_nom{nom}, d_prenom{prenom}, d_num{num}, d_adresseMail{adresse}, d_suiv{nullptr}
 {}
 
 string contact::getNom() const {

@@ -74,8 +74,8 @@ vectorLite<contact *> &tabContacts) {
 	return r;
 }
 
-void listJour::ajouterContact(rdv *r, contact *c) {
-    jour::ajouterContact(r, c);
+bool listJour::ajouterContact(rdv *r, contact *c) {
+	return jour::ajouterContact(r, c);
 }
 
 void listJour::supprimerContact(rdv *r, contact *c) {

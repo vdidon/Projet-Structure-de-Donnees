@@ -8,11 +8,14 @@ listContact::listContact(contact *tete) : d_tete{tete} {}
 /** Destrcuteur */
 
 listContact::~listContact() {
-    contact *c = d_tete;
-    while (c != nullptr) {
-        contact *n = c;
-        c = c->d_suiv;
-        delete n;
+    if (d_tete) {
+        contact *c = d_tete;
+        while (c->d_suiv != nullptr) {
+            contact *n = c;
+            c = c->d_suiv;
+            delete n;
+        }
+        delete c;
     }
 }
 
