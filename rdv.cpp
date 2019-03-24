@@ -2,6 +2,7 @@
 #include "contact.h"
 #include "temps.h"
 #include "jour.h"
+#include <iomanip>
 
 rdv::rdv(const std::string &nom, const temps &deb, const temps &fin, jour *j, jour *jfin,
          const vectorLite<contact *> &tabContacts) :
@@ -209,9 +210,13 @@ bool rdv::supprimeContact(contact *c)
 
 bool rdv::afficherRdv(std::ostream &out) const {
 	out << "nom : " << d_nom << endl;
-	out << "date de debut : " << d_j->getJour() << '/' << d_j->getMois() << '/' << d_j->getAnnee() << endl;
-	out << "l'heure de debut : " << d_tDeb.h << ':' << d_tDeb.m << endl;
-	out << "date de fin : " << d_jfin->getJour() << '/' << d_jfin->getMois() << '/' << d_jfin->getAnnee() << endl;
-	out << "l'heure de fin : " << d_tFin.h << ':' << d_tFin.m << endl << endl;
+	out << "date de debut : " << setfill('0') << setw(2) << d_j->getJour() << '/' << setfill('0') << setw(2)
+	    << d_j->getMois() << '/' << setfill('0') << setw(4) << d_j->getAnnee() << endl;
+	out << "l'heure de debut : " << setfill('0') << setw(2) << d_tDeb.h << ':' << setfill('0') << setw(2) << d_tDeb.m
+	    << endl;
+	out << "date de fin : " << setfill('0') << setw(2) << d_jfin->getJour() << '/' << setfill('0') << setw(2)
+	    << d_jfin->getMois() << '/' << setfill('0') << setw(4) << d_jfin->getAnnee() << endl;
+	out << "l'heure de fin : " << setfill('0') << setw(2) << d_tFin.h << ':' << setfill('0') << setw(2) << d_tFin.m
+	    << endl << endl;
 	return true;
 }

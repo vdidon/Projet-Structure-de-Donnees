@@ -163,7 +163,6 @@ bool jour::modifJourFin(const std::string &nom, jour *j)
 
 bool jour::afficherRdvDeJour(std::ostream &out) const
 {
-
     if (d_tete==nullptr)
     {
         return false;

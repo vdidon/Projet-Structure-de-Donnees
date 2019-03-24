@@ -54,7 +54,9 @@ bool agenda::modifHeureDeb(int j, int m, int a, const std::string &nom, int h, i
 }*/
 
 bool agenda::ajouterContactARdv(const string &nom, const string &prenom, const string &nom_rdv, int j, int m, int a) {
-    contact *c;
+	if (!testJour(j, m, a))
+		return false;
+	contact *c;
     rdv *r;
     if (!chercherContactEtRdv(nom, prenom, nom_rdv, j, m, a, c, r))
         return false;
@@ -118,7 +120,7 @@ bool agenda::afficherContactDeRdv(const string &nom_rdv, int j, int m, int a, st
 
 bool agenda::afficherRdvDeJour(int j, int m, int a, std::ostream &out) const {
     jour *jo = d_listJour.chercherJour(date{j, m, a});
-    if (!j)
+	if (!jo)
         return false; // jour pas trouvé
     jo->afficherRdvDeJour(out);
     return true;
