@@ -147,6 +147,7 @@
     <ClInclude Include="..\..\listJour.h" />
     <ClInclude Include="..\..\rdv.h" />
     <ClInclude Include="..\..\temps.h" />
+    <ClInclude Include="..\..\test.h" />
     <ClInclude Include="..\..\vectorLite.h" />
   </ItemGroup>
   <ItemGroup>
