@@ -188,7 +188,7 @@ bool listJour::modifJourDeb(const date &d, const date &newd, const std::string &
 		if (newd < d) {
 			// ajout et supprimer de la list chainée
 			do {
-				new_j->d_rdvMultiJours.push_back(r);
+				new_j->ajouterRdvMultiJour(r);
 				new_j = new_j->suiv;
 			} while (new_j >= j);
 		}

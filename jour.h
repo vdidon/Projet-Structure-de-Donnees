@@ -29,15 +29,13 @@ public:
 
 	static bool supprimerRdv(rdv *r); //ska : fait
 
-	static bool supprimerRdv(jour *j, rdv *r);
+	bool supprimerRdvSansDelete(rdv *r);
 
-	static bool ajouterRdv(rdv *r); //ska : fait
+	bool ajouterRdvSansNew(rdv *r);
 
-	static bool ajouterRdv(jour *j, rdv *r);
+	bool ajouterRdvMultiJour(rdv *r); //fait
 
-	//static void 
-
-	bool ajouterRdvMultiJour(rdv *r);
+	bool supprimerRdvMultiJour(rdv *r);
 
 	int getJour() const;    //ska : fait
 
