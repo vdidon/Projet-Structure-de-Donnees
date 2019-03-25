@@ -1,6 +1,2 @@
-﻿  jour.cpp
-  listJour.cpp
-  main.cpp
-  Test.cpp
-c:\users\vdido\google drive\l2\structures de donnees\projet-structure-de-donnees\boost_1_69_0\boost\test\included\unit_test.hpp(18): fatal error C1083: Impossible d'ouvrir le fichier include : 'boost/test/impl/compiler_log_formatter.ipp' : No such file or directory
-  Génération de code en cours...
+﻿  rdv.cpp
+  VS 2017.vcxproj -> C:\Users\vdido\Google Drive\L2\Structures de donnees\Projet-Structure-de-Donnees\VS 2017\Debug\VS 2017.exe
