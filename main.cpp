@@ -308,8 +308,9 @@ void ajouRdv() {
 	entrerRdv(nom, j, m, a);
 	cout << endl << "HEURE DE DEBUT : " << endl;
 	entrerTemps(h, min);
-	cout << endl << "HEURE DE FIN : " << endl;
+	cout << endl << "DATE DE FIN : " << endl;
 	entrerJour(fj, fm, fa);
+	cout << endl << "HEURE DE FIN : " << endl;
 	entrerTemps(fh, fmin);
 	if (ag.ajouterRdv(j, m, a, nom, h, min, fj, fm, fa, fh, fmin)) {
 		cout << "Rdv ajouté" << endl;
