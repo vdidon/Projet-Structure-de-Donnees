@@ -88,8 +88,7 @@ bool listJour::modifHeureDeb(const date &d, const std::string &nom, const temps 
     jour *j = chercherJour(d);
     if (!j)
         return false;
-    j->modifHeureDeb(nom, t);
-	return true;
+	return j->modifHeureDeb(nom, t);
 }
 
 /*bool listJour::modifDuree(const date &d, const std::string &nom, unsigned int duree) {
@@ -176,14 +175,26 @@ bool listJour::modifJourDeb(const date &d, const date &newd, const std::string &
 
 	jour *new_j = d_tete;
 	jour *pre = nullptr;
-	while (new_j != nullptr && d < new_j->d_date) {
-		pre = j;
-		j = new_j->suiv;
+	while (new_j != nullptr && newd > new_j->d_date) {
+		pre = new_j;
+		new_j = new_j->suiv;
 	}
-	if (new_j == nullptr || new_j->d_date > d)
-		new_j = ajouterJour(d, pre, new_j);
+	if (new_j == nullptr || new_j->d_date != newd)
+		new_j = ajouterJour(newd, pre, new_j);
 
-	return j->modifJourDeb(nom, new_j);
+	if (j->modifJourDeb(nom, new_j)) {
+		rdv *r = chercherRdv(newd, nom);
+
+		if (newd < d) {
+			// ajout et supprimer de la list chainée
+			do {
+				new_j->d_rdvMultiJours.push_back(r);
+				new_j = new_j->suiv;
+			} while (new_j >= j);
+		}
+	}
+
+	return false;
 }
 
 bool listJour::modifJourFin(const date &d, const date &newd, const std::string &nom) {
@@ -195,12 +206,12 @@ bool listJour::modifJourFin(const date &d, const date &newd, const std::string &
 
 	jour *new_j = d_tete;
 	jour *pre = nullptr;
-	while (new_j != nullptr && d < new_j->d_date) {
-		pre = j;
-		j = new_j->suiv;
+	while (new_j != nullptr && newd > new_j->d_date) {
+		pre = new_j;
+		new_j = new_j->suiv;
 	}
-	if (new_j == nullptr || new_j->d_date > d)
-		new_j = ajouterJour(d, pre, new_j);
+	if (new_j == nullptr || new_j->d_date != newd)
+		new_j = ajouterJour(newd, pre, new_j);
 
 	return j->modifJourFin(nom, new_j);
 }

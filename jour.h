@@ -27,7 +27,15 @@ public:
 
 	rdv *chercherRdv(const std::string &nom) const; //ska : fait
 
-	static void supprimerRdv(rdv *r); //ska : fait
+	static bool supprimerRdv(rdv *r); //ska : fait
+
+	static bool supprimerRdv(jour *j, rdv *r);
+
+	static bool ajouterRdv(rdv *r); //ska : fait
+
+	static bool ajouterRdv(jour *j, rdv *r);
+
+	//static void 
 
 	bool ajouterRdvMultiJour(rdv *r);
 

@@ -164,9 +164,9 @@ agenda::contactEstDispo(string nom, string prenom, int dj, int dm, int da, int d
 
 	if (!c)
 		return false;
-	auto rs = c->getTabrdv();
-	for (int i = 0; i < rs.size(); ++i) {
-		if (!rs[i]->pasEnMemeTemps(&tmp_r))
+	auto rs = &c->getTabrdv();
+	for (int i = 0; i < rs->size(); ++i) {
+		if (!(*rs)[i]->pasEnMemeTemps(&tmp_r))
 			return false;
 	}
 	return true;

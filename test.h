@@ -24,10 +24,14 @@ void test() {
 	     << endl;
 	cout << "ag.modifJourDeb(9,5,1997,\"coucou\",8,5,1997)" << ag.modifJourDeb(9, 5, 1997, "coucou", 8, 5, 1997)
 	     << endl;
-	cout << "ag.modifJourFin(9,5,1997,\"coucou\",11,5,1997)" << ag.modifJourFin(9, 5, 1997, "coucou", 11, 5, 1997)
+	cout << "ag.modifJourFin(8,5,1997,\"coucou\",11,5,1997)" << ag.modifJourFin(8, 5, 1997, "coucou", 11, 5, 1997)
 	     << endl;
 	cout << "ag.contactEstDispo(\"didon\",\"valère\",9,4,1997,4,4,10,4,1997,9,9)"
-	     << ag.contactEstDispo("didon", "valère", 9, 4, 1997, 4, 4, 10, 4, 1997, 9, 9) << endl;
+	     << ag.contactEstDispo("didon", "valère", 9, 5, 1997, 4, 4, 10, 5, 1997, 9, 9) << endl;
+	cout << "!ag.contactEstDispo(\"didon\",\"valère\",9,4,1997,4,4,10,4,1997,9,9)"
+	     << !ag.contactEstDispo("didon", "valère", 9, 5, 1997, 4, 4, 10, 5, 1997, 9, 9) << endl;
+	cout << endl;
+	ag.afficherRdvDeContact("didon", "valère", cout);
 }
 
 
