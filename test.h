@@ -11,8 +11,8 @@ void test() {
 	agenda ag{};
 	cout << "ag.ajouterContact(\"didon\", \"valère\", \"1234567890\", \"vdidon@live.fr\") : "
 	     << ag.ajouterContact("didon", "valère", "1234567890", "vdidon@live.fr") << endl;
-	cout << "ag.ajouterRdv(9, 5, 1997, \"test\", 20, 0, 10, 5, 1997, 20, 3) : "
-	     << ag.ajouterRdv(9, 5, 1997, "test", 20, 0, 10, 5, 1997, 20, 3) << endl;
+	cout << "ag.ajouterRdv(9, 5, 1997, \"coucou\", 20, 0, 10, 5, 1997, 20, 3) : "
+	     << ag.ajouterRdv(9, 5, 1997, "coucou", 20, 0, 10, 5, 1997, 20, 3) << endl;
 	cout << "ag.ajouterContactARdv(\"didon\", \"valère\", \"coucou\", 9, 5, 1997) : "
 	     << ag.ajouterContactARdv("didon", "valère", "coucou", 9, 5, 1997) << endl;
 	cout << "ag.modifNum(\"didon\",\"valère\",\"0987654321\")" << ag.modifNum("didon", "valère", "0987654321") << endl;
@@ -20,7 +20,7 @@ void test() {
 	     << ag.modifEmail("didon", "valère", "coucou@gmail.com") << endl;
 	cout << "ag.modifHeureDeb(9,5,1997,\"coucou\",10,10)<<endl;" << ag.modifHeureDeb(9, 5, 1997, "coucou", 10, 10)
 	     << endl;
-	cout << "ag.modifHeureFin(10,5,1997,\"coucou\",10,10)<<endl;" << ag.modifHeureDeb(10, 5, 1997, "coucou", 10, 10)
+	cout << "ag.modifHeureFin(9,5,1997,\"coucou\",10,10)<<endl;" << ag.modifHeureFin(9, 5, 1997, "coucou", 10, 10)
 	     << endl;
 	cout << "ag.modifJourDeb(9,5,1997,\"coucou\",8,5,1997)" << ag.modifJourDeb(9, 5, 1997, "coucou", 8, 5, 1997)
 	     << endl;

@@ -6,7 +6,7 @@
 
 rdv::rdv(const std::string &nom, const temps &deb, const temps &fin, jour *j, jour *jfin,
          const vectorLite<contact *> &tabContacts) :
-		d_nom{nom}, d_tDeb{deb}, d_tFin{fin}, d_j{jfin}, d_jfin{jfin}, d_tabContacts{tabContacts}, d_suiv{nullptr}
+		d_nom{nom}, d_tDeb{deb}, d_tFin{fin}, d_j{j}, d_jfin{jfin}, d_tabContacts{tabContacts}, d_suiv{nullptr}
     {}
 
 rdv::~rdv() = default;
