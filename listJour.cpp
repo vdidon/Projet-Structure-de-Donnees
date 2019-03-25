@@ -7,13 +7,15 @@ listJour::listJour(jour *tete) : d_tete{tete} {
 }
 
 listJour::~listJour() {
-    jour *suiv = d_tete->suiv;
-    while (suiv != nullptr) {
-        delete d_tete;
-        d_tete = suiv;
-        suiv = d_tete->suiv;
-    }
-    delete d_tete;
+	if (d_tete) {
+		jour *suiv = d_tete->suiv;
+		while (suiv != nullptr) {
+			delete d_tete;
+			d_tete = suiv;
+			suiv = d_tete->suiv;
+		}
+		delete d_tete;
+	}
 }
 
 rdv *listJour::chercherRdv(const date &d, const std::string &nom) const {

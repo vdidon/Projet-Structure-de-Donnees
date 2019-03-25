@@ -13,8 +13,8 @@ void test() {
 	     << ag.ajouterContact("didon", "valère", "1234567890", "vdidon@live.fr") << endl;
 	cout << "ag.ajouterRdv(9, 5, 1997, \"test\", 20, 0, 10, 5, 1997, 20, 3) : "
 	     << ag.ajouterRdv(9, 5, 1997, "test", 20, 0, 10, 5, 1997, 20, 3) << endl;
-	cout << "ag.ajouterContactARdv(\"didon\", \"valère\", \"coucou\", 9, 9, 9) : "
-	     << ag.ajouterContactARdv("didon", "valère", "coucou", 9, 9, 9) << endl;
+	cout << "ag.ajouterContactARdv(\"didon\", \"valère\", \"coucou\", 9, 5, 1997) : "
+	     << ag.ajouterContactARdv("didon", "valère", "coucou", 9, 5, 1997) << endl;
 	cout << "ag.modifNum(\"didon\",\"valère\",\"0987654321\")" << ag.modifNum("didon", "valère", "0987654321") << endl;
 	cout << "ag.modifEmail(\"didon\",\"valère\",\"coucou@gmail.com\")"
 	     << ag.modifEmail("didon", "valère", "coucou@gmail.com") << endl;
