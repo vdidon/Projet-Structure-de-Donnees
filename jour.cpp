@@ -78,6 +78,41 @@ rdv *jour::ajouterRdv(const std::string &nom, const temps &tDeb, const temps &tF
     return n;
 }
 
+
+bool jour::ajouterRdvSansNew(rdv *r){
+    rdv*cl=d_tete, *prec=nullptr;
+                                            //liste vide impossible
+    while(r->d_tDeb>cl->d_tDeb)
+    {
+        prec=cl;
+        cl=cl->d_suiv;
+    }
+    if(r->d_tDeb<=prec_d_tFin && r->d_tFin>=cl->d_tDeb)
+    {
+        if                                  //Cas en tête
+        {
+            prec=nullptr;
+            r->d_suiv=cl;
+            d_tete=r;
+            return true;
+        }
+        else                                //Cas courant
+        {
+            prec->d_suiv=r;
+            r->d_suiv=cl;
+            return true;
+        }
+    }
+
+    return false;
+
+}
+
+
+
+
+
+
 rdv *jour::chercherRdv(const std::string &nom) const
 {
     rdv* cl=d_tete;
@@ -113,6 +148,34 @@ bool jour::supprimerRdv(rdv *r) //static
     }
 	return false;
 }
+
+bool jour::supprimerRdvSansDelete(rdv *r)
+{
+    rdv *cl=d_tete, *prec=nullptr;
+    while (cl!=nullptr && cl->d_nom!=r->d_nom)
+    {
+        prec=cl;
+        cl=cl->d_suiv;
+    }
+
+    if(cl==nullptr)             //Rdv pas trouvé
+    {
+        return false;
+    }
+
+    if(prec=nullptr)            //Rdv en tête
+    {
+        d_tete=nullptr;
+        return true;
+    }
+    else
+    {
+        prec->d_suiv=r->d_suiv; //Cas courant
+        return true;
+    }
+}
+
+
 
 bool jour::supprimerRdv(jour *j, rdv *r) //static
 {
