@@ -114,29 +114,6 @@ bool jour::supprimerRdv(rdv *r) //static
 	return false;
 }
 
-bool jour::supprimerRdv(jour *j, rdv *r) //static
-{
-	if (j->d_tete != nullptr) {
-		if (r == j->d_tete) {
-			rdv *cl = j->d_tete->d_suiv;
-			delete j->d_tete;
-			j->d_tete = cl;
-		} else {
-			rdv *cl = j->d_tete, *prec = nullptr;
-			do {
-				prec = cl;
-				cl = cl->d_suiv;
-			} while (cl != nullptr && cl != r);
-			if (cl != nullptr && cl == r) {
-				prec->d_suiv = cl->d_suiv;
-				delete cl;
-			}
-		}
-		return true;
-	}
-	return false;
-}
-
 
 bool jour::ajouterContact(rdv *r, contact *c) //static
 {
