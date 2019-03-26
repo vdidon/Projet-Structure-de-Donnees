@@ -89,7 +89,7 @@ bool agenda::chercherContactEtRdv(const string &nom, const string &prenom, const
 }
 
 bool agenda::supprimerRdv(int j, int m, int a, const std::string &nom) {
-    if (testJour(j, m, a) && testRdv(nom))
+	if (!testJour(j, m, a) || !testRdv(nom))
         return false; // date ou rdv pas bon
     rdv *r = d_listJour.chercherRdv(date{j, m, a}, nom);
     if (r == nullptr)

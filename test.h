@@ -38,7 +38,7 @@ void test() {
 }
 
 void test2() {
-	agenda ag{};
+//	agenda ag{};
 	cout << "ag.ajouterRdv(9, 5, 1997, \"coucou\", 20, 0, 10, 5, 1997, 20, 3) : "
 	     << ag.ajouterRdv(9, 5, 1997, "coucou", 20, 0, 10, 5, 1997, 20, 3) << endl;
 	cout << endl << ag.supprimerRdv(9, 5, 1997, "coucou");

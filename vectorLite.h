@@ -90,7 +90,7 @@ template<typename T>
 bool vectorLite<T>::supprimer(int i) {
 	if (i >= 0 && i < d_size) {
 		--d_size;
-		memcpy(&d_tab[i], &d_tab[i + 1], (d_size - i - 1) * sizeof(T));
+		memcpy(&d_tab[i], &d_tab[i + 1], (d_size - i) * sizeof(T));
 		return true;
 	}
 	return false;

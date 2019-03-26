@@ -113,7 +113,7 @@ void listJour::supprimerRdv(rdv *r) {
 			if (!j->d_tete && j->d_rdvMultiJours.size())
 				supprimerJour(pre, j->suiv);
 			pre = pre->suiv;
-			j = pre->suiv->suiv;
+			j = pre->suiv;
 
 		} while (j != jFin);
 	}
