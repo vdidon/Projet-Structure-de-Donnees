@@ -87,7 +87,7 @@ bool rdv::pasEnMemeTemps(rdv *r){
 
 bool rdv::modifHeureDeb(const temps &t){
 	vectorLite<rdv *> *T;
-        bool modifPossible=true;
+
 	temps old_deb = d_tDeb;
 	d_tDeb = t;
 	if (t < old_deb)                                       //si le rdv est avancé, on check les conflits
@@ -140,7 +140,6 @@ bool rdv::modifJourDeb(jour *j) {
 bool rdv::modifHeureFin(const temps &t)                     //voir modifierHeureDebut
 {
     vectorLite<rdv *> T;
-    bool modifPossible=true;
     if (t>d_tFin)
         {
             for(int i=0; i<d_tabContacts.size(); i++)

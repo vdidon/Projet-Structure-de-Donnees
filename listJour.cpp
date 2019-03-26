@@ -36,7 +36,7 @@ jour *listJour::chercherJour(const date &d) const {
 int listJour::taille() {
     int res;
     jour *j = d_tete;
-    for (res = 0; d_tete; ++res, d_tete = d_tete->suiv);
+    for (res = 0; j; ++res, j = j->suiv);
     return res;
 }
 
@@ -103,7 +103,7 @@ void listJour::supprimerRdv(rdv *r) {
     jour *j = r->getJourDeb();
 	jour *jFin = r->getJourFin();
 	if (j != jFin) {
-		jour *jDeb = j;
+		//jour *jDeb = j;
 		jour *pre = j;
 		j = j->suiv;
 		do {
@@ -158,11 +158,9 @@ void listJour::supprimerJour(const date &d) {
 }
 
 bool listJour::modifHeureFin(const date &d, const std::string &nom, const temps &t) {
-    rdv *r = chercherRdv(d, nom);
-    if (!r)
+    jour* j = chercherJour(d);
+    if (!j)
         return false;
-    jour *j = r->getJourDeb();
-    jour *jFin = r->getJourFin();
 	return j->modifHeureFin(nom, t);
 }
 
