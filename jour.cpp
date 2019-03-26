@@ -132,7 +132,7 @@ rdv *jour::chercherRdv(const std::string &nom) const
 bool jour::supprimerRdv(rdv *r) //static
 {
 	jour *j = r->d_j;
-	if (j->d_tete != nullptr)
+	if (j->d_tete != nullptr)   //liste non vide
     {
 	    if (r == j->d_tete) {
 		    rdv *cl = j->d_tete->d_suiv;
