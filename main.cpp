@@ -4,7 +4,7 @@
 
 using namespace std;
 
-agenda ag{};
+//agenda ag{};
 
 void majuscule(char &c) {
     if (c >= 'a' && c <= 'z')
@@ -404,5 +404,6 @@ bool menuPrincipal() {
 int main() {
 	//while (menuPrincipal());
 	test();
+	while (menuPrincipal());
 	return 0;
 }

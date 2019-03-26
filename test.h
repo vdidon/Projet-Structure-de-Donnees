@@ -9,9 +9,9 @@
 #include <iostream>
 
 using namespace std;
-
+agenda ag{};
 void test() {
-	agenda ag{};
+
 	cout << "ag.ajouterContact(\"didon\", \"valère\", \"1234567890\", \"vdidon@live.fr\") : "
 	     << ag.ajouterContact("didon", "valère", "1234567890", "vdidon@live.fr") << endl;
 	cout << "ag.ajouterRdv(9, 5, 1997, \"coucou\", 20, 0, 10, 5, 1997, 20, 3) : "
@@ -31,8 +31,8 @@ void test() {
 	     << endl;
 	cout << "ag.contactEstDispo(\"didon\",\"valère\",9,4,1997,4,4,10,4,1997,9,9)"
 	     << ag.contactEstDispo("didon", "valère", 9, 5, 1997, 4, 4, 10, 5, 1997, 9, 9) << endl;
-	cout << "!ag.contactEstDispo(\"didon\",\"valère\",9,4,1997,4,4,10,4,1997,9,9)"
-	     << !ag.contactEstDispo("didon", "valère", 9, 5, 1997, 4, 4, 10, 5, 1997, 9, 9) << endl;
+	cout << "!ag.contactEstDispo(\"didon\", \"valère\", 8, 5, 1997, 20, 0, 9, 5, 1997, 20, 0)"
+	     << !ag.contactEstDispo("didon", "valère", 8, 5, 1997, 20, 0, 9, 5, 1997, 20, 0) << endl;
 	cout << endl;
 	ag.afficherRdvDeContact("didon", "valère", cout);
 }
