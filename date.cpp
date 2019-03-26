@@ -38,5 +38,6 @@ bool date::operator<=(const date &d) const {
 ostream &operator<<(ostream &out, const date &d) {
 	out << setfill('0') << setw(2) << d.j << '/' << setfill('0') << setw(2)
 	    << d.m << '/' << setfill('0') << setw(4) << d.a;
+	return out;
 }
 
