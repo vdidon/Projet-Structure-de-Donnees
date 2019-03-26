@@ -185,6 +185,13 @@ bool listJour::modifJourDeb(const date &d, const date &newd, const std::string &
 	if (j->modifJourDeb(nom, new_j)) {
 		rdv *r = chercherRdv(newd, nom);
 		j->supprimerRdvSansDelete(r);
+		if (j->d_tete) {
+			delete j;
+			jour *tmp = d_tete;
+			while (tmp->suiv && tmp->suiv->d_date < d)
+				tmp = tmp->suiv;
+			j = tmp; //jour précédent
+		}
 		new_j->ajouterRdvSansNew(r);
 		if (newd < d) {
 			do {
@@ -222,6 +229,11 @@ bool listJour::modifJourFin(const date &d, const date &newd, const std::string &
 	if (j->modifJourFin(nom, new_j)) {
 		rdv *r = chercherRdv(newd, nom);
 		j->supprimerRdvSansDelete(r);
+		if (j->d_tete) {
+			jour *tmp = j->suiv;
+			delete j;
+			j = tmp;
+		}
 		new_j->ajouterRdvSansNew(r);
 		if (newd < d) {
 			do {
