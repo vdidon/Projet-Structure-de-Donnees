@@ -87,7 +87,10 @@ bool jour::ajouterRdvMultiJour(rdv *r) {
 
 bool jour::ajouterRdvSansNew(rdv *r){
     rdv*cl=d_tete, *prec=nullptr;
-                                            //liste vide impossible
+	if (!d_tete) {
+		d_tete = r;
+		return true;
+	}
     while(r->d_tDeb>cl->d_tDeb)
     {
         prec=cl;
