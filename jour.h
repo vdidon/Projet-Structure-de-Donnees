@@ -29,9 +29,9 @@ public:
 
 	static bool supprimerRdv(rdv *r); //ska : fait
 
-	bool supprimerRdvSansDelete(rdv *r);
+	bool supprimerRdvSansDelete(rdv *r); //fait
 
-	bool ajouterRdvSansNew(rdv *r);
+	bool ajouterRdvSansNew(rdv *r); //fait
 
 	bool ajouterRdvMultiJour(rdv *r); //fait
 

@@ -87,22 +87,21 @@ bool jour::ajouterRdvSansNew(rdv *r){
         prec=cl;
         cl=cl->d_suiv;
     }
-    if(r->d_tDeb<=prec_d_tFin && r->d_tFin>=cl->d_tDeb)
+	if (r->d_tFin >= cl->d_tDeb)
     {
-        if                                  //Cas en tête
-        {
-            prec=nullptr;
-            r->d_suiv=cl;
-            d_tete=r;
-            return true;
-        }
-        else                                //Cas courant
-        {
-            prec->d_suiv=r;
-            r->d_suiv=cl;
-            return true;
-        }
+	    if (!prec)                                  //Cas en tête
+	    {
+		    prec = nullptr;
+		    r->d_suiv = cl;
+		    d_tete = r;
+		    return true;
+	    } else if (r->d_tDeb <= prec->d_tFin) {
+		    prec->d_suiv = r;
+		    r->d_suiv = cl;
+		    return true;
+	    }
     }
+
 
     return false;
 
@@ -163,7 +162,7 @@ bool jour::supprimerRdvSansDelete(rdv *r)
         return false;
     }
 
-    if(prec=nullptr)            //Rdv en tête
+	if (prec == nullptr)            //Rdv en tête
     {
         d_tete=nullptr;
         return true;
@@ -175,34 +174,6 @@ bool jour::supprimerRdvSansDelete(rdv *r)
     }
 }
 
-
-
-bool jour::supprimerRdv(jour *j, rdv *r) //static
-{
-	if (j->d_tete != nullptr) {
-		if (r == j->d_tete) {
-			rdv *cl = j->d_tete->d_suiv;
-			delete j->d_tete;
-			j->d_tete = cl;
-		} else {
-			rdv *cl = j->d_tete, *prec = nullptr;
-			do {
-				prec = cl;
-				cl = cl->d_suiv;
-			} while (cl != nullptr && cl != r);
-			if (cl != nullptr && cl == r) {
-				prec->d_suiv = cl->d_suiv;
-				delete cl;
-			}
-		}
-		return true;
-	}
-	return false;
-}
-/*
-=======
->>>>>>> e20ab3e63a1467011b66b60ac9cbb4194848f0ae
-*/
 bool jour::ajouterContact(rdv *r, contact *c) //static
 {
 	return r->ajouterContact(c);
