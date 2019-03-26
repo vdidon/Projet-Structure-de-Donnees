@@ -6,6 +6,9 @@
 #define PROJET_STRUCTURE_DE_DONNEES_TEST_H
 
 #include "agenda.h"
+#include <iostream>
+
+using namespace std;
 
 void test() {
 	agenda ag{};
@@ -32,6 +35,13 @@ void test() {
 	     << !ag.contactEstDispo("didon", "valère", 9, 5, 1997, 4, 4, 10, 5, 1997, 9, 9) << endl;
 	cout << endl;
 	ag.afficherRdvDeContact("didon", "valère", cout);
+}
+
+void test2() {
+	agenda ag{};
+	cout << "ag.ajouterRdv(9, 5, 1997, \"coucou\", 20, 0, 10, 5, 1997, 20, 3) : "
+	     << ag.ajouterRdv(9, 5, 1997, "coucou", 20, 0, 10, 5, 1997, 20, 3) << endl;
+	cout << endl << ag.supprimerRdv(9, 5, 1997, "coucou");
 }
 
 
