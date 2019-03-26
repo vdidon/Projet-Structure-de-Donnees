@@ -27,10 +27,10 @@ rdv *listJour::chercherRdv(const date &d, const std::string &nom) const {
 
 jour *listJour::chercherJour(const date &d) const {
     jour *j = d_tete;
-    while (j != nullptr && d < j->d_date) {
+	while (j != nullptr && d > j->d_date) {
         j = j->suiv;
     }
-    return (j == nullptr || d > j->d_date) ? nullptr : j;
+	return (j == nullptr || d < j->d_date) ? nullptr : j;
 }
 
 int listJour::taille() {
@@ -183,14 +183,15 @@ bool listJour::modifJourDeb(const date &d, const date &newd, const std::string &
 		new_j = ajouterJour(newd, pre, new_j);
 
 	if (j->modifJourDeb(nom, new_j)) {
-		rdv *r = chercherRdv(newd, nom);
+		rdv *r = chercherRdv(d, nom);
 		j->supprimerRdvSansDelete(r);
 		if (!j->d_tete) {
+			pre = d_tete;
+			while (pre->suiv && pre->suiv->d_date < d)
+				pre = pre->suiv;
+			pre->suiv = j->suiv;
 			delete j;
-			jour *tmp = d_tete;
-			while (tmp->suiv && tmp->suiv->d_date < d)
-				tmp = tmp->suiv;
-			j = tmp; //jour précédent
+			j = pre; //jour précédent
 		}
 		new_j->ajouterRdvSansNew(r);
 		if (newd < d) {
@@ -210,13 +211,16 @@ bool listJour::modifJourDeb(const date &d, const date &newd, const std::string &
 	return false;
 }
 
-bool listJour::modifJourFin(const date &d, const date &newd, const std::string &nom) {
-	if (d == newd)
-		return true;
-	jour *j = chercherJour(d);
+bool listJour::modifJourFin(const date &dDeb, const date &newd, const std::string &nom) {
+	rdv *r = chercherRdv(dDeb, nom);
+	if (!r)
+		return false;
+	jour *j = r->getJourDeb();
 	if (!j)
 		return false;
-
+	date d = r->getJourFin()->getDate();
+	if (d == newd)
+		return true;
 	jour *new_j = d_tete;
 	jour *pre = nullptr;
 	while (new_j != nullptr && newd > new_j->d_date) {
@@ -227,14 +231,21 @@ bool listJour::modifJourFin(const date &d, const date &newd, const std::string &
 		new_j = ajouterJour(newd, pre, new_j);
 
 	if (j->modifJourFin(nom, new_j)) {
-		rdv *r = chercherRdv(newd, nom);
-		j->supprimerRdvSansDelete(r);
+		//rdv *r = chercherRdv(d, nom);
+		/*j->supprimerRdvSansDelete(r);
 		if (!j->d_tete) {
-			jour *tmp = j->suiv;
+			jour *suiv = j->suiv;
+			pre = d_tete;
+			while (pre->suiv && pre->suiv->d_date < d)
+				pre = pre->suiv;
+			if (j == d_tete)
+				d_tete = j->suiv;
+			else
+				pre->suiv = j->suiv;
 			delete j;
-			j = tmp;
+			j = suiv;
 		}
-		new_j->ajouterRdvSansNew(r);
+		new_j->ajouterRdvSansNew(r);*/
 		if (newd < d) {
 			do {
 				new_j = new_j->suiv;
