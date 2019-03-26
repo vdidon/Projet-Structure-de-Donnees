@@ -1,5 +1,6 @@
 
 #include "date.h"
+#include <iomanip>
 
 date::date(int p_j, int p_m, int p_a) : j{p_j}, m{p_m}, a{p_a} {
 
@@ -34,5 +35,8 @@ bool date::operator<=(const date &d) const {
 	return !(*this > d);
 }
 
-
+ostream &operator<<(ostream &out, const date &d) {
+	out << setfill('0') << setw(2) << d.j << '/' << setfill('0') << setw(2)
+	    << d.m << '/' << setfill('0') << setw(4) << d.a;
+}
 

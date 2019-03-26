@@ -1,7 +1,9 @@
 #ifndef PROJET_STRUCTURE_DE_DONNEES_TEMPS_H
 #define PROJET_STRUCTURE_DE_DONNEES_TEMPS_H
 
-#include <iostream>
+#include <ostream>
+
+using namespace std;
 
 class temps {
 public:

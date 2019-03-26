@@ -208,13 +208,9 @@ bool rdv::supprimeContact(contact *c)
 
 bool rdv::afficherRdv(std::ostream &out) const {
 	out << "nom : " << d_nom << endl;
-	out << "date de debut : " << setfill('0') << setw(2) << d_j->getJour() << '/' << setfill('0') << setw(2)
-	    << d_j->getMois() << '/' << setfill('0') << setw(4) << d_j->getAnnee() << endl;
-	out << "l'heure de debut : " << setfill('0') << setw(2) << d_tDeb.h << ':' << setfill('0') << setw(2) << d_tDeb.m
-	    << endl;
-	out << "date de fin : " << setfill('0') << setw(2) << d_jfin->getJour() << '/' << setfill('0') << setw(2)
-	    << d_jfin->getMois() << '/' << setfill('0') << setw(4) << d_jfin->getAnnee() << endl;
-	out << "l'heure de fin : " << setfill('0') << setw(2) << d_tFin.h << ':' << setfill('0') << setw(2) << d_tFin.m
-	    << endl << endl;
+	out << "date de debut : " << d_j << endl;
+	out << "l'heure de debut : " << d_tDeb << endl;
+	out << "date de fin : " << d_jfin << endl;
+	out << "l'heure de fin : " << d_tFin << endl;
 	return true;
 }

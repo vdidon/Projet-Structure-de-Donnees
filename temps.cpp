@@ -1,5 +1,6 @@
 #include "temps.h"
 
+#include <iomanip>
 
 temps::temps(short t_h, short t_m) :
     h{t_h}, m{t_m}
@@ -58,6 +59,6 @@ temps::~temps() = default;
 
 
 std::ostream &operator<<(std::ostream &out, const temps &t) {
-    out << '(' << t.h << ',' << t.m << ')';
+    out << setfill('0') << setw(2) << t.h << ':' << setfill('0') << setw(2) << t.m << endl;
     return out;
 }
