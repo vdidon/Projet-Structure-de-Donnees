@@ -184,16 +184,22 @@ bool listJour::modifJourDeb(const date &d, const date &newd, const std::string &
 
 	if (j->modifJourDeb(nom, new_j)) {
 		rdv *r = chercherRdv(newd, nom);
-
+		j->supprimerRdvSansDelete(r);
+		new_j->ajouterRdvSansNew(r);
 		if (newd < d) {
-			// ajout et supprimer de la list chainée
 			do {
-				new_j->ajouterRdvMultiJour(r);
 				new_j = new_j->suiv;
-			} while (new_j >= j);
+				new_j->ajouterRdvMultiJour(r);
+			} while (new_j->d_date < j->d_date);
+		} else //newd>d
+		{
+			do {
+				j = j->suiv;
+				j->supprimerRdvMultiJour(r);
+			} while (new_j->d_date > j->d_date);
 		}
+		return true;
 	}
-
 	return false;
 }
 
@@ -213,7 +219,25 @@ bool listJour::modifJourFin(const date &d, const date &newd, const std::string &
 	if (new_j == nullptr || new_j->d_date != newd)
 		new_j = ajouterJour(newd, pre, new_j);
 
-	return j->modifJourFin(nom, new_j);
+	if (j->modifJourFin(nom, new_j)) {
+		rdv *r = chercherRdv(newd, nom);
+		j->supprimerRdvSansDelete(r);
+		new_j->ajouterRdvSansNew(r);
+		if (newd < d) {
+			do {
+				new_j = new_j->suiv;
+				new_j->supprimerRdvMultiJour(r);
+			} while (new_j->d_date < j->d_date);
+		} else //newd>d
+		{
+			do {
+				j = j->suiv;
+				j->ajouterRdvMultiJour(r);
+			} while (new_j->d_date > j->d_date);
+		}
+		return true;
+	}
+	return false;
 }
 
 bool listJour::afficherContactDeRdv(const date &d, const std::string &nom, std::ostream &out) const {

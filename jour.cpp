@@ -199,8 +199,10 @@ bool jour::supprimerRdv(jour *j, rdv *r) //static
 	}
 	return false;
 }
-
-
+/*
+=======
+>>>>>>> e20ab3e63a1467011b66b60ac9cbb4194848f0ae
+*/
 bool jour::ajouterContact(rdv *r, contact *c) //static
 {
 	return r->ajouterContact(c);
