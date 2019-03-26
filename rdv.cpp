@@ -208,9 +208,9 @@ bool rdv::supprimeContact(contact *c)
 
 bool rdv::afficherRdv(std::ostream &out) const {
 	out << "nom : " << d_nom << endl;
-	out << "date de debut : " << d_j << endl;
+	out << "date de debut : " << d_j->getDate() << endl;
 	out << "l'heure de debut : " << d_tDeb << endl;
-	out << "date de fin : " << d_jfin << endl;
+	out << "date de fin : " << d_jfin->getDate() << endl;
 	out << "l'heure de fin : " << d_tFin << endl;
 	return true;
 }
