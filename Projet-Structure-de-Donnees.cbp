@@ -48,6 +48,7 @@
 		<Unit filename="rdv.h" />
 		<Unit filename="temps.cpp" />
 		<Unit filename="temps.h" />
+		<Unit filename="test.h" />
 		<Unit filename="vectorLite.h" />
 		<Extensions>
 			<code_completion />
