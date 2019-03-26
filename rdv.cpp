@@ -56,15 +56,29 @@ bool rdv::afficherContactDeRdv(std::ostream &out) const{
 }
 
 bool rdv::pasEnMemeTemps(rdv *r){
-    if ((this->d_tDeb <= r->d_tDeb) && (this->d_tFin >= r->d_tDeb))
-    {
-        return false;
-    }
+	return true;
+	if (r->d_jfin->getDate() < d_j->getDate()) // avant
+		return true;
+	if (d_jfin->getDate() < r->d_j->getDate()) // aprés
+		return true;
+	if ((this->d_j->getDate() <= r->d_j->getDate()) && (this->d_jFin->getDate() >= r->d_j)) {
+		return false;
+	}
+	if (r->d_j == d_j) {
+		if (r->d_jfin->getDate() > d_jfin->getDate()) {
 
-    if ((this->d_tDeb >= r->d_tDeb) && (this->d_tDeb <= r->d_tFin))
-    {
-        return false;
-    }
+		}
+		if ((this->d_tDeb <= r->d_tDeb) &&)
+	}
+	if (r->d_j == d_j && r->d_jfin == d_jfin) {
+		if ((this->d_tDeb <= r->d_tDeb) && (this->d_tFin >= r->d_tDeb)) {
+			return false;
+		}
+
+		if ((this->d_tDeb >= r->d_tDeb) && (this->d_tDeb <= r->d_tFin)) {
+			return false;
+		}
+	}
 
     return true;
 

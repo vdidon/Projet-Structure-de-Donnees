@@ -120,8 +120,8 @@ void modifPersonne() {
 	    string nom, prenom, num, email;
         entrerPersonne(nom, prenom);
         cout << "Quel modification voulez vous faire : " << endl;
-        cout << "1 - Heure de début" << endl;
-        cout << "2 - Heure de fin" << endl;
+	    cout << "1 - Le numéro" << endl;
+	    cout << "2 - l'email" << endl;
         cout << "0 - Menu principal" << endl;
         cout << "0-2 : ";
         cin >> i;
