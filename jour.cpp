@@ -7,7 +7,7 @@ jour::jour(const date &d, rdv *tete) : d_date{d}, d_tete{tete}, d_rdvMultiJours{
 
 jour::~jour()
     {
-      rdv *r = d_tete, rTemp=nullptr;
+      rdv *r = d_tete, *rTemp=nullptr;
       while(r!=nullptr)
       {
           rdv *rTemp=r;
