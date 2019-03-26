@@ -61,14 +61,14 @@ bool rdv::pasEnMemeTemps(rdv *r){
 		return true;
 	if (d_jfin->getDate() < r->d_j->getDate()) // aprés
 		return true;
-	if ((this->d_j->getDate() <= r->d_j->getDate()) && (this->d_jFin->getDate() >= r->d_j)) {
+	if ((this->d_j->getDate() <= r->d_j->getDate()) && (this->d_jfin->getDate() >= r->d_j->getDate())) {
 		return false;
 	}
 	if (r->d_j == d_j) {
 		if (r->d_jfin->getDate() > d_jfin->getDate()) {
 
 		}
-		if ((this->d_tDeb <= r->d_tDeb) &&)
+		if ((this->d_tDeb <= r->d_tDeb));
 	}
 	if (r->d_j == d_j && r->d_jfin == d_jfin) {
 		if ((this->d_tDeb <= r->d_tDeb) && (this->d_tFin >= r->d_tDeb)) {

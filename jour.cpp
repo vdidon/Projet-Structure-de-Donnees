@@ -183,7 +183,7 @@ bool jour::supprimerRdvSansDelete(rdv *r)
 bool jour::supprimerRdvMultiJour(rdv *r)
 {
     int i=0;
-    while(i<d_rdvMultiJours.size() && r->nom!=d_rdvMultiJours[i]->nom)
+	while (i < d_rdvMultiJours.size() && r->d_nom != d_rdvMultiJours[i]->d_nom)
     {
         i++;
     }
