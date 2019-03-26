@@ -79,6 +79,12 @@ rdv *jour::ajouterRdv(const std::string &nom, const temps &tDeb, const temps &tF
 }
 
 
+bool jour::ajouterRdvMultiJour(rdv *r) {
+	d_rdvMultiJours.push_back(r);
+	return true;
+}
+
+
 bool jour::ajouterRdvSansNew(rdv *r){
     rdv*cl=d_tete, *prec=nullptr;
                                             //liste vide impossible
@@ -174,6 +180,24 @@ bool jour::supprimerRdvSansDelete(rdv *r)
     }
 }
 
+bool jour::supprimerRdvMultiJour(rdv *r)
+{
+    int i=0;
+    while(i<d_rdvMultiJours.size() && r->nom!=d_rdvMultiJours[i]->nom)
+    {
+        i++;
+    }
+    if(i==d_rdvMultiJours.size())                           //Rdv pas trouvé
+    {
+        return false;
+    }
+    d_rdvMultiJours.supprimer(i);
+    return true;
+}
+
+
+
+
 bool jour::ajouterContact(rdv *r, contact *c) //static
 {
 	return r->ajouterContact(c);
@@ -249,9 +273,4 @@ bool jour::afficherContactDeRdv(const std::string &nom, std::ostream &out) const
 	rdv *cl = chercherRdv(nom);
 	cl->afficherContactDeRdv(out);
     return true;
-}
-
-bool jour::ajouterRdvMultiJour(rdv *r) {
-	d_rdvMultiJours.push_back(r);
-	return true;
 }

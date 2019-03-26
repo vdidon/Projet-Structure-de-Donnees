@@ -29,9 +29,9 @@ public:
 
 	static bool supprimerRdv(rdv *r); //ska : fait
 
-	bool supprimerRdvSansDelete(rdv *r); //fait
+	bool supprimerRdvSansDelete(rdv *r); //ska : fait
 
-	bool ajouterRdvSansNew(rdv *r); //fait
+	bool ajouterRdvSansNew(rdv *r); //ska : fait
 
 	bool ajouterRdvMultiJour(rdv *r); //fait
 
@@ -59,8 +59,6 @@ public:
 	bool modifHeureFin(const std::string &nom, const temps &t); //ska : fait
 
 	bool modifJourFin(const std::string &nom, jour *j);   //ska : fait
-
-//    void modifDuree(const std::string &nom, unsigned int duree);
 
 	bool afficherRdvDeJour(std::ostream &out) const;    //ska : fait
 
