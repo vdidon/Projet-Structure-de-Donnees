@@ -33,6 +33,16 @@ void test() {
 	     << ag.contactEstDispo("didon", "valère", 9, 4, 1997, 4, 4, 10, 4, 1997, 9, 9) << endl;
 	cout << "!ag.contactEstDispo(\"didon\", \"valère\", 8, 5, 1997, 20, 0, 9, 5, 1997, 20, 0)"
 	     << !ag.contactEstDispo("didon", "valère", 8, 5, 1997, 20, 0, 9, 5, 1997, 20, 0) << endl;
+	cout << "ag.ajouterRdv(9, 5, 1997, \"coucou2\", 20, 0, 10, 5, 1997, 20, 3) : "
+	     << ag.ajouterRdv(9, 5, 1997, "coucou2", 20, 0, 10, 5, 1997, 20, 3) << endl;
+	cout << "!ag.ajouterContactARdv(\"didon\", \"valère\", \"coucou2\", 9, 5, 1997) : "
+	     << !ag.ajouterContactARdv("didon", "valère", "coucou2", 9, 5, 1997) << endl;
+	cout << "ag.modifJourDeb(9,5,1997,\"coucou2\",9,4,1997)" << ag.modifJourDeb(9, 5, 1997, "coucou2", 9, 4, 1997)
+	     << endl;
+	cout << "ag.modifJourFin(9,4,1997,\"coucou2\",11,4,1997)" << ag.modifJourFin(9, 4, 1997, "coucou2", 11, 4, 1997)
+	     << endl;
+	cout << "ag.ajouterContactARdv(\"didon\", \"valère\", \"coucou2\", 9, 4, 1997) : "
+	     << ag.ajouterContactARdv("didon", "valère", "coucou2", 9, 4, 1997) << endl;
 	cout << endl;
 	ag.afficherRdvDeContact("didon", "valère", cout);
 	cout << endl << "suppRdv : " << ag.supprimerRdv(8, 5, 1997, "coucou");
