@@ -174,6 +174,7 @@ bool listJour::modifJourDeb(const date &d, const date &newd, const std::string &
 
 	jour *new_j = d_tete;
 	jour *pre = nullptr;
+	jour *suiv = nullptr;
 	while (new_j != nullptr && newd > new_j->d_date) {
 		pre = new_j;
 		new_j = new_j->suiv;
@@ -201,8 +202,14 @@ bool listJour::modifJourDeb(const date &d, const date &newd, const std::string &
 		} else //newd>d
 		{
 			do {
+				pre = j;
 				j = j->suiv;
 				j->supprimerRdvMultiJour(r);
+				if (!j->d_tete && !j->d_rdvMultiJours.size()) {
+					suiv = j->suiv;
+					supprimerJour(pre, j->suiv);
+					j = suiv;
+				}
 			} while (new_j->d_date > j->d_date);
 		}
 		return true;
@@ -222,6 +229,7 @@ bool listJour::modifJourFin(const date &dDeb, const date &newd, const std::strin
 		return true;
 	jour *new_j = d_tete;
 	jour *pre = nullptr;
+	jour *suiv = nullptr;
 	while (new_j != nullptr && newd > new_j->d_date) {
 		pre = new_j;
 		new_j = new_j->suiv;
@@ -247,8 +255,14 @@ bool listJour::modifJourFin(const date &dDeb, const date &newd, const std::strin
 		new_j->ajouterRdvSansNew(r);*/
 		if (newd < d) {
 			do {
+				pre = new_j;
 				new_j = new_j->suiv;
 				new_j->supprimerRdvMultiJour(r);
+				if (!new_j->d_tete && !new_j->d_rdvMultiJours.size()) {
+					suiv = new_j->suiv;
+					supprimerJour(pre, new_j->suiv);
+					new_j = suiv;
+				}
 			} while (new_j->d_date < j->d_date);
 		} else //newd>d
 		{
