@@ -62,7 +62,7 @@ bool contact::supprimerRdv(rdv *r)
         {
             i++;
         }
-        supprimerRdv(d_tabRdv[i]);
+	    d_tabRdv.supprimer(i);
         return true;
     }
     return false;

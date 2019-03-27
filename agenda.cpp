@@ -16,7 +16,7 @@ bool agenda::ajouterContact(const string &nom, const string &prenom, const strin
 }
 
 bool agenda::supprimerContact(const string &nom, const string &prenom) {
-    if (testContact(nom, prenom))
+	if (!testContact(nom, prenom))
         return false;
     return d_listContact.supprimerContact(nom, prenom);
 }

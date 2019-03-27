@@ -35,6 +35,8 @@ void test() {
 	     << !ag.contactEstDispo("didon", "valère", 8, 5, 1997, 20, 0, 9, 5, 1997, 20, 0) << endl;
 	cout << endl;
 	ag.afficherRdvDeContact("didon", "valère", cout);
+	cout << endl << "suppRdv : " << ag.supprimerRdv(8, 5, 1997, "coucou");
+	cout << endl << "suppContact : " << ag.supprimerContact("didon", "valère");
 }
 
 void test2() {
@@ -42,6 +44,7 @@ void test2() {
 	cout << "ag.ajouterRdv(9, 5, 1997, \"coucou\", 20, 0, 10, 5, 1997, 20, 3) : "
 	     << ag.ajouterRdv(9, 5, 1997, "coucou", 20, 0, 10, 5, 1997, 20, 3) << endl;
 	cout << endl << ag.supprimerRdv(9, 5, 1997, "coucou");
+
 }
 
 
