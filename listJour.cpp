@@ -45,7 +45,7 @@ vectorLite<contact *> &tabContacts) {
     jour *j = d_tete;
     jour *pre = nullptr;
     jour *jFin;
-    while (j != nullptr && d < j->d_date) {
+	while (j != nullptr && d > j->d_date) {
         pre = j;
         j = j->suiv;
     }

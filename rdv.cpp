@@ -170,7 +170,7 @@ bool rdv::modifJourFin(jour *j) {
 		return false;
 	else if (j->getDate() <= d_jfin->getDate()) // dans les date du rdv
 	{
-		d_j = j;
+		d_jfin = j;
 		return true;
 	} else // aprés la date de fin
 	{
