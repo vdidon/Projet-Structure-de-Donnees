@@ -115,8 +115,9 @@ void listJour::supprimerRdv(rdv *r) {
 			pre = pre->suiv;
 			j = pre->suiv;
 
-		} while (j != jFin);
+		} while (j && j != jFin);
 	}
+	j = r->getJourDeb();
 	jour::supprimerRdv(r);
 	if (!j->d_tete)
 		supprimerJour(j->d_date); // gros gros problème : pas opti x)
