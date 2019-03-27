@@ -59,6 +59,6 @@ temps::~temps() = default;
 
 
 std::ostream &operator<<(std::ostream &out, const temps &t) {
-    out << setfill('0') << setw(2) << t.h << ':' << setfill('0') << setw(2) << t.m << endl;
+	out << setfill('0') << setw(2) << t.h << ':' << setfill('0') << setw(2) << t.m;
     return out;
 }
