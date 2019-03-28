@@ -402,8 +402,7 @@ bool menuPrincipal() {
 }
 
 int main() {
-	//while (menuPrincipal());
-	test();
+	test3();
 	while (menuPrincipal());
 	return 0;
 }

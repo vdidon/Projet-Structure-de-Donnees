@@ -60,5 +60,18 @@ void test2() {
 
 }
 
+void test3() {
+	cout << "ag.ajouterContact(\"didon\", \"valère\", \"1234567890\", \"vdidon@live.fr\") : "
+	     << ag.ajouterContact("didon", "valère", "1234567890", "vdidon@live.fr") << endl;
+	cout << "ag.ajouterContact(\"didon2\", \"valère\", \"1234567890\", \"vdidon@live.fr\") : "
+	     << ag.ajouterContact("didon2", "valère", "1234567890", "vdidon@live.fr") << endl;
+	cout << "ag.ajouterRdv(9, 5, 1997, \"coucou\", 20, 0, 10, 5, 1997, 20, 3) : "
+	     << ag.ajouterRdv(9, 5, 1997, "coucou", 20, 0, 10, 5, 1997, 20, 3) << endl;
+	cout << "ag.ajouterContactARdv(\"didon\", \"valère\", \"coucou\", 9, 5, 1997) : "
+	     << ag.ajouterContactARdv("didon", "valère", "coucou", 9, 5, 1997) << endl;
+	cout << "ag.ajouterContactARdv(\"didon2\", \"valère\", \"coucou\", 9, 5, 1997) : "
+	     << ag.ajouterContactARdv("didon2", "valère", "coucou", 9, 5, 1997) << endl;
+}
+
 
 #endif //PROJET_STRUCTURE_DE_DONNEES_TEST_H
