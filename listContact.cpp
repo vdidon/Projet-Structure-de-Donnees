@@ -26,8 +26,19 @@ contact * listContact::ajouterContact(const string &nom, const string &prenom, c
     if (d_tete == nullptr) {
         d_tete = n;
     } else {
-        n->d_suiv = d_tete;
-        d_tete = n;
+        contact *ch = d_tete;
+        contact *pre = nullptr;
+        while (ch != nullptr && (ch->d_nom < nom || (ch->d_nom == nom && ch->d_prenom < nom))) {
+            pre = ch;
+            ch = ch->d_suiv;
+        }
+        if (ch == d_tete) {
+            n->d_suiv = d_tete;
+            d_tete = n;
+        } else {
+            pre->d_suiv = n;
+            n->d_suiv = ch;
+        }
     }
     return n;
 }
@@ -48,7 +59,7 @@ int listContact::taille() {
 
 contact *listContact::chercherContact(const string &nom, const string &prenom) const {
     contact *c = d_tete;
-    while (c != nullptr && (c->d_nom != nom && c->d_prenom != prenom)) {
+    while (c != nullptr && (c->d_nom != nom || c->d_prenom != prenom)) {
         c = c->d_suiv;
     }
     if (c == nullptr) {
