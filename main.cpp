@@ -1,32 +1,13 @@
 #include <iostream>
 #include "agenda.h"
-#include "test.h"
 
 using namespace std;
 
-//agenda ag{};
+agenda ag{};
 
 void majuscule(char &c) {
     if (c >= 'a' && c <= 'z')
         c -= 'a' - 'A';
-}
-
-bool sortir() {
-    do {
-        cout << "Voulez vous revenir au menu principal ? (O/N) ";
-        char c;
-        cin >> c;
-        majuscule(c);
-        switch (c) {
-            case 'O':
-                return true;
-            case 'N':
-                return false;
-            default:
-                cout << "Entré O ou N" << endl;
-        }
-    } while ("quand les poules auront des" != "dents");
-	return true;
 }
 
 bool sanschiffre(const string &s) {
@@ -81,6 +62,23 @@ void entrerTemps(int &h, int &m) {
 	cin >> m;
 }
 
+bool sortir() {
+	do {
+		cout << "Voulez vous revenir au menu principal ? (O/N) ";
+		char c;
+		cin >> c;
+		majuscule(c);
+		switch (c) {
+			case 'O':
+				return true;
+			case 'N':
+				return false;
+			default:
+				cout << "Entré O ou N" << endl;
+		}
+	} while ("quand les poules auront des" != "dents");
+	return true;
+}
 
 void suppPersonne() {
     string nom, prenom;
@@ -402,7 +400,6 @@ bool menuPrincipal() {
 }
 
 int main() {
-	test3();
 	while (menuPrincipal());
 	return 0;
 }
