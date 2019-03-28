@@ -1,6 +1,4 @@
 #include "listJour.h"
-#include "jour.h"
-#include "rdv.h"
 
 listJour::listJour(jour *tete) : d_tete{tete} {
 

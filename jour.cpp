@@ -1,6 +1,4 @@
 #include "jour.h"
-#include "rdv.h"
-#include "date.h"
 
 jour::jour(const date &d, rdv *tete) : d_date{d}, d_tete{tete}, d_rdvMultiJours{}
     {}

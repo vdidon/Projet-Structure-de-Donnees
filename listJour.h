@@ -2,9 +2,7 @@
 #define PROJET_STRUCTURE_DE_DONNEES_LISTRDV_H
 
 #include <string>
-#include "temps.h"
-#include "date.h"
-#include "vectorLite.h"
+#include "jour.h"
 
 
 class contact;
@@ -17,7 +15,7 @@ class listJour {
 public:
     listJour(jour *tete = nullptr);
 
-    ~listJour();
+	~listJour();
 
     rdv *chercherRdv(const date &d, const std::string &nom) const;
 

@@ -7,7 +7,7 @@ using namespace std;
 
 class temps {
 public:
-    temps(short t_h, short t_m); //ska : fait
+	temps(short t_h, short t_m); //ska : fait
 
     ~temps();
 

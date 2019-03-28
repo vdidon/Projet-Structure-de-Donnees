@@ -3,6 +3,7 @@
 
 #include <string>
 #include <ostream>
+#include "contact.h"
 
 using namespace std; // pour le string
 
@@ -14,7 +15,7 @@ class listContact {
 public:
     listContact(contact *tete = nullptr); /** fait */
 
-    ~listContact(); /** fait */
+	~listContact(); /** fait */
 
     contact * ajouterContact(const string &nom, const string &prenom, const string &num = "", const string &adresseMail = ""); /** fait */
 

@@ -48,7 +48,7 @@ private:
     temps d_tDeb;
     temps d_tFin;
     vectorLite<contact *> d_tabContacts;
-    rdv *d_suiv;
+	rdv *d_suiv;
 
     bool modifHeureDeb(const temps &t); //ska : fait
 

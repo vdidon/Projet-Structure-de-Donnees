@@ -1,7 +1,7 @@
 #ifndef PROJET_STRUCTURE_DE_DONNEES_VECTORLITE_H
 #define PROJET_STRUCTURE_DE_DONNEES_VECTORLITE_H
 
-#include <cstring>
+#include <cstring> // pour memcpy
 
 template<typename T> // T étant un pointeur
 class vectorLite {

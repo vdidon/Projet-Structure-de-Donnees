@@ -1,11 +1,5 @@
 //#include <sys/param.h>
 #include "agenda.h"
-#include "listContact.h"
-#include "listJour.h"
-#include "date.h"
-#include "contact.h"
-#include "rdv.h"
-#include "jour.h"
 
 agenda::agenda() : d_listJour{}, d_listContact{} {}
 
