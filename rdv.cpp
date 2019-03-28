@@ -197,13 +197,9 @@ bool rdv::ajouterContact(contact *c){
 	vectorLite<rdv *> *T = &c->getTabrdv();
 	for (int i = 0; i < T->size(); i++)
     {
-	    if (pasEnMemeTemps((*T)[i]))
+	    if (!pasEnMemeTemps((*T)[i]))
         {
-	        i++;
-        }
-        else
-        {
-            return false;
+	        return false;
         }
     }
     d_tabContacts.push_back(c);

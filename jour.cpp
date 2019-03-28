@@ -7,7 +7,7 @@ jour::jour(const date &d, rdv *tete) : d_date{d}, d_tete{tete}, d_rdvMultiJours{
 
 jour::~jour()
     {
-      rdv *r = d_tete, *rTemp=nullptr;
+	    rdv *r = d_tete;
       while(r!=nullptr)
       {
           rdv *rTemp=r;
@@ -169,9 +169,7 @@ bool jour::supprimerRdvSansDelete(rdv *r)
     if(cl==nullptr)             //Rdv pas trouvé
     {
         return false;
-    }
-
-	if (prec == nullptr)            //Rdv en tête
+    } else if (prec == nullptr)            //Rdv en tête
     {
         d_tete=nullptr;
         return true;

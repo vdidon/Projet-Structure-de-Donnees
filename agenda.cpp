@@ -12,7 +12,7 @@ agenda::agenda() : d_listJour{}, d_listContact{} {}
 agenda::~agenda() = default;
 
 bool agenda::ajouterContact(const string &nom, const string &prenom, const string &num, const string &adresseMail) {
-    return d_listContact.ajouterContact(nom, prenom, num, adresseMail);
+	return static_cast<bool> (d_listContact.ajouterContact(nom, prenom, num, adresseMail));
 }
 
 bool agenda::supprimerContact(const string &nom, const string &prenom) {
